@@ -5,9 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="433.255">
+        Title="MainWindow" Height="529" Width="355.932">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="185,359,0,0" VerticalAlignment="Top" Width="75"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="—Pngtree—neon background wall poster background_1043173.jpg"/>
+        </Grid.Background>
+        <Button Content="Ingresar" HorizontalAlignment="Left" Margin="107.903,453.902,0,0" VerticalAlignment="Top" Width="134.949" RenderTransformOrigin="0.5,0.5" Background="#FFAEA5A5" UseLayoutRounding="False" Padding="1" Height="22.96">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.207"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="43.55" Margin="86.355,75.322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187.096" FontFamily="Rockwell" FontSize="36" FontStyle="Italic" FontStretch="Expanded" Foreground="#FFA879AA">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="9"/>
+            </TextBlock.Effect><Run Text="B"/><Run Text="ienvenido"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="86.355,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171.645"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="86.355,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171.645"/>
+        <TextBlock HorizontalAlignment="Left" Margin="86.355,204.04,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="86.355,272.08,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.251,0.313" Height="26.92"><Run Text="Contraseña"/><LineBreak/><Run/></TextBlock>
+        <Button Content="Recuperar Contraseña" HorizontalAlignment="Left" Height="25" Margin="107,392,0,0" VerticalAlignment="Top" Width="134"/>
 
     </Grid>
 </Window>
