@@ -28,7 +28,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="86.355,304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171.645"/>
         <TextBlock HorizontalAlignment="Left" Margin="86.355,204.04,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top" Foreground="#FFECACAC"/>
         <TextBlock HorizontalAlignment="Left" Margin="86.355,272.08,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.251,0.313" Height="26.92"><Run Foreground="#FFEC9E9E" Text="Contraseña"/><LineBreak/><Run/></TextBlock>
-        <Button Content="Recuperar Contraseña" HorizontalAlignment="Left" Height="25" Margin="107,392,0,0" VerticalAlignment="Top" Width="134"/>
+        <Button Content="Recuperar Contraseña" HorizontalAlignment="Left" Height="25" Margin="107,392,0,0" VerticalAlignment="Top" Width="134" Foreground="Black" Background="#FFD4C7C7"/>
 
     </Grid>
 </Window>
