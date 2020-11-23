@@ -8,19 +8,19 @@
         Title="MenuPrincipal" Height="450" Width="554.025">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="tema-fondo-luces-neon_52683-44625.jpg"/>
+            <ImageBrush ImageSource="Imagenes/tema-fondo-luces-neon_52683-44625.jpg"/>
         </Grid.Background>
-        <Button Content="Modo Solo" HorizontalAlignment="Left" Height="26.695" Margin="217.186,157.958,0,0" VerticalAlignment="Top" Width="100.106"/>
+        <Button Content="Modo Solo" HorizontalAlignment="Left" Height="27" Margin="217,158,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBlock HorizontalAlignment="Left" Height="74.364" Margin="92.291,39.737,0,0" TextWrapping="Wrap" Text="Memorama Distribuido" VerticalAlignment="Top" Width="382.31" FontSize="36" Foreground="White" FontFamily="Tempus Sans ITC"/>
         <Button Content="Multijugador" HorizontalAlignment="Left" Height="26.695" Margin="217.186,235.182,0,0" VerticalAlignment="Top" Width="100.106"/>
         <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="25.556,357.517,0,0" VerticalAlignment="Top" Width="52.435" Foreground="White" BorderBrush="#FF524785">
             <Button.Background>
-                <ImageBrush ImageSource="kisspng-gear-icon-gears-transparent-background-5a7a299b10b782.8313858415179554830685.png"/>
+                <ImageBrush ImageSource="Imagenes/kisspng-gear-icon-gears-transparent-background-5a7a299b10b782.8313858415179554830685.png"/>
             </Button.Background>
         </Button>
         <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="467.928,357.517,0,0" VerticalAlignment="Top" Width="55.297" BorderBrush="#FF37307E">
             <Button.Background>
-                <ImageBrush ImageSource="19ac9c9b9ff7376fc86b45fee366a1a2-icono-de-lista-de-verificaci--n-de-archivos-by-vexels.png"/>
+                <ImageBrush ImageSource="Imagenes/19ac9c9b9ff7376fc86b45fee366a1a2-icono-de-lista-de-verificaci--n-de-archivos-by-vexels.png"/>
             </Button.Background>
         </Button>
 
