@@ -111,5 +111,14 @@
   <ItemGroup>
     <Resource Include="—Pngtree—neon background wall poster background_1043173.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="kisspng-gear-icon-gears-transparent-background-5a7a299b10b782.8313858415179554830685.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="19ac9c9b9ff7376fc86b45fee366a1a2-icono-de-lista-de-verificaci--n-de-archivos-by-vexels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tema-fondo-luces-neon_52683-44625.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
