@@ -24,5 +24,14 @@ namespace Memorama_Client
         {
             InitializeComponent();
         }
+
+        private void btnIngresar_Click(object sender, RoutedEventArgs e)
+        {
+            Servicios.IniciarSesion(new ServidorMemorama.Usuario
+            {
+                Nickname = txtUsuario.Text,
+                Password = txtContraseña.Text
+            });
+        }
     }
 }

@@ -68,6 +68,8 @@
     <Compile Include="RegistrarUsuario.xaml.cs">
       <DependentUpon>RegistrarUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Servicios.cs" />
+    <Compile Include="ServiciosCallBack.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
