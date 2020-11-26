@@ -29,6 +29,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="86.355,204.04,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top" Foreground="#FFECACAC"/>
         <TextBlock HorizontalAlignment="Left" Margin="86.355,272.08,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.251,0.313" Height="26.92"><Run Foreground="#FFEC9E9E" Text="Contraseña"/><LineBreak/><Run/></TextBlock>
         <Button Content="Recuperar Contraseña" HorizontalAlignment="Left" Height="25" Margin="107,392,0,0" VerticalAlignment="Top" Width="134" Foreground="Black" Background="#FFD4C7C7"/>
+        <Button x:Name="btnRegistrarUsuario" Content="Registrarse" HorizontalAlignment="Left" Margin="107,345,0,0" VerticalAlignment="Top" Width="75" Click="btnRegistrarUsuario_Click"/>
 
     </Grid>
 </Window>

@@ -31,5 +31,19 @@ namespace Memorama_Client
                 MessageBox.Show("Verifica tu contraseña");
             }
         }
+
+        public void GetRegistroResultado(ResultadosRegistro resultado)
+        {
+            if (resultado == ResultadosRegistro.RegistradoConExito)
+            {
+                MessageBox.Show("Registrado con exito");
+
+
+            }else
+            {
+                MessageBox.Show("Ocurrió Algun error al registrar");
+            }
+
+        }
     }
 }

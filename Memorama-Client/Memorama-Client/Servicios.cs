@@ -18,5 +18,13 @@ namespace Memorama_Client
 
             server.Login(usuario);
         }
+        public static void RegistrarUsuario(Usuario usuario)
+        {
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+
+            server.RegistrarUsuario(usuario);
+        }
     }
 }

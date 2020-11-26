@@ -33,5 +33,12 @@ namespace Memorama_Client
                 Password = txtContraseña.Text
             });
         }
+
+        private void btnRegistrarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarUsuario registrarusuario = new RegistrarUsuario();
+            registrarusuario.Show();
+            this.Close();
+        }
     }
 }

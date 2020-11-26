@@ -23,10 +23,31 @@ namespace Memorama_Client.ServidorMemorama {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodigoVerificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CorreoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoVerificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NicknameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> NumeroPartidasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Memorama_Client.ServidorMemorama.Partida[] PartidaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Memorama_Client.ServidorMemorama.Reporte[] ReporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Memorama_Client.ServidorMemorama.SolicitudAmistad[] SolicitudAmistadField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -35,6 +56,45 @@ namespace Memorama_Client.ServidorMemorama {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CodigoVerificacion {
+            get {
+                return this.CodigoVerificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodigoVerificacionField, value) != true)) {
+                    this.CodigoVerificacionField = value;
+                    this.RaisePropertyChanged("CodigoVerificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Correo {
+            get {
+                return this.CorreoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CorreoField, value) != true)) {
+                    this.CorreoField = value;
+                    this.RaisePropertyChanged("Correo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EstadoVerificacion {
+            get {
+                return this.EstadoVerificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoVerificacionField, value) != true)) {
+                    this.EstadoVerificacionField = value;
+                    this.RaisePropertyChanged("EstadoVerificacion");
+                }
             }
         }
         
@@ -52,6 +112,32 @@ namespace Memorama_Client.ServidorMemorama {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> NumeroPartidas {
+            get {
+                return this.NumeroPartidasField;
+            }
+            set {
+                if ((this.NumeroPartidasField.Equals(value) != true)) {
+                    this.NumeroPartidasField = value;
+                    this.RaisePropertyChanged("NumeroPartidas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Memorama_Client.ServidorMemorama.Partida[] Partida {
+            get {
+                return this.PartidaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartidaField, value) != true)) {
+                    this.PartidaField = value;
+                    this.RaisePropertyChanged("Partida");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Password {
             get {
                 return this.PasswordField;
@@ -60,6 +146,391 @@ namespace Memorama_Client.ServidorMemorama {
                 if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
                     this.PasswordField = value;
                     this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Memorama_Client.ServidorMemorama.Reporte[] Reporte {
+            get {
+                return this.ReporteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReporteField, value) != true)) {
+                    this.ReporteField = value;
+                    this.RaisePropertyChanged("Reporte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Memorama_Client.ServidorMemorama.SolicitudAmistad[] SolicitudAmistad {
+            get {
+                return this.SolicitudAmistadField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SolicitudAmistadField, value) != true)) {
+                    this.SolicitudAmistadField = value;
+                    this.RaisePropertyChanged("SolicitudAmistad");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Partida", Namespace="http://schemas.datacontract.org/2004/07/Contratos")]
+    [System.SerializableAttribute()]
+    public partial class Partida : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> DifucultadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoPartidaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdPartidaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NicknameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PuntajeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.TimeSpan> TiempoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Memorama_Client.ServidorMemorama.Usuario UsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Difucultad {
+            get {
+                return this.DifucultadField;
+            }
+            set {
+                if ((this.DifucultadField.Equals(value) != true)) {
+                    this.DifucultadField = value;
+                    this.RaisePropertyChanged("Difucultad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EstadoPartida {
+            get {
+                return this.EstadoPartidaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoPartidaField, value) != true)) {
+                    this.EstadoPartidaField = value;
+                    this.RaisePropertyChanged("EstadoPartida");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdPartida {
+            get {
+                return this.IdPartidaField;
+            }
+            set {
+                if ((this.IdPartidaField.Equals(value) != true)) {
+                    this.IdPartidaField = value;
+                    this.RaisePropertyChanged("IdPartida");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nickname {
+            get {
+                return this.NicknameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NicknameField, value) != true)) {
+                    this.NicknameField = value;
+                    this.RaisePropertyChanged("Nickname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Puntaje {
+            get {
+                return this.PuntajeField;
+            }
+            set {
+                if ((this.PuntajeField.Equals(value) != true)) {
+                    this.PuntajeField = value;
+                    this.RaisePropertyChanged("Puntaje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.TimeSpan> Tiempo {
+            get {
+                return this.TiempoField;
+            }
+            set {
+                if ((this.TiempoField.Equals(value) != true)) {
+                    this.TiempoField = value;
+                    this.RaisePropertyChanged("Tiempo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Memorama_Client.ServidorMemorama.Usuario Usuario {
+            get {
+                return this.UsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
+                    this.UsuarioField = value;
+                    this.RaisePropertyChanged("Usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Reporte", Namespace="http://schemas.datacontract.org/2004/07/Contratos")]
+    [System.SerializableAttribute()]
+    public partial class Reporte : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdReporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NicknameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Memorama_Client.ServidorMemorama.Usuario UsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdReporte {
+            get {
+                return this.IdReporteField;
+            }
+            set {
+                if ((this.IdReporteField.Equals(value) != true)) {
+                    this.IdReporteField = value;
+                    this.RaisePropertyChanged("IdReporte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nickname {
+            get {
+                return this.NicknameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NicknameField, value) != true)) {
+                    this.NicknameField = value;
+                    this.RaisePropertyChanged("Nickname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Memorama_Client.ServidorMemorama.Usuario Usuario {
+            get {
+                return this.UsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
+                    this.UsuarioField = value;
+                    this.RaisePropertyChanged("Usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SolicitudAmistad", Namespace="http://schemas.datacontract.org/2004/07/Contratos")]
+    [System.SerializableAttribute()]
+    public partial class SolicitudAmistad : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdSolicitudField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Memorama_Client.ServidorMemorama.Usuario UsuarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioDestinatarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioRemitenteField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdSolicitud {
+            get {
+                return this.IdSolicitudField;
+            }
+            set {
+                if ((this.IdSolicitudField.Equals(value) != true)) {
+                    this.IdSolicitudField = value;
+                    this.RaisePropertyChanged("IdSolicitud");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Memorama_Client.ServidorMemorama.Usuario Usuario {
+            get {
+                return this.UsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
+                    this.UsuarioField = value;
+                    this.RaisePropertyChanged("Usuario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioDestinatario {
+            get {
+                return this.UsuarioDestinatarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioDestinatarioField, value) != true)) {
+                    this.UsuarioDestinatarioField = value;
+                    this.RaisePropertyChanged("UsuarioDestinatario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioRemitente {
+            get {
+                return this.UsuarioRemitenteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioRemitenteField, value) != true)) {
+                    this.UsuarioRemitenteField = value;
+                    this.RaisePropertyChanged("UsuarioRemitente");
                 }
             }
         }
@@ -88,6 +559,17 @@ namespace Memorama_Client.ServidorMemorama {
         UsuarioEncontrado = 4,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadosRegistro", Namespace="http://schemas.datacontract.org/2004/07/Contratos")]
+    public enum ResultadosRegistro : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RegistradoConExito = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoEsPosibleRegistrar = 1,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServidorMemorama.IContratos", CallbackContract=typeof(Memorama_Client.ServidorMemorama.IContratosCallback))]
     public interface IContratos {
@@ -97,6 +579,12 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/Login")]
         System.Threading.Tasks.Task LoginAsync(Memorama_Client.ServidorMemorama.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RegistrarUsuario")]
+        void RegistrarUsuario(Memorama_Client.ServidorMemorama.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RegistrarUsuario")]
+        System.Threading.Tasks.Task RegistrarUsuarioAsync(Memorama_Client.ServidorMemorama.Usuario usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -104,6 +592,9 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetLoginResult")]
         void GetLoginResult(Memorama_Client.ServidorMemorama.LoginResults resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetRegistroResultado")]
+        void GetRegistroResultado(Memorama_Client.ServidorMemorama.ResultadosRegistro resultado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -140,6 +631,14 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task LoginAsync(Memorama_Client.ServidorMemorama.Usuario usuario) {
             return base.Channel.LoginAsync(usuario);
+        }
+        
+        public void RegistrarUsuario(Memorama_Client.ServidorMemorama.Usuario usuario) {
+            base.Channel.RegistrarUsuario(usuario);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarUsuarioAsync(Memorama_Client.ServidorMemorama.Usuario usuario) {
+            return base.Channel.RegistrarUsuarioAsync(usuario);
         }
     }
 }

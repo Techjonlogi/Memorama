@@ -39,15 +39,27 @@
   <wsdl:message name="IContratos_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
+  <wsdl:message name="IContratos_RegistrarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuario" />
+  </wsdl:message>
   <wsdl:message name="IContratos_GetLoginResult_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetLoginResult" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetRegistroResultado_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetRegistroResultado" />
   </wsdl:message>
   <wsdl:portType name="IContratos">
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/Login" message="tns:IContratos_Login_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/RegistrarUsuario" message="tns:IContratos_RegistrarUsuario_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetLoginResult" message="tns:IContratos_GetLoginResult_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistroResultado">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetRegistroResultado" message="tns:IContratos_GetRegistroResultado_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IContratos" type="tns:IContratos">
@@ -59,8 +71,20 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/RegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetLoginResult" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistroResultado">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetRegistroResultado" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

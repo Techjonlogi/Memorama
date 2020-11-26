@@ -24,12 +24,12 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Button Content="Button" HorizontalAlignment="Left" Height="37" Margin="256,470,0,0" VerticalAlignment="Top" Width="121"/>
-        <Button Content="Button" HorizontalAlignment="Left" Height="37" Margin="32,470,0,0" VerticalAlignment="Top" Width="121"/>
-        <PasswordBox HorizontalAlignment="Left" Height="24" Margin="127,365,0,0" VerticalAlignment="Top" Width="147"/>
-        <PasswordBox HorizontalAlignment="Left" Height="24" Margin="127,295,0,0" VerticalAlignment="Top" Width="147"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="127,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="147"/>
-        <TextBox HorizontalAlignment="Left" Height="29" Margin="127,222,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="147"/>
+        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Height="37" Margin="256,470,0,0" VerticalAlignment="Top" Width="121" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Height="37" Margin="32,470,0,0" VerticalAlignment="Top" Width="121"/>
+        <PasswordBox x:Name="PassRepite" HorizontalAlignment="Left" Height="24" Margin="127,365,0,0" VerticalAlignment="Top" Width="147"/>
+        <PasswordBox x:Name="PassPassword" HorizontalAlignment="Left" Height="24" Margin="127,295,0,0" VerticalAlignment="Top" Width="147"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="29" Margin="127,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="29" Margin="127,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
 
     </Grid>
 </Window>
