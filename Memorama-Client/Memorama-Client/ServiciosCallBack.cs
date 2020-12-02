@@ -45,5 +45,19 @@ namespace Memorama_Client
             }
 
         }
+
+        public void void GetValidacionResultado(ResultadoValidacion resultado)
+        {
+            if (resultado == ResultadoValidacion.CodigoCorrecto)
+            {
+                MessageBox.Show("Registro validado");
+                MenuPrincipal ventanaprincipal = new MenuPrincipal();
+                ventanaprincipal.Show();
+            }
+            else if (resultado == ResultadoValidacion.CodigoIncorrecto)
+            {
+                MessageBox.Show("Código incorrecto");
+            }
+        }
     }
 }

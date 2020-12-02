@@ -84,7 +84,9 @@ namespace Memorama_Client
                     usuario.Nickname = txtUserName.Text;
                     usuario.Password = PassPassword.Password;
                     Servicios.RegistrarUsuario(usuario);
-
+                    
+                    ValidarRegistro validarRegistro = new ValidarRegistro();
+                    validarRegistro.Show();
                     
                 }
             }

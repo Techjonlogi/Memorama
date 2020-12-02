@@ -26,5 +26,10 @@ namespace Memorama_Client
 
             server.RegistrarUsuario(usuario);
         }
+
+        public static void ValidarRegistro()
+        {
+
+        }
     }
 }
