@@ -12,7 +12,7 @@
         </Grid.Background>
         <Button Content="Modo Solo" HorizontalAlignment="Left" Height="27" Margin="217,158,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}"/>
         <TextBlock HorizontalAlignment="Left" Height="74.364" Margin="92.291,39.737,0,0" TextWrapping="Wrap" Text="Memorama Distribuido" VerticalAlignment="Top" Width="382.31" FontSize="36" Foreground="White" FontFamily="Tempus Sans ITC"/>
-        <Button Content="Multijugador" HorizontalAlignment="Left" Height="26.695" Margin="217.186,235.182,0,0" VerticalAlignment="Top" Width="100.106" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnMultijugador" Content="Multijugador" HorizontalAlignment="Left" Height="26.695" Margin="217.186,235.182,0,0" VerticalAlignment="Top" Width="100.106" BorderBrush="{x:Null}" Click="btnMultijugador_Click"/>
         <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="25.556,357.517,0,0" VerticalAlignment="Top" Width="52.435" Foreground="White" BorderBrush="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/kisspng-gear-icon-gears-transparent-background-5a7a299b10b782.8313858415179554830685.png"/>

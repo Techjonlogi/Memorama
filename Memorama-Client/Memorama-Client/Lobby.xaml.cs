@@ -15,21 +15,15 @@ using System.Windows.Shapes;
 namespace Memorama_Client
 {
     /// <summary>
-    /// Lógica de interacción para MenuPrincipal.xaml
+    /// Lógica de interacción para Lobby.xaml
     /// </summary>
-    public partial class MenuPrincipal : Window
+    public partial class Lobby : Window
     {
-        public MenuPrincipal()
+        public Lobby()
         {
             InitializeComponent();
         }
 
-        private void btnMultijugador_Click(object sender, RoutedEventArgs e)
-        {
-            
-            ServidorMemorama.Usuario usuario = new ServidorMemorama.Usuario();
-            usuario.Nickname= Memorama_Client.Properties.Settings.Default.UsuarioOnline;
-            Servicios.AgregarUsuarios(usuario);
-        }
+        
     }
 }

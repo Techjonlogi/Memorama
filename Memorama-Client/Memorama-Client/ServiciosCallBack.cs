@@ -1,6 +1,7 @@
 ﻿using Memorama_Client.ServidorMemorama;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -46,7 +47,9 @@ namespace Memorama_Client
 
         }
 
-        public void void GetValidacionResultado(ResultadoValidacion resultado)
+      
+
+        public void  GetValidacionResultado(ResultadoValidacion resultado)
         {
             if (resultado == ResultadoValidacion.CodigoCorrecto)
             {
@@ -59,5 +62,21 @@ namespace Memorama_Client
                 MessageBox.Show("Código incorrecto");
             }
         }
+
+        public void RecibirMensajes(string source, string message)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public void GetUsuariosOnline(string[] usuariosConectados)
+        {
+            Lobby lobby = new Lobby();
+            ObservableCollection<string> misUsuarios = new ObservableCollection<string>(usuariosConectados);
+
+            lobby.ListUsuariosConectados.ItemsSource = misUsuarios;
+            lobby.Show();
+        }
+
     }
 }

@@ -31,5 +31,13 @@ namespace Memorama_Client
         {
 
         }
+
+        public static void AgregarUsuarios(Usuario usuario) {
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+            server.AgregarUsuariosLobby(usuario);
+
+        }
     }
 }

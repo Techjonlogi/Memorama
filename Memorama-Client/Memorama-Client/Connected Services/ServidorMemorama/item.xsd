@@ -93,9 +93,40 @@
   <xs:element name="LoginResults" nillable="true" type="tns:LoginResults" />
   <xs:simpleType name="ResultadosRegistro">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="RegistradoConExito" />
-      <xs:enumeration value="NoEsPosibleRegistrar" />
+      <xs:enumeration value="RegistradoConExito">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoEsPosibleRegistrar">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ResultadosRegistro" nillable="true" type="tns:ResultadosRegistro" />
+  <xs:simpleType name="ResultadoValidacion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CodigoCorrecto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CodigoIncorrecto">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResultadoValidacion" nillable="true" type="tns:ResultadoValidacion" />
 </xs:schema>

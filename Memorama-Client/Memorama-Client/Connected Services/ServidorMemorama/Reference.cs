@@ -564,10 +564,21 @@ namespace Memorama_Client.ServidorMemorama {
     public enum ResultadosRegistro : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RegistradoConExito = 0,
+        RegistradoConExito = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoEsPosibleRegistrar = 1,
+        NoEsPosibleRegistrar = 0,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultadoValidacion", Namespace="http://schemas.datacontract.org/2004/07/Contratos")]
+    public enum ResultadoValidacion : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CodigoCorrecto = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CodigoIncorrecto = 0,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -585,6 +596,24 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RegistrarUsuario")]
         System.Threading.Tasks.Task RegistrarUsuarioAsync(Memorama_Client.ServidorMemorama.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/ValidarRegistro")]
+        void ValidarRegistro(Memorama_Client.ServidorMemorama.Usuario usuario, string codigoVerificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/ValidarRegistro")]
+        System.Threading.Tasks.Task ValidarRegistroAsync(Memorama_Client.ServidorMemorama.Usuario usuario, string codigoVerificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/EnviarMensaje")]
+        void EnviarMensaje(string destino, string mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/EnviarMensaje")]
+        System.Threading.Tasks.Task EnviarMensajeAsync(string destino, string mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/AgregarUsuariosLobby")]
+        void AgregarUsuariosLobby(Memorama_Client.ServidorMemorama.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/AgregarUsuariosLobby")]
+        System.Threading.Tasks.Task AgregarUsuariosLobbyAsync(Memorama_Client.ServidorMemorama.Usuario usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -595,6 +624,15 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetRegistroResultado")]
         void GetRegistroResultado(Memorama_Client.ServidorMemorama.ResultadosRegistro resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetValidacionResultado")]
+        void GetValidacionResultado(Memorama_Client.ServidorMemorama.ResultadoValidacion resultado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetUsuariosOnline")]
+        void GetUsuariosOnline(string[] usuariosConectados);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RecibirMensajes")]
+        void RecibirMensajes(string source, string message);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -639,6 +677,30 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task RegistrarUsuarioAsync(Memorama_Client.ServidorMemorama.Usuario usuario) {
             return base.Channel.RegistrarUsuarioAsync(usuario);
+        }
+        
+        public void ValidarRegistro(Memorama_Client.ServidorMemorama.Usuario usuario, string codigoVerificacion) {
+            base.Channel.ValidarRegistro(usuario, codigoVerificacion);
+        }
+        
+        public System.Threading.Tasks.Task ValidarRegistroAsync(Memorama_Client.ServidorMemorama.Usuario usuario, string codigoVerificacion) {
+            return base.Channel.ValidarRegistroAsync(usuario, codigoVerificacion);
+        }
+        
+        public void EnviarMensaje(string destino, string mensaje) {
+            base.Channel.EnviarMensaje(destino, mensaje);
+        }
+        
+        public System.Threading.Tasks.Task EnviarMensajeAsync(string destino, string mensaje) {
+            return base.Channel.EnviarMensajeAsync(destino, mensaje);
+        }
+        
+        public void AgregarUsuariosLobby(Memorama_Client.ServidorMemorama.Usuario usuario) {
+            base.Channel.AgregarUsuariosLobby(usuario);
+        }
+        
+        public System.Threading.Tasks.Task AgregarUsuariosLobbyAsync(Memorama_Client.ServidorMemorama.Usuario usuario) {
+            return base.Channel.AgregarUsuariosLobbyAsync(usuario);
         }
     }
 }

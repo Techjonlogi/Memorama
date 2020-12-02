@@ -34,6 +34,7 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Contratos" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IContratos_Login_InputMessage">
@@ -42,11 +43,29 @@
   <wsdl:message name="IContratos_RegistrarUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarUsuario" />
   </wsdl:message>
+  <wsdl:message name="IContratos_ValidarRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_EnviarMensaje_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensaje" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_AgregarUsuariosLobby_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsuariosLobby" />
+  </wsdl:message>
   <wsdl:message name="IContratos_GetLoginResult_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetLoginResult" />
   </wsdl:message>
   <wsdl:message name="IContratos_GetRegistroResultado_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetRegistroResultado" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetValidacionResultado_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetValidacionResultado" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetUsuariosOnline_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuariosOnline" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_RecibirMensajes_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirMensajes" />
   </wsdl:message>
   <wsdl:portType name="IContratos">
     <wsdl:operation name="Login">
@@ -55,11 +74,29 @@
     <wsdl:operation name="RegistrarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/RegistrarUsuario" message="tns:IContratos_RegistrarUsuario_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ValidarRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/ValidarRegistro" message="tns:IContratos_ValidarRegistro_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensaje">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/EnviarMensaje" message="tns:IContratos_EnviarMensaje_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuariosLobby">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/AgregarUsuariosLobby" message="tns:IContratos_AgregarUsuariosLobby_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetLoginResult" message="tns:IContratos_GetLoginResult_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetRegistroResultado">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetRegistroResultado" message="tns:IContratos_GetRegistroResultado_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidacionResultado">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetValidacionResultado" message="tns:IContratos_GetValidacionResultado_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosOnline">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetUsuariosOnline" message="tns:IContratos_GetUsuariosOnline_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibirMensajes">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/RecibirMensajes" message="tns:IContratos_RecibirMensajes_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IContratos" type="tns:IContratos">
@@ -77,6 +114,24 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="ValidarRegistro">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/ValidarRegistro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensaje">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/EnviarMensaje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsuariosLobby">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/AgregarUsuariosLobby" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetLoginResult" style="document" />
       <wsdl:output>
@@ -85,6 +140,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetRegistroResultado">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetRegistroResultado" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidacionResultado">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetValidacionResultado" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosOnline">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetUsuariosOnline" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecibirMensajes">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/RecibirMensajes" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

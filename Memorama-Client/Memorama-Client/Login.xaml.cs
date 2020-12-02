@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Memorama_Client.ServidorMemorama;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,11 +28,18 @@ namespace Memorama_Client
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
         {
+            Memorama_Client.Properties.Settings.Default.UsuarioOnline=txtUsuario.Text;
+            
+
+
             Servicios.IniciarSesion(new ServidorMemorama.Usuario
             {
                 Nickname = txtUsuario.Text,
                 Password = txtContraseña.Text
             });
+
+
+            
         }
 
         private void btnRegistrarUsuario_Click(object sender, RoutedEventArgs e)
