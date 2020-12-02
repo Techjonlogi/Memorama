@@ -85,7 +85,7 @@ namespace Memorama_Client
                     usuario.Password = PassPassword.Password;
                     Servicios.RegistrarUsuario(usuario);
                     
-                    ValidarRegistro validarRegistro = new ValidarRegistro();
+                    ValidarRegistro validarRegistro = new ValidarRegistro(usuario);
                     validarRegistro.Show();
                     
                 }
