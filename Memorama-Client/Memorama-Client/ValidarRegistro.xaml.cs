@@ -20,18 +20,18 @@ namespace Memorama_Client
     /// </summary>
     public partial class ValidarRegistro : Window
     {
-        private Usuario usu;
-        public ValidarRegistro(Usuario usuario)
+        private Usuario usuario;
+        public ValidarRegistro(Usuario usu)
         {
             InitializeComponent();
-            usu = usuario;
+            usuario = usu;
         }
 
         private void btn_Verifcar_Click(object sender, RoutedEventArgs e)
         {
             string codigoVerificacion = txtCodigoVerificacion.Text;
 
-
+            Servicios.ValidarRegistro(usuario, codigoVerificacion);
 
         }
     }

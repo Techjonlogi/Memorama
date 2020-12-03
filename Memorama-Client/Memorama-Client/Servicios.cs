@@ -27,9 +27,11 @@ namespace Memorama_Client
             server.RegistrarUsuario(usuario);
         }
 
-        public static void ValidarRegistro()
+        public static void ValidarRegistro(Usuario usuario, string codigo)
         {
-
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            server.ValidarRegistro(usuario, codigo);
         }
 
         public static void AgregarUsuarios(Usuario usuario) {
@@ -38,6 +40,14 @@ namespace Memorama_Client
 
             server.AgregarUsuariosLobby(usuario);
 
+        }
+
+        public static void RaikingUsuarios()
+        {
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+            server.RankingUsuarios();
         }
     }
 }

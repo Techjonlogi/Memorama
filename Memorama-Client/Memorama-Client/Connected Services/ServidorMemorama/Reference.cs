@@ -44,6 +44,9 @@ namespace Memorama_Client.ServidorMemorama {
         private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PuntajeTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Memorama_Client.ServidorMemorama.Reporte[] ReporteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -146,6 +149,19 @@ namespace Memorama_Client.ServidorMemorama {
                 if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
                     this.PasswordField = value;
                     this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PuntajeTotal {
+            get {
+                return this.PuntajeTotalField;
+            }
+            set {
+                if ((this.PuntajeTotalField.Equals(value) != true)) {
+                    this.PuntajeTotalField = value;
+                    this.RaisePropertyChanged("PuntajeTotal");
                 }
             }
         }
@@ -581,6 +597,67 @@ namespace Memorama_Client.ServidorMemorama {
         CodigoIncorrecto = 0,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UsuarioRanking", Namespace="http://schemas.datacontract.org/2004/07/Contratos")]
+    [System.SerializableAttribute()]
+    public partial class UsuarioRanking : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NicknameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PuntuacionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nickname {
+            get {
+                return this.NicknameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NicknameField, value) != true)) {
+                    this.NicknameField = value;
+                    this.RaisePropertyChanged("Nickname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Puntuacion {
+            get {
+                return this.PuntuacionField;
+            }
+            set {
+                if ((this.PuntuacionField.Equals(value) != true)) {
+                    this.PuntuacionField = value;
+                    this.RaisePropertyChanged("Puntuacion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServidorMemorama.IContratos", CallbackContract=typeof(Memorama_Client.ServidorMemorama.IContratosCallback))]
     public interface IContratos {
@@ -614,6 +691,12 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/AgregarUsuariosLobby")]
         System.Threading.Tasks.Task AgregarUsuariosLobbyAsync(Memorama_Client.ServidorMemorama.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RankingUsuarios")]
+        void RankingUsuarios();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RankingUsuarios")]
+        System.Threading.Tasks.Task RankingUsuariosAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -633,6 +716,9 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RecibirMensajes")]
         void RecibirMensajes(string source, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetRanking")]
+        void GetRanking(Memorama_Client.ServidorMemorama.UsuarioRanking[] ranking);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -701,6 +787,14 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task AgregarUsuariosLobbyAsync(Memorama_Client.ServidorMemorama.Usuario usuario) {
             return base.Channel.AgregarUsuariosLobbyAsync(usuario);
+        }
+        
+        public void RankingUsuarios() {
+            base.Channel.RankingUsuarios();
+        }
+        
+        public System.Threading.Tasks.Task RankingUsuariosAsync() {
+            return base.Channel.RankingUsuariosAsync();
         }
     }
 }

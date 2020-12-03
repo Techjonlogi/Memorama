@@ -87,6 +87,7 @@ namespace Memorama_Client
                     
                     ValidarRegistro validarRegistro = new ValidarRegistro(usuario);
                     validarRegistro.Show();
+                    this.Close();
                     
                 }
             }

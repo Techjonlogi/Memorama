@@ -23,6 +23,13 @@
                 <ImageBrush ImageSource="Imagenes/19ac9c9b9ff7376fc86b45fee366a1a2-icono-de-lista-de-verificaci--n-de-archivos-by-vexels.png"/>
             </Button.Background>
         </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="113,358,0,0" VerticalAlignment="Top" Width="46" Height="42" Click="btnRainking_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/iconoRainking.png"/>
+            </Button.Background>
+        </Button>
+
+
 
     </Grid>
 </Window>

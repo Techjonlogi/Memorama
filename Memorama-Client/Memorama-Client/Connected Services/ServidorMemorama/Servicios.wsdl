@@ -52,6 +52,9 @@
   <wsdl:message name="IContratos_AgregarUsuariosLobby_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarUsuariosLobby" />
   </wsdl:message>
+  <wsdl:message name="IContratos_RankingUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:RankingUsuarios" />
+  </wsdl:message>
   <wsdl:message name="IContratos_GetLoginResult_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetLoginResult" />
   </wsdl:message>
@@ -66,6 +69,9 @@
   </wsdl:message>
   <wsdl:message name="IContratos_RecibirMensajes_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:RecibirMensajes" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetRanking_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetRanking" />
   </wsdl:message>
   <wsdl:portType name="IContratos">
     <wsdl:operation name="Login">
@@ -83,6 +89,9 @@
     <wsdl:operation name="AgregarUsuariosLobby">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/AgregarUsuariosLobby" message="tns:IContratos_AgregarUsuariosLobby_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RankingUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/RankingUsuarios" message="tns:IContratos_RankingUsuarios_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetLoginResult" message="tns:IContratos_GetLoginResult_OutputCallbackMessage" />
     </wsdl:operation>
@@ -97,6 +106,9 @@
     </wsdl:operation>
     <wsdl:operation name="RecibirMensajes">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/RecibirMensajes" message="tns:IContratos_RecibirMensajes_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRanking">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetRanking" message="tns:IContratos_GetRanking_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IContratos" type="tns:IContratos">
@@ -132,6 +144,12 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="RankingUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/RankingUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetLoginResult" style="document" />
       <wsdl:output>
@@ -162,6 +180,12 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRanking">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetRanking" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Servicios">
     <wsdl:port name="NetTcpBinding_IContratos" binding="tns:NetTcpBinding_IContratos">
@@ -169,7 +193,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/Contratos</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>JONATHAN-LAP\jhoni</Upn>
+          <Upn>ANGEL-CO\A515-54-798T</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

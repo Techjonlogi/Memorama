@@ -31,5 +31,10 @@ namespace Memorama_Client
             usuario.Nickname= Memorama_Client.Properties.Settings.Default.UsuarioOnline;
             Servicios.AgregarUsuarios(usuario);
         }
+
+        private void btnRainking_Click(object sender, RoutedEventArgs e)
+        {
+            Servicios.RaikingUsuarios();
+        }
     }
 }
