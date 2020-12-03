@@ -27,12 +27,11 @@ namespace Memorama_Client
             usuario = usu;
         }
 
-        private void btn_Verifcar_Click(object sender, RoutedEventArgs e)
+        private void btnVerificar_Click(object sender, RoutedEventArgs e)
         {
             string codigoVerificacion = txtCodigoVerificacion.Text;
 
-            Servicios.ValidarRegistro(usuario, codigoVerificacion);
-
+            Servicios.ValidarRegistro(usuario,codigoVerificacion);
         }
     }
 }
