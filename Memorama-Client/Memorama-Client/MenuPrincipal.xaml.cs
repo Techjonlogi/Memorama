@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Memorama_Client.JuegoBase.Vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Memorama_Client.JuegoBase.ModelosVistas;
 
 namespace Memorama_Client
 {
@@ -26,15 +28,21 @@ namespace Memorama_Client
 
         private void btnMultijugador_Click(object sender, RoutedEventArgs e)
         {
-            
+
             ServidorMemorama.Usuario usuario = new ServidorMemorama.Usuario();
-            usuario.Nickname= Memorama_Client.Properties.Settings.Default.UsuarioOnline;
+            usuario.Nickname = Memorama_Client.Properties.Settings.Default.UsuarioOnline;
             Servicios.AgregarUsuarios(usuario);
         }
 
         private void btnRainking_Click(object sender, RoutedEventArgs e)
         {
             Servicios.RaikingUsuarios();
+        }
+
+        private void btnModoSolo_Click(object sender, RoutedEventArgs e)
+        {
+            Juego juego = new Juego();
+            juego.Show();
         }
     }
 }

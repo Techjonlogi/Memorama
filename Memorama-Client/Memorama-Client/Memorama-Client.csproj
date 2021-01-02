@@ -71,6 +71,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="JuegoBase\ControladorDeAudio.cs" />
+    <Compile Include="JuegoBase\ModelosVistas\ImagenesModelosDeVista.cs" />
+    <Compile Include="JuegoBase\ModelosVistas\InicioDeJuego.cs" />
+    <Compile Include="JuegoBase\ModelosVistas\ModeloVistaJuego.cs" />
+    <Compile Include="JuegoBase\ModelosVistas\ObservableObject.cs" />
+    <Compile Include="JuegoBase\ModelosVistas\TimerModeloVista.cs" />
+    <Compile Include="JuegoBase\Modelos\ModeloImagenes.cs" />
+    <Compile Include="JuegoBase\Vistas\Juego.xaml.cs">
+      <DependentUpon>Juego.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JuegoBase\Vistas\Memorama.xaml.cs">
+      <DependentUpon>Memorama.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lobby.xaml.cs">
       <DependentUpon>Lobby.xaml</DependentUpon>
     </Compile>
@@ -94,6 +107,14 @@
     <Compile Include="ValidarRegistro.xaml.cs">
       <DependentUpon>ValidarRegistro.xaml</DependentUpon>
     </Compile>
+    <Page Include="JuegoBase\Vistas\Juego.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JuegoBase\Vistas\Memorama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Lobby.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -194,6 +215,22 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="JuegoBase\Recursos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Cartas\2033100802_preview_nargacuga_icon.png" />
+    <Resource Include="Imagenes\Cartas\MHW-Icono_Anjanath.png" />
+    <Resource Include="Imagenes\Cartas\MHW-Icono_Gran_Jagras.png" />
+    <Resource Include="Imagenes\Cartas\MHW-Icono_Legiana.png" />
+    <Resource Include="Imagenes\Cartas\MHW-Icono_Nergigante.png" />
+    <Resource Include="Imagenes\Cartas\MHWI-Icono_Glavenus.png" />
+    <Resource Include="Imagenes\Cartas\mystery_image.jpg" />
+    <Content Include="Sonidos\background_music.mp3" />
+    <Content Include="Sonidos\card_flip.mp3" />
+    <Content Include="Sonidos\correct_match.mp3" />
+    <Content Include="Sonidos\incorrect_match.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/tema-fondo-luces-neon_52683-44625.jpg"/>
         </Grid.Background>
-        <Button Content="Modo Solo" HorizontalAlignment="Left" Height="27" Margin="217,158,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}"/>
+        <Button x:Name="btnModoSolo" Content="Modo Solo" HorizontalAlignment="Left" Height="27" Margin="217,158,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Click="btnModoSolo_Click"/>
         <TextBlock HorizontalAlignment="Left" Height="74.364" Margin="92.291,39.737,0,0" TextWrapping="Wrap" Text="Memorama Distribuido" VerticalAlignment="Top" Width="382.31" FontSize="36" Foreground="White" FontFamily="Tempus Sans ITC"/>
         <Button x:Name="btnMultijugador" Content="Multijugador" HorizontalAlignment="Left" Height="26.695" Margin="217.186,235.182,0,0" VerticalAlignment="Top" Width="100.106" BorderBrush="{x:Null}" Click="btnMultijugador_Click"/>
         <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="25.556,357.517,0,0" VerticalAlignment="Top" Width="52.435" Foreground="White" BorderBrush="{x:Null}">
