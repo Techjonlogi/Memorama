@@ -9,22 +9,20 @@ namespace Memorama_Client.JuegoBase.ModelosVistas
 
     public enum Categoriascartas
     {
-        Animals,
-        Cars,
-        Foods
+        Cartas
     }
 
 
 
-    public class ModeloVistaJuego 
+    public class ModeloVistaJuego : ObservableObject
     {
 
-        //Coleccion de cartas con las que se juagrá
-        // public SlideCollectionViewModel Slides { get; private set; }
+        //Coleccion de cartas con las que se jugará
+        public ColeccionDeCartas cartas { get; private set; }
         //Infomracion del juego, tiempo, intentos, etc
-        //public GameInfoViewModel GameInfo { get; private set; }
+        public InfomracionDelJuegoModelo GameInfo { get; private set; }
         //Temporizador del tiempo transcurrido
-        //public TimerViewModel Timer { get; private set; }
+        public TimerModeloVista Timer { get; private set; }
         //Categoria que jugará
         public Categoriascartas Category { get; private set; }
 
@@ -38,24 +36,67 @@ namespace Memorama_Client.JuegoBase.ModelosVistas
         private void SetupGame(Categoriascartas category)
         {
 
-            //Slides = new SlideCollectionViewModel();
-            //Timer = new TimerViewModel(new TimeSpan(0, 0, 1));
-            //GameInfo = new GameInfoViewModel();
+            cartas = new ColeccionDeCartas();
+            Timer = new TimerModeloVista(new TimeSpan(0, 0, 1));
+            GameInfo = new InfomracionDelJuegoModelo();
 
-            //Set attempts to the maximum allowed
-            //GameInfo.ClearInfo();
+            //asigana intentos maximos permitidos
+            GameInfo.ClearInfo();
 
             //Create slides from image folder then display to be memorized
-            //Slides.CreateSlides("Assets/" + category.ToString());
-            //Slides.Memorize();
+            cartas.CrearCartas("Assets/" + category.ToString());
+            cartas.Memorizar();
 
             //Game has started, begin count.
-            //Timer.Start();
+            Timer.iniciar();
 
             //Slides have been updated
-            //OnPropertyChanged("Slides");
-            //OnPropertyChanged("Timer");
-            //OnPropertyChanged("GameInfo");
+            OnPropertyChanged("Slides");
+            OnPropertyChanged("Timer");
+            OnPropertyChanged("GameInfo");
+        }
+        //Cartas cuando es cliqueada
+
+        public void CartaSeleccionada(object carta)
+        {
+            if (cartas.PuedeSeleccionar) 
+            {
+                var seleccionada = carta as ImagenesModelosDeVista;
+                cartas.seleccionarCarta(seleccionada);
+
+
+            }
+
+            if (!cartas.CartasActivas) 
+            {
+                if (cartas.RevisarSiEsPar())
+                    GameInfo.Award();//match correcta
+                GameInfo.Penalize();//match incorrecta
+            }
+            
+                
+        }
+
+
+        private void EstatusDeljuego()
+        {
+            if(GameInfo.MatchAttempts<0)
+            {
+                GameInfo.GameStatus(false);
+                cartas.revelarSinPareja();
+                Timer.parar();
+            }
+            if (cartas.TodasLasCartasVolteadas) 
+            {
+                GameInfo.GameStatus(true);
+                Timer.parar();
+            }
+        }
+
+        public void Reiniciar()
+        {
+            ControladorDeAudio.PlayIncorrecto();
+            SetupGame(Category);
         }
 
     }

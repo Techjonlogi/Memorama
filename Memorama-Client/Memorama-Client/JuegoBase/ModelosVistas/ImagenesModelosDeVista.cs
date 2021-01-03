@@ -97,7 +97,7 @@ namespace Memorama_Client.JuegoBase.ModelosVistas
                     return _model.ImagenRecurso;
 
 
-                return "/Memorama-Client;component/Imagenes/Cartas/mystery_image.jpg";
+                return "/Memorama-Client;component/Imagenes/mystery_image.jpg";
             
             }
         }

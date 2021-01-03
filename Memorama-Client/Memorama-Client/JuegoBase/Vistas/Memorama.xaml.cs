@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Memorama_Client.JuegoBase.ModelosVistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,19 @@ namespace Memorama_Client.JuegoBase.Vistas
         {
             InitializeComponent();
         }
+
+        private void Slide_Clicked(object sender, RoutedEventArgs e)
+        {
+            var game = DataContext as ModeloVistaJuego;
+            var button = sender as Button;
+            game.CartaSeleccionada(button.DataContext);
+        }
+   
+        private void PlayAgain_c(Object sender, RoutedEventArgs e)
+        {
+            var game = DataContext as ModeloVistaJuego;
+            game.Reiniciar();
+        }
     }
+
 }

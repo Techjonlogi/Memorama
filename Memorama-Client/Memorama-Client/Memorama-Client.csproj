@@ -72,7 +72,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="JuegoBase\ControladorDeAudio.cs" />
+    <Compile Include="JuegoBase\ModelosVistas\ColeccionDeCartas.cs" />
     <Compile Include="JuegoBase\ModelosVistas\ImagenesModelosDeVista.cs" />
+    <Compile Include="JuegoBase\ModelosVistas\InfomracionDelJuegoModelo.cs" />
     <Compile Include="JuegoBase\ModelosVistas\InicioDeJuego.cs" />
     <Compile Include="JuegoBase\ModelosVistas\ModeloVistaJuego.cs" />
     <Compile Include="JuegoBase\ModelosVistas\ObservableObject.cs" />
@@ -226,7 +228,7 @@
     <Resource Include="Imagenes\Cartas\MHW-Icono_Legiana.png" />
     <Resource Include="Imagenes\Cartas\MHW-Icono_Nergigante.png" />
     <Resource Include="Imagenes\Cartas\MHWI-Icono_Glavenus.png" />
-    <Resource Include="Imagenes\Cartas\mystery_image.jpg" />
+    <Resource Include="Imagenes\mystery_image.jpg" />
     <Content Include="Sonidos\background_music.mp3" />
     <Content Include="Sonidos\card_flip.mp3" />
     <Content Include="Sonidos\correct_match.mp3" />
