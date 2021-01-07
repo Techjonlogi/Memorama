@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Lobby" Height="417.201" Width="751.515">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Imagenes/tema-fondo-luces-neon_52683-44625.jpg"/>
+        </Grid.Background>
         <ListBox x:Name="ListUsuariosConectados" HorizontalAlignment="Left" Height="209" Margin="503,123,0,0" VerticalAlignment="Top" Width="212"/>
         <TextBlock HorizontalAlignment="Left" Height="36" Margin="541,62,0,0" TextWrapping="Wrap" Text="Usuarios Conectados" VerticalAlignment="Top" Width="174"/>
         <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="46,332,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
