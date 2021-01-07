@@ -224,12 +224,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\mystery_image.jpg" />
-    <Resource Include="Assets\Animals\bear_image.jpg" />
-    <Resource Include="Assets\Animals\deer_image.jpg" />
-    <Resource Include="Assets\Animals\eagle_image.jpg" />
-    <Resource Include="Assets\Animals\fish_image.jpg" />
-    <Resource Include="Assets\Animals\fox_image.jpg" />
-    <Resource Include="Assets\Animals\rabbit_image.jpg" />
+    <Resource Include="Assets\Animals\2033100802_preview_nargacuga_icon.jpg" />
+    <Resource Include="Assets\Animals\MHW-Icono_Anjanath.jpg" />
+    <Resource Include="Assets\Animals\MHW-Icono_Gran_Jagras.jpg" />
+    <Resource Include="Assets\Animals\MHW-Icono_Legiana.jpg" />
+    <Resource Include="Assets\Animals\MHW-Icono_Nergigante.jpg" />
+    <Resource Include="Assets\Animals\MHWI-Icono_Glavenus.jpg" />
     <Content Include="Assets\background_music.mp3" />
     <Resource Include="Assets\black_background.jpg" />
     <Resource Include="Assets\Cars\blackcar_image.jpg" />
