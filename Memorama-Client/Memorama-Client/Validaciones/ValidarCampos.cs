@@ -1,25 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Memorama_Client.Validaciones
 {
-   public class ValidarCampos
+    public class ValidarCampos
     {
-        public enum ResultadosValidacion {
-        
-        ContraseñaValida,
-        ContraseñaInvalida,
+        public enum ResultadosValidacion
+        {
 
-        UsuarioValido,
-        UsuarioInvalido,
+            ContraseñaValida,
+            ContraseñaInvalida,
 
-        CorreoValido,
-        CorreoInvalido
-        
+            UsuarioValido,
+            UsuarioInvalido,
+
+            CorreoValido,
+            CorreoInvalido
+
         }
 
 

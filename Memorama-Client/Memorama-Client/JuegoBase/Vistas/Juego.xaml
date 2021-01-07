@@ -4,20 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client.JuegoBase.Vistas"
-        xmlns:viewmodels="clr-namespace:Memorama_Client.JuegoBase.ModelosVistas"
+        xmlns:viewmodels="clr-namespace:Memorama_Client.JuegoBase.ViewModels"
         xmlns:views="clr-namespace:Memorama_Client.JuegoBase.Vistas"
         mc:Ignorable="d"
         Title="Memorama" Height="650" Width="825">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewmodels:ModeloVistaJuego}">
+        <DataTemplate DataType="{x:Type viewmodels:GameViewModel}">
             <views:Memorama DataContext="{Binding}"/>
-        
         </DataTemplate>
-    </Window.Resources>
-
-
-
-    <Grid>
         
+    </Window.Resources>
+    <Grid>
+        <ContentControl Content="{Binding}"/>
     </Grid>
+
+
+
+   
 </Window>

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
+using System.Windows.Media;
 
 namespace Memorama_Client.JuegoBase
 {
@@ -14,7 +10,7 @@ namespace Memorama_Client.JuegoBase
         private static MediaPlayer _mediaPlayer = new MediaPlayer();
         private static MediaPlayer _effectPlayer = new MediaPlayer();
 
-        
+
         public static void OpenMusic(string relativePath)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

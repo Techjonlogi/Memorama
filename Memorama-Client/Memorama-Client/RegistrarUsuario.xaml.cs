@@ -1,18 +1,7 @@
 ﻿using Memorama_Client.ServidorMemorama;
 using Memorama_Client.Validaciones;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Memorama_Client
 {
@@ -33,7 +22,7 @@ namespace Memorama_Client
         private ChecResults CheckEmptyFields()
         {
             ChecResults check = ChecResults.Failed;
-            if (txtCorreo.Text == String.Empty || txtUserName.Text == String.Empty|| PassPassword.Password==String.Empty || PassRepite.Password==String.Empty)
+            if (txtCorreo.Text == String.Empty || txtUserName.Text == String.Empty || PassPassword.Password == String.Empty || PassRepite.Password == String.Empty)
             {
                 check = ChecResults.Failed;
             }
@@ -64,14 +53,15 @@ namespace Memorama_Client
             else if (validarCampos.ValidarCorreo(txtCorreo.Text) == ValidarCampos.ResultadosValidacion.CorreoInvalido)
             {
                 MessageBox.Show("El correo que ingresó no es valido, intente de nuevo");
-            }else 
+            }
+            else
             {
                 check = ChecResults.Passed;
             }
             return check;
         }
 
-       
+
 
         private void btnRegistrar_Click(object sender, RoutedEventArgs e)
         {
@@ -84,11 +74,11 @@ namespace Memorama_Client
                     usuario.Nickname = txtUserName.Text;
                     usuario.Password = PassPassword.Password;
                     Servicios.RegistrarUsuario(usuario);
-                    
+
                     ValidarRegistro validarRegistro = new ValidarRegistro(usuario);
                     validarRegistro.Show();
                     this.Close();
-                    
+
                 }
             }
             else

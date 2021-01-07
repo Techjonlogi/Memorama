@@ -1,13 +1,8 @@
 ﻿using Memorama_Client.ServidorMemorama;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Xml;
 
 namespace Memorama_Client
 {
@@ -40,16 +35,17 @@ namespace Memorama_Client
                 MessageBox.Show("Registrado con exito");
 
 
-            }else
+            }
+            else
             {
                 MessageBox.Show("Ocurrió Algun error al registrar");
             }
 
         }
 
-      
 
-        public void  GetValidacionResultado(ResultadoValidacion resultado)
+
+        public void GetValidacionResultado(ResultadoValidacion resultado)
         {
             if (resultado == ResultadoValidacion.CodigoCorrecto)
             {

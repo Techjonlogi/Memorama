@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Memorama_Client.ServidorMemorama;
 using System.ServiceModel;
-using Memorama_Client.ServidorMemorama;
 
 namespace Memorama_Client
 {
@@ -34,7 +29,8 @@ namespace Memorama_Client
             server.ValidarRegistro(usuario, codigo);
         }
 
-        public static void AgregarUsuarios(Usuario usuario) {
+        public static void AgregarUsuarios(Usuario usuario)
+        {
             InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
             ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 

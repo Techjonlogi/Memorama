@@ -72,14 +72,14 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="JuegoBase\ControladorDeAudio.cs" />
-    <Compile Include="JuegoBase\ModelosVistas\ColeccionDeCartas.cs" />
-    <Compile Include="JuegoBase\ModelosVistas\ImagenesModelosDeVista.cs" />
-    <Compile Include="JuegoBase\ModelosVistas\InfomracionDelJuegoModelo.cs" />
-    <Compile Include="JuegoBase\ModelosVistas\InicioDeJuego.cs" />
-    <Compile Include="JuegoBase\ModelosVistas\ModeloVistaJuego.cs" />
-    <Compile Include="JuegoBase\ModelosVistas\ObservableObject.cs" />
-    <Compile Include="JuegoBase\ModelosVistas\TimerModeloVista.cs" />
-    <Compile Include="JuegoBase\Modelos\ModeloImagenes.cs" />
+    <Compile Include="JuegoBase\Models\PictureModel.cs" />
+    <Compile Include="JuegoBase\ViewModels\GameInfoViewModel.cs" />
+    <Compile Include="JuegoBase\ViewModels\GameViewModel.cs" />
+    <Compile Include="JuegoBase\ViewModels\ObservableObject.cs" />
+    <Compile Include="JuegoBase\ViewModels\PictureViewModel.cs" />
+    <Compile Include="JuegoBase\ViewModels\SlideCollectionViewModel.cs" />
+    <Compile Include="JuegoBase\ViewModels\StartMenuViewModel.cs" />
+    <Compile Include="JuegoBase\ViewModels\TimerViewModel.cs" />
     <Compile Include="JuegoBase\Vistas\Juego.xaml.cs">
       <DependentUpon>Juego.xaml</DependentUpon>
     </Compile>
@@ -160,6 +160,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Assets\Cars\Thumbs.db" />
     <None Include="Connected Services\ServidorMemorama\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -222,13 +223,33 @@
     <Folder Include="JuegoBase\Recursos\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Cartas\2033100802_preview_nargacuga_icon.png" />
-    <Resource Include="Imagenes\Cartas\MHW-Icono_Anjanath.png" />
-    <Resource Include="Imagenes\Cartas\MHW-Icono_Gran_Jagras.png" />
-    <Resource Include="Imagenes\Cartas\MHW-Icono_Legiana.png" />
-    <Resource Include="Imagenes\Cartas\MHW-Icono_Nergigante.png" />
-    <Resource Include="Imagenes\Cartas\MHWI-Icono_Glavenus.png" />
     <Resource Include="Imagenes\mystery_image.jpg" />
+    <Resource Include="Assets\Animals\bear_image.jpg" />
+    <Resource Include="Assets\Animals\deer_image.jpg" />
+    <Resource Include="Assets\Animals\eagle_image.jpg" />
+    <Resource Include="Assets\Animals\fish_image.jpg" />
+    <Resource Include="Assets\Animals\fox_image.jpg" />
+    <Resource Include="Assets\Animals\rabbit_image.jpg" />
+    <Content Include="Assets\background_music.mp3" />
+    <Resource Include="Assets\black_background.jpg" />
+    <Resource Include="Assets\Cars\blackcar_image.jpg" />
+    <Resource Include="Assets\Cars\bluecar_image.jpg" />
+    <Resource Include="Assets\Cars\greencar_image.jpeg" />
+    <Resource Include="Assets\Cars\orangecar_image.jpg" />
+    <Resource Include="Assets\Cars\redcar_image2.jpg" />
+    <Resource Include="Assets\Cars\whitecar_image.jpg" />
+    <Resource Include="Assets\Cars\yellowcar_image.jpg" />
+    <Resource Include="Assets\Foods\apple_image.jpg" />
+    <Resource Include="Assets\Foods\banana_image.jpg" />
+    <Resource Include="Assets\Foods\grape_image.jpg" />
+    <Resource Include="Assets\Foods\orange_image.jpg" />
+    <Resource Include="Assets\Foods\pepper_image.jpg" />
+    <Resource Include="Assets\Foods\pineapple_image.jpg" />
+    <Resource Include="Assets\greenblock.png" />
+    <Resource Include="Assets\mystery_image.jpg" />
+    <Content Include="Assets\SoundEffects\card_flip.mp3" />
+    <Content Include="Assets\SoundEffects\correct_match.mp3" />
+    <Content Include="Assets\SoundEffects\incorrect_match.mp3" />
     <Content Include="Sonidos\background_music.mp3" />
     <Content Include="Sonidos\card_flip.mp3" />
     <Content Include="Sonidos\correct_match.mp3" />
