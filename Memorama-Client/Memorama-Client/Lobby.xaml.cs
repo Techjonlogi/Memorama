@@ -12,6 +12,19 @@ namespace Memorama_Client
             InitializeComponent();
         }
 
-                
+        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnMensaje_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnIniciar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
