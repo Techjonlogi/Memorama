@@ -86,6 +86,19 @@
     <Compile Include="JuegoBase\Vistas\Memorama.xaml.cs">
       <DependentUpon>Memorama.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JuegoMulti\ViewModels\GameInfoViewModelM.cs" />
+    <Compile Include="JuegoMulti\ViewModels\GameViewModelM.cs" />
+    <Compile Include="JuegoMulti\ViewModels\ObservableObjectM.cs" />
+    <Compile Include="JuegoMulti\ViewModels\PictureViewModelM.cs" />
+    <Compile Include="JuegoMulti\ViewModels\SlideCollectionViewModelM.cs" />
+    <Compile Include="JuegoMulti\ViewModels\StartMenuViewModelM.cs" />
+    <Compile Include="JuegoMulti\ViewModels\TimerViewModelM.cs" />
+    <Compile Include="JuegoMulti\Vistas\JuegoM.xaml.cs">
+      <DependentUpon>JuegoM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JuegoMulti\Vistas\MemoramaM.xaml.cs">
+      <DependentUpon>MemoramaM.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lobby.xaml.cs">
       <DependentUpon>Lobby.xaml</DependentUpon>
     </Compile>
@@ -114,6 +127,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="JuegoBase\Vistas\Memorama.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JuegoMulti\Vistas\JuegoM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JuegoMulti\Vistas\MemoramaM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,9 +240,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JuegoBase\Recursos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagenes\mystery_image.jpg" />
     <Resource Include="Assets\Animals\2033100802_preview_nargacuga_icon.jpg" />
