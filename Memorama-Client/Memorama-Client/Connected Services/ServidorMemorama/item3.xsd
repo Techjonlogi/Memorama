@@ -44,6 +44,27 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="Empezarjuego">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PasarCarta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogOutLobby">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetLoginResult">
     <xs:complexType>
       <xs:sequence>
@@ -85,6 +106,20 @@
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Contratos" minOccurs="0" name="ranking" nillable="true" type="q9:ArrayOfUsuarioRanking" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJuego">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

@@ -1,4 +1,7 @@
-﻿using Memorama_Client.ServidorMemorama;
+﻿using GoogleApi.Entities.Search.Video.Common;
+using Memorama_Client.JuegoBase.Modelos;
+using Memorama_Client.JuegoMulti.ViewModels;
+using Memorama_Client.ServidorMemorama;
 using System.ServiceModel;
 
 namespace Memorama_Client
@@ -44,6 +47,36 @@ namespace Memorama_Client
             ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
             server.RankingUsuarios();
+        }
+
+        public static void SalirLobby(string usuario) 
+        {
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            server.LogOutLobby(usuario);
+
+
+        }
+
+        public static void EmpezarJuego() 
+        {
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            server.Empezarjuego();
+        }
+
+
+        public static void EnviarCarta(PictureViewModelM slide) 
+        {
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+            PictureModel model = new PictureModel();
+            model = slide.GetModel();
+
+            server.PasarCarta(model.Id, model.ImageSource, slide.Id);
+            
+
         }
     }
 }

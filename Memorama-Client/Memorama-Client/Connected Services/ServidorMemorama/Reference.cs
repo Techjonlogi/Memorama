@@ -697,6 +697,24 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/RankingUsuarios")]
         System.Threading.Tasks.Task RankingUsuariosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/Empezarjuego")]
+        void Empezarjuego();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/Empezarjuego")]
+        System.Threading.Tasks.Task EmpezarjuegoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/PasarCarta")]
+        void PasarCarta(int id, string source, int id2);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/PasarCarta")]
+        System.Threading.Tasks.Task PasarCartaAsync(int id, string source, int id2);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/LogOutLobby")]
+        void LogOutLobby(string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/LogOutLobby")]
+        System.Threading.Tasks.Task LogOutLobbyAsync(string usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -719,6 +737,12 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetRanking")]
         void GetRanking(Memorama_Client.ServidorMemorama.UsuarioRanking[] ranking);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetCarta")]
+        void GetCarta(int id, string source, int id2);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetJuego")]
+        void GetJuego();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -795,6 +819,30 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task RankingUsuariosAsync() {
             return base.Channel.RankingUsuariosAsync();
+        }
+        
+        public void Empezarjuego() {
+            base.Channel.Empezarjuego();
+        }
+        
+        public System.Threading.Tasks.Task EmpezarjuegoAsync() {
+            return base.Channel.EmpezarjuegoAsync();
+        }
+        
+        public void PasarCarta(int id, string source, int id2) {
+            base.Channel.PasarCarta(id, source, id2);
+        }
+        
+        public System.Threading.Tasks.Task PasarCartaAsync(int id, string source, int id2) {
+            return base.Channel.PasarCartaAsync(id, source, id2);
+        }
+        
+        public void LogOutLobby(string usuario) {
+            base.Channel.LogOutLobby(usuario);
+        }
+        
+        public System.Threading.Tasks.Task LogOutLobbyAsync(string usuario) {
+            return base.Channel.LogOutLobbyAsync(usuario);
         }
     }
 }

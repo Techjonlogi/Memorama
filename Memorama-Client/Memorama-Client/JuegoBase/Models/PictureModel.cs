@@ -1,5 +1,8 @@
-﻿namespace Memorama_Client.JuegoBase.Modelos
+﻿using System;
+
+namespace Memorama_Client.JuegoBase.Modelos
 {
+   
     public class PictureModel
     {
         public int Id { get; set; }

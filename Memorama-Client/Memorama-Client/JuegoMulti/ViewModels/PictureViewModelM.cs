@@ -9,6 +9,7 @@ using Memorama_Client.JuegoBase.Modelos;
 
 namespace Memorama_Client.JuegoMulti.ViewModels
 {
+    
     public class PictureViewModelM : ObservableObjectM
     {
         //Model for this view
@@ -21,6 +22,10 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         private bool _isViewed;
         private bool _isMatched;
         private bool _isFailed;
+
+        public PictureModel GetModel() {
+            return _model;
+        }
 
         //Is being viewed by user
         public bool isViewed

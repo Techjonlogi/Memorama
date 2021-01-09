@@ -1,8 +1,14 @@
-﻿using Memorama_Client.ServidorMemorama;
+﻿using GoogleApi.Entities.Translate.Common.Enums;
+using Memorama_Client.JuegoBase.Modelos;
+using Memorama_Client.JuegoMulti.ViewModels;
+using Memorama_Client.JuegoMulti.Vistas;
+using Memorama_Client.ServidorMemorama;
 using System;
 using System.Collections.ObjectModel;
+using System.Data.Linq;
 using System.ServiceModel;
 using System.Windows;
+
 
 namespace Memorama_Client
 {
@@ -10,6 +16,7 @@ namespace Memorama_Client
 
     public class ServiciosCallBack : IContratosCallback
     {
+        
         public void GetLoginResult(LoginResults resultado)
         {
             if (resultado == LoginResults.UsuarioEncontrado)
@@ -89,5 +96,26 @@ namespace Memorama_Client
             ventanaRiking.lvRankig.ItemsSource = usuarioRanking;
             ventanaRiking.Show();
         }
+
+        public void GetCarta(int id, string source,int id2)
+        {
+            PictureModel slide = new PictureModel();
+            slide.Id = id;
+            slide.ImageSource = source;
+
+            PictureViewModelM modelm = new PictureViewModelM(slide);
+
+            GameViewModelM modelg = new GameViewModelM();
+            modelg.ClickedSlide(modelm);
+            
+        }
+
+        public void GetJuego()
+        {
+            JuegoM multi = new JuegoM();
+            multi.Show();
+        }
+
+       
     }
 }

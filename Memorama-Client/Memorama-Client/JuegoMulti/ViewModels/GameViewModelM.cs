@@ -34,6 +34,8 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             SetupGame(category);
         }
 
+        public GameViewModelM() { }
+
         //Initialize game essentials
         private void SetupGame(SlideCategoriesM category)
         {

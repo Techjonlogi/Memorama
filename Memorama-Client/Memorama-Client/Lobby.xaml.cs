@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Memorama_Client.JuegoMulti.Vistas;
+using System.Windows;
+using static Memorama_Client.Servicios;
 
 namespace Memorama_Client
 {
@@ -14,7 +16,9 @@ namespace Memorama_Client
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
-
+            SalirLobby(Memorama_Client.Properties.Settings.Default.UsuarioOnline);
+            this.Close();
+           
         }
 
         private void btnMensaje_Click(object sender, RoutedEventArgs e)
@@ -24,7 +28,8 @@ namespace Memorama_Client
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
-
+            JuegoM multi = new JuegoM();
+            multi.Show();
         }
     }
 }

@@ -55,6 +55,15 @@
   <wsdl:message name="IContratos_RankingUsuarios_InputMessage">
     <wsdl:part name="parameters" element="tns:RankingUsuarios" />
   </wsdl:message>
+  <wsdl:message name="IContratos_Empezarjuego_InputMessage">
+    <wsdl:part name="parameters" element="tns:Empezarjuego" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_PasarCarta_InputMessage">
+    <wsdl:part name="parameters" element="tns:PasarCarta" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_LogOutLobby_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOutLobby" />
+  </wsdl:message>
   <wsdl:message name="IContratos_GetLoginResult_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetLoginResult" />
   </wsdl:message>
@@ -72,6 +81,12 @@
   </wsdl:message>
   <wsdl:message name="IContratos_GetRanking_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetRanking" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetCarta_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetCarta" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetJuego_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetJuego" />
   </wsdl:message>
   <wsdl:portType name="IContratos">
     <wsdl:operation name="Login">
@@ -92,6 +107,15 @@
     <wsdl:operation name="RankingUsuarios">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/RankingUsuarios" message="tns:IContratos_RankingUsuarios_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Empezarjuego">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/Empezarjuego" message="tns:IContratos_Empezarjuego_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PasarCarta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/PasarCarta" message="tns:IContratos_PasarCarta_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOutLobby">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/LogOutLobby" message="tns:IContratos_LogOutLobby_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetLoginResult" message="tns:IContratos_GetLoginResult_OutputCallbackMessage" />
     </wsdl:operation>
@@ -109,6 +133,12 @@
     </wsdl:operation>
     <wsdl:operation name="GetRanking">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetRanking" message="tns:IContratos_GetRanking_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarta">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetCarta" message="tns:IContratos_GetCarta_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJuego">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetJuego" message="tns:IContratos_GetJuego_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IContratos" type="tns:IContratos">
@@ -150,6 +180,24 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="Empezarjuego">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/Empezarjuego" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PasarCarta">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/PasarCarta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="LogOutLobby">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/LogOutLobby" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetLoginResult" style="document" />
       <wsdl:output>
@@ -182,6 +230,18 @@
     </wsdl:operation>
     <wsdl:operation name="GetRanking">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetRanking" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarta">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetCarta" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJuego">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetJuego" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

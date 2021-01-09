@@ -1,5 +1,6 @@
 ﻿using Memorama_Client.JuegoBase;
 using Memorama_Client.JuegoBase.Vistas;
+using Memorama_Client.JuegoMulti.Vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace Memorama_Client.JuegoMulti.ViewModels
 {
    public  class StartMenuViewModelM
     {
-        private Juego _mainWindow;
-        public StartMenuViewModelM(Juego main)
+        private JuegoM _mainWindow;
+        public StartMenuViewModelM(JuegoM main)
         {
             _mainWindow = main;
             ControladorDeAudio.PlayBackgroundMusic();

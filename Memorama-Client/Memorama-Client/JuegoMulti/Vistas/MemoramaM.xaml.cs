@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Memorama_Client.JuegoBase.Modelos;
+using Memorama_Client.JuegoMulti.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Memorama_Client.Servicios;
 
 namespace Memorama_Client.JuegoMulti.Vistas
 {
@@ -23,6 +26,23 @@ namespace Memorama_Client.JuegoMulti.Vistas
         public MemoramaM()
         {
             InitializeComponent();
+        }
+
+        private void Slide_Clicked(object sender, RoutedEventArgs e)
+        {
+            var game = DataContext as GameViewModelM;
+            var button = sender as Button;
+            game.ClickedSlide(button.DataContext);
+            EnviarCarta((PictureViewModelM)button.DataContext);
+            
+
+
+        }
+
+        private void PlayAgain_c(Object sender, RoutedEventArgs e)
+        {
+            var game = DataContext as GameViewModelM;
+            game.Restart();
         }
     }
 }
