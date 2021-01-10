@@ -43,6 +43,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
         {
             var game = DataContext as GameViewModelM;
             game.Restart();
+            
         }
     }
 }

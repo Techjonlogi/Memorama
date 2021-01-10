@@ -742,7 +742,7 @@ namespace Memorama_Client.ServidorMemorama {
         void GetCarta(int id, string source, int id2);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetJuego")]
-        void GetJuego();
+        void GetJuego(bool bandera);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

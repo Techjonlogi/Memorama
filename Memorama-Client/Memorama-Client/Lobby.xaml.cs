@@ -28,8 +28,7 @@ namespace Memorama_Client
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
-            JuegoM multi = new JuegoM();
-            multi.Show();
+            EmpezarJuego();
         }
     }
 }

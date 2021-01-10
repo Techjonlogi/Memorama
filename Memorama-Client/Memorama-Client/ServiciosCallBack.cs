@@ -110,10 +110,18 @@ namespace Memorama_Client
             
         }
 
-        public void GetJuego()
+        public void GetJuego(Boolean bandera)
         {
-            JuegoM multi = new JuegoM();
-            multi.Show();
+            if (bandera) 
+            {
+                JuegoM multi = new JuegoM();
+                multi.Show();
+            }
+            else 
+            {
+                MessageBox.Show("Faltan jugadores para iniciar");
+            }
+           
         }
 
        
