@@ -29,6 +29,8 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         //Interval for how long a user has to memorize slides
         private const int _openSeconds = 5;
 
+        private int numero;
+
         //Are selected slides still being displayed
         public bool areSlidesActive
         {
@@ -60,8 +62,9 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         public bool canSelect { get; private set; }
 
 
-        public SlideCollectionViewModelM()
+        public SlideCollectionViewModelM(int numero)
         {
+            this.numero = numero;
             _peekTimer = new DispatcherTimer();
             _peekTimer.Interval = new TimeSpan(0, 0, _peekSeconds);
             _peekTimer.Tick += PeekTimer_Tick;
@@ -202,14 +205,52 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         //Randomize the location of the slides in collection
         private void ShuffleSlides()
         {
-            //Randomizing slide indexes
-            var rnd = new Random();
-            //Shuffle memory slides
-            for (int i = 0; i < 64; i++)
+            if (numero == 5) 
+            
+            {
+                for (int i = 0; i < 64; i++)
+                {
+
+                    MemorySlides.Reverse();
+                    MemorySlides.Move(5, 1);
+                    MemorySlides.Move(2, 3);
+                    MemorySlides.Move(0, 4);
+
+                }
+
+            }else if(numero == 4) 
             {
                 MemorySlides.Reverse();
-                MemorySlides.Move(rnd.Next(0, MemorySlides.Count), rnd.Next(0, MemorySlides.Count));
+                MemorySlides.Move(3, 1);
+                MemorySlides.Move(5, 3);
+                MemorySlides.Move(2, 4);
+            }else if(numero==3){
+
+                MemorySlides.Reverse();
+                MemorySlides.Move(2, 1);
+                MemorySlides.Move(5, 4);
+                MemorySlides.Move(3, 4);
             }
+            else if (numero == 2)
+            {
+
+                MemorySlides.Reverse();
+                MemorySlides.Move(2, 3);
+                MemorySlides.Move(0, 5);
+                MemorySlides.Move(3, 4);
+            }
+            else if (numero == 1)
+            {
+
+                MemorySlides.Reverse();
+                MemorySlides.Move(0, 3);
+                MemorySlides.Move(0, 5);
+                MemorySlides.Move(2, 4);
+                MemorySlides.Move(1, 4);
+            }
+
+
+
         }
 
         //Close slides being memorized

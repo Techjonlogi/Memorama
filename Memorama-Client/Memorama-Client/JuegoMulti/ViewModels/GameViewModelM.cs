@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Memorama_Client.Servicios;
 
 namespace Memorama_Client.JuegoMulti.ViewModels
 {
@@ -28,8 +29,11 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         //Category we are playing in
         public SlideCategoriesM Category { get; private set; }
 
-        public GameViewModelM(SlideCategoriesM category)
+        private int numero;
+
+        public GameViewModelM(SlideCategoriesM category, int numero)
         {
+            this.numero = numero;
             Category = category;
             SetupGame(category);
         }
@@ -40,7 +44,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         private void SetupGame(SlideCategoriesM category)
         {
 
-            Slides = new SlideCollectionViewModelM();
+            Slides = new SlideCollectionViewModelM(numero);
             Timer = new TimerViewModelM(new TimeSpan(0, 0, 1));
             GameInfo = new GameInfoViewModelM();
 
@@ -72,7 +76,11 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             if (!Slides.areSlidesActive)
             {
                 if (Slides.CheckIfMatched())
+                
                     GameInfo.Award(); //Correct match
+                  
+                   
+                
                 else
                     GameInfo.Penalize();//Incorrect match
             }

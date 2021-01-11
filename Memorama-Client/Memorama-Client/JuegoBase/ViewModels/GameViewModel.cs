@@ -90,6 +90,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             if (Slides.AllSlidesMatched)
             {
                 GameInfo.GameStatus(true);
+
                 Timer.Stop();
             }
         }

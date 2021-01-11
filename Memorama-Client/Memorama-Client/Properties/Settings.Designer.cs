@@ -34,5 +34,17 @@ namespace Memorama_Client.Properties {
                 this["UsuarioOnline"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int random {
+            get {
+                return ((int)(this["random"]));
+            }
+            set {
+                this["random"] = value;
+            }
+        }
     }
 }

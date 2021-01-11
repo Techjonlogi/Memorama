@@ -52,9 +52,8 @@
   <xs:element name="PasarCarta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="id2" type="xs:int" />
+        <xs:element minOccurs="0" name="objeto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Objeto2" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -111,9 +110,8 @@
   <xs:element name="GetCarta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="id2" type="xs:int" />
+        <xs:element minOccurs="0" name="objeto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="objeto2" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -121,6 +119,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="bandera" type="xs:boolean" />
+        <xs:element minOccurs="0" name="numero" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

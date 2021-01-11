@@ -8,15 +8,20 @@ using System.Collections.ObjectModel;
 using System.Data.Linq;
 using System.ServiceModel;
 using System.Windows;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 
 namespace Memorama_Client
 {
     [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
 
+
     public class ServiciosCallBack : IContratosCallback
     {
+
         
+
         public void GetLoginResult(LoginResults resultado)
         {
             if (resultado == LoginResults.UsuarioEncontrado)
@@ -97,24 +102,21 @@ namespace Memorama_Client
             ventanaRiking.Show();
         }
 
-        public void GetCarta(int id, string source,int id2)
+        public void GetCarta(string objeto, string objeto2)
         {
-            PictureModel slide = new PictureModel();
-            slide.Id = id;
-            slide.ImageSource = source;
-
-            PictureViewModelM modelm = new PictureViewModelM(slide);
-
-            GameViewModelM modelg = new GameViewModelM();
-            modelg.ClickedSlide(modelm);
+            GameViewModelM game = JsonSerializer.Deserialize<GameViewModelM>(objeto);
+            Object carta = JsonSerializer.Deserialize<Object>(objeto2);
+            game.ClickedSlide(carta);
+            
             
         }
 
-        public void GetJuego(Boolean bandera)
+        public void GetJuego(Boolean bandera,int numero)
         {
             if (bandera) 
             {
-                JuegoM multi = new JuegoM();
+                
+                JuegoM multi = new JuegoM(numero);
                 multi.Show();
             }
             else 
@@ -124,6 +126,7 @@ namespace Memorama_Client
            
         }
 
+       
        
     }
 }

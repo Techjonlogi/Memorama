@@ -66,16 +66,14 @@ namespace Memorama_Client
         }
 
 
-        public static void EnviarCarta(PictureViewModelM slide) 
+        public static void EnviarCarta(string juego, string datacontex) 
         {
             InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
             ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
-            PictureModel model = new PictureModel();
-            model = slide.GetModel();
 
-            server.PasarCarta(model.Id, model.ImageSource, slide.Id);
-            
+
+            server.PasarCarta(juego, datacontex);
 
         }
     }

@@ -12,8 +12,10 @@ namespace Memorama_Client.JuegoMulti.ViewModels
    public  class StartMenuViewModelM
     {
         private JuegoM _mainWindow;
-        public StartMenuViewModelM(JuegoM main)
+        int numrandom;
+        public StartMenuViewModelM(JuegoM main, int numero)
         {
+            numrandom = numero;
             _mainWindow = main;
             ControladorDeAudio.PlayBackgroundMusic();
         }
@@ -21,7 +23,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         public void StartNewGame(int categoryIndex)
         {
             var category = (SlideCategoriesM)categoryIndex;
-            GameViewModelM newGame = new GameViewModelM(category);
+            GameViewModelM newGame = new GameViewModelM(category,numrandom);
             _mainWindow.DataContext = newGame;
         }
     }

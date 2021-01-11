@@ -20,10 +20,11 @@ namespace Memorama_Client.JuegoMulti.Vistas
     /// </summary>
     public partial class JuegoM : Window
     {
-        public JuegoM()
+        public JuegoM(int numero)
         {
+            int _numero = numero;
             InitializeComponent();
-            DataContext = new StartMenuViewModelM(this);
+            DataContext = new StartMenuViewModelM(this,_numero);
             var startMenu = DataContext as StartMenuViewModelM;
             startMenu.StartNewGame((int)SlideCategoriesM.Animals);
         }

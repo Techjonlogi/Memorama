@@ -1,5 +1,6 @@
 ﻿using Memorama_Client.JuegoBase.Modelos;
 using Memorama_Client.JuegoMulti.ViewModels;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+
+
+
 using static Memorama_Client.Servicios;
+
 
 namespace Memorama_Client.JuegoMulti.Vistas
 {
@@ -33,7 +41,16 @@ namespace Memorama_Client.JuegoMulti.Vistas
             var game = DataContext as GameViewModelM;
             var button = sender as Button;
             game.ClickedSlide(button.DataContext);
-            EnviarCarta((PictureViewModelM)button.DataContext);
+           
+            
+            
+         
+          
+
+
+            
+            
+
             
 
 
