@@ -17,7 +17,53 @@ namespace Memorama_Client.Validaciones.Tests
         [TestMethod()]
         public void ValidarContraseñaTest()
         {
-            Assert.Fail();
+
+            ValidarCampos chec = new ValidarCampos();
+            String contraseñacorrecta = "Musica0102";
+
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.ContraseñaValida, chec.ValidarContraseña(contraseñacorrecta));
+        }
+        [TestMethod()]
+        public void ValidarContraseñaTestError()
+        {
+
+            ValidarCampos chec = new ValidarCampos();
+            String contraseñaincorrecta = "musica";
+
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.ContraseñaInvalida, chec.ValidarContraseña(contraseñaincorrecta));
+        }
+
+        [TestMethod()]
+        public void ValidarUsuarioTest()
+        {
+            ValidarCampos chec = new ValidarCampos();
+            String usuario = "techjonlogi35";
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.UsuarioValido, chec.ValidarUsuario(usuario));
+        }
+        [TestMethod()]
+        public void ValidarUsuarioTestError()
+        {
+            ValidarCampos chec = new ValidarCampos();
+            String usuario = "techjonlogi35 * +_,,,";
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.UsuarioInvalido, chec.ValidarUsuario(usuario));
+        }
+
+        [TestMethod()]
+        public void ValidarCorreoTest()
+        {
+            ValidarCampos chec = new ValidarCampos();
+            String correo = "jhoni65475@gmail.com";
+
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.CorreoValido, chec.ValidarCorreo(correo));
+        }
+
+        [TestMethod()]
+        public void ValidarCorreoTestError()
+        {
+            ValidarCampos chec = new ValidarCampos();
+            String correo = "jhoni65475..-..zcv";
+
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.CorreoInvalido, chec.ValidarCorreo(correo));
         }
     }
 }
