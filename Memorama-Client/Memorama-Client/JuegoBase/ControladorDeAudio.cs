@@ -7,6 +7,9 @@ namespace Memorama_Client.JuegoBase
 {
     class ControladorDeAudio
     {
+        /// <summary>
+        /// Encargad de reproducir los sonidos cada que es necesario
+        /// </summary>
         private static MediaPlayer _mediaPlayer = new MediaPlayer();
         private static MediaPlayer _effectPlayer = new MediaPlayer();
 

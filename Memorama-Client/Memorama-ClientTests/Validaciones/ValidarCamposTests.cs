@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Memorama_Client.Validaciones.Tests
 {
+    /// <summary>
+    /// Clase de prueba para validar campo
+    /// </summary>
     [TestClass()]
     public class ValidarCamposTests
     {

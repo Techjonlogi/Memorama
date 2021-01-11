@@ -4,6 +4,7 @@ namespace Memorama_Client
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
+    /// permite el ingreso de un usuario registrado al programa
     /// </summary>
     public partial class MainWindow : Window
     {

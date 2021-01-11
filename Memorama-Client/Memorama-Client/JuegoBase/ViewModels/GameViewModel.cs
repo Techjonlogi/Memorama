@@ -18,6 +18,10 @@ namespace Memorama_Client.JuegoBase.ViewModels
 
     public class GameViewModel : ObservableObject
     {
+        /// <summary>
+        /// Esta clase es la encargada de configurar el juego, se podria decir que esta clase es el juego en si
+        /// </summary>
+        
         //Collection of slides we are playing with
         public SlideCollectionViewModel Slides { get; private set; }
         //Game information scores, attempts etc

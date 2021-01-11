@@ -7,6 +7,9 @@ using System.Windows;
 
 namespace Memorama_Client.JuegoBase.ViewModels
 {
+    /// <summary>
+    /// Esta clase contiene toda la infomracion necesario en el memorama, como los intentos y los puntos por match
+    /// </summary>
    public  class GameInfoViewModel : ObservableObject
     {
         private const int _maxAttempts = 4;

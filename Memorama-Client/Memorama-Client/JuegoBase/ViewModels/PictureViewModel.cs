@@ -11,6 +11,12 @@ namespace Memorama_Client.JuegoBase.ViewModels
 {
     public class PictureViewModel : ObservableObject
     {
+        
+        /// <summary>
+        /// Esta clase contiene la infomracion individual de cada carta, como si está volteada o es par de alguna
+        /// </summary>
+        
+        
         //Model for this view
         private PictureModel _model;
 

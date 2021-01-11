@@ -9,6 +9,13 @@ namespace Memorama_Client.JuegoBase.ViewModels
 {
    public class TimerViewModel : ObservableObject
     {
+        
+        /// <summary>
+        /// Se encarga de iniciar los timer así como controlar el timer al momento de checar una carta.
+        /// </summary>
+        
+        
+        
         private DispatcherTimer _playedTimer;
         private TimeSpan _timePlayed;
 

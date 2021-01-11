@@ -6,6 +6,7 @@ namespace Memorama_Client.JuegoBase.Vistas
 {
     /// <summary>
     /// Lógica de interacción para Juego.xaml
+    /// Crea el starmenuviewmodel para que inicie el juego
     /// </summary>
     public partial class Juego : Window
     {

@@ -6,6 +6,9 @@ using System.ServiceModel;
 
 namespace Memorama_Client
 {
+    /// <summary>
+    /// clase encargada de enviar los mensajes al servidor
+    /// </summary>
     public static class Servicios
     {
         public static void IniciarSesion(Usuario usuario)

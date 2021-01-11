@@ -14,6 +14,9 @@ using System.Text.Json.Serialization;
 
 namespace Memorama_Client
 {
+    /// <summary>
+    /// Clase encargada de resibir los mensajes del servidor y manejarlos
+    /// </summary>
     [CallbackBehavior(ConcurrencyMode = ConcurrencyMode.Reentrant)]
 
 

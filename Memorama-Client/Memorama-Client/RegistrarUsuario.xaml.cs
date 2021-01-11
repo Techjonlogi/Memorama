@@ -7,6 +7,7 @@ namespace Memorama_Client
 {
     /// <summary>
     /// Lógica de interacción para RegistrarUsuario.xaml
+    /// Encargada de registrar un usuario en la bd
     /// </summary>
     public partial class RegistrarUsuario : Window
     {

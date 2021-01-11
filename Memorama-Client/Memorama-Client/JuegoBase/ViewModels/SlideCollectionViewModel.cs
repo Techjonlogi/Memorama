@@ -12,6 +12,14 @@ namespace Memorama_Client.JuegoBase.ViewModels
 {
     public class SlideCollectionViewModel : ObservableObject
     {
+        
+        /// <summary>
+        /// Esta clase es la encargada de mapear las imagenes para que se puedan utilizar mas adelante como cartas
+        /// al final regresa la collecion de las cartas a gameviemodel
+        /// Tambien es responsable de cambiar las propiedades de cada carta
+        /// </summary>
+        
+        
         //Collection of picture slides
         public ObservableCollection<PictureViewModel> MemorySlides { get; private set; }
 

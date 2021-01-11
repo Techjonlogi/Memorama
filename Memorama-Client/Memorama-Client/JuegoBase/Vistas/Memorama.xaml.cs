@@ -8,6 +8,7 @@ namespace Memorama_Client.JuegoBase.Vistas
 {
     /// <summary>
     /// Lógica de interacción para Memorama.xaml
+    /// contiene los metodos que se relacionan con las clases del juego, necesarios para cambiar las propiedades de cada carta.
     /// </summary>
     public partial class Memorama : UserControl
     {

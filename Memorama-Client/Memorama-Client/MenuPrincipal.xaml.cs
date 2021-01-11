@@ -6,6 +6,7 @@ namespace Memorama_Client
 {
     /// <summary>
     /// Lógica de interacción para MenuPrincipal.xaml
+    /// muestra las opciones principales del juego
     /// </summary>
     public partial class MenuPrincipal : Window
     {

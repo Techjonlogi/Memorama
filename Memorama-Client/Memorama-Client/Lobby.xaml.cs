@@ -6,6 +6,7 @@ namespace Memorama_Client
 {
     /// <summary>
     /// Lógica de interacción para Lobby.xaml
+    /// muestra a los usuarios conectados, así como inicia el juego
     /// </summary>
     public partial class Lobby : Window
     {

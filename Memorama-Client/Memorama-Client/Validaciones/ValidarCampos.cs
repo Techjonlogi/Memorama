@@ -4,6 +4,11 @@ namespace Memorama_Client.Validaciones
 {
     public class ValidarCampos
     {
+        /// <summary>
+        /// clase y enumeracion necesaria para validar campos dentro del sistema, como el nickname o el correo.
+        /// </summary>
+        
+        
         public enum ResultadosValidacion
         {
 
