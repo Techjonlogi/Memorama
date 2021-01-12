@@ -89,13 +89,7 @@ namespace Memorama_Client
             lobby.Show();
         }
 
-        /*
-        public void GetRanking(List<UsuarioRanking> ranking)
-        {
-            Rainking ventanaRiking = new Rainking(ranking);
-            ventanaRiking.Show();
-        }
-        */
+       
 
         public void GetRanking(UsuarioRanking[] ranking)
         {
