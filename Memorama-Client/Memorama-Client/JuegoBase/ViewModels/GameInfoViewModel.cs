@@ -44,6 +44,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             private set
             {
                 _score = value;
+                Memorama_Client.Properties.Settings.Default.puntaje = value;
                 OnPropertyChanged("Score");
             }
         }

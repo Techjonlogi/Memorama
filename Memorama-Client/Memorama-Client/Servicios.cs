@@ -79,5 +79,16 @@ namespace Memorama_Client
             server.PasarCarta(juego, datacontex);
 
         }
+
+        public static void EnviarPuntaje(string usuario,int puntos) 
+        {
+            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+            server.AgregarPuntuacion(usuario, puntos);
+
+
+        }
+
     }
 }

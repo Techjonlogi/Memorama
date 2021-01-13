@@ -64,6 +64,9 @@
   <wsdl:message name="IContratos_LogOutLobby_InputMessage">
     <wsdl:part name="parameters" element="tns:LogOutLobby" />
   </wsdl:message>
+  <wsdl:message name="IContratos_AgregarPuntuacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarPuntuacion" />
+  </wsdl:message>
   <wsdl:message name="IContratos_GetLoginResult_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetLoginResult" />
   </wsdl:message>
@@ -115,6 +118,9 @@
     </wsdl:operation>
     <wsdl:operation name="LogOutLobby">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/LogOutLobby" message="tns:IContratos_LogOutLobby_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPuntuacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/AgregarPuntuacion" message="tns:IContratos_AgregarPuntuacion_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetLoginResult" message="tns:IContratos_GetLoginResult_OutputCallbackMessage" />
@@ -194,6 +200,12 @@
     </wsdl:operation>
     <wsdl:operation name="LogOutLobby">
       <soap12:operation soapAction="http://tempuri.org/IContratos/LogOutLobby" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarPuntuacion">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/AgregarPuntuacion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -38,12 +38,12 @@ namespace Memorama_Client.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int random {
+        public int puntaje {
             get {
-                return ((int)(this["random"]));
+                return ((int)(this["puntaje"]));
             }
             set {
-                this["random"] = value;
+                this["puntaje"] = value;
             }
         }
     }

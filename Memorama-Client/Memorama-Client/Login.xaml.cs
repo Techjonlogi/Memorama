@@ -74,7 +74,7 @@ namespace Memorama_Client
                     Nickname = txtUsuario.Text,
                     Password = passBox.Password
                 }); ;
-                this.Close();
+               
 
 
             }

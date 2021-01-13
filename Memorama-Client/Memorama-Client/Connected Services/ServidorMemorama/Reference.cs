@@ -715,6 +715,12 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/LogOutLobby")]
         System.Threading.Tasks.Task LogOutLobbyAsync(string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/AgregarPuntuacion")]
+        void AgregarPuntuacion(string usuario, int puntaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/AgregarPuntuacion")]
+        System.Threading.Tasks.Task AgregarPuntuacionAsync(string usuario, int puntaje);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -843,6 +849,14 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task LogOutLobbyAsync(string usuario) {
             return base.Channel.LogOutLobbyAsync(usuario);
+        }
+        
+        public void AgregarPuntuacion(string usuario, int puntaje) {
+            base.Channel.AgregarPuntuacion(usuario, puntaje);
+        }
+        
+        public System.Threading.Tasks.Task AgregarPuntuacionAsync(string usuario, int puntaje) {
+            return base.Channel.AgregarPuntuacionAsync(usuario, puntaje);
         }
     }
 }

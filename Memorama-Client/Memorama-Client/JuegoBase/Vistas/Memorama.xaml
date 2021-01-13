@@ -23,7 +23,7 @@
                     </StackPanel>
                 </DockPanel>
                 <StackPanel DataContext="{Binding GameInfo}" DockPanel.Dock="Left">
-                    <TextBlock Text="{Binding Score, StringFormat=Score: {0}}" Foreground="#FFFFF163" FontSize="24" />
+                    <TextBlock x:Name="textpuntos" Text="{Binding Score, StringFormat=Score: {0}}" Foreground="#FFFFF163" FontSize="24" />
                     <TextBlock Text="{Binding MatchAttempts, StringFormat=Attempts Left: {0}}" Foreground="#FFFF7D41" FontSize="22" />
                 </StackPanel>
             </DockPanel>
