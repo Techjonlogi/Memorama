@@ -3,6 +3,7 @@ using Memorama_Client.JuegoBase.Modelos;
 using Memorama_Client.JuegoMulti.ViewModels;
 using Memorama_Client.ServidorMemorama;
 using System.ServiceModel;
+using System.Windows;
 
 namespace Memorama_Client
 {
@@ -13,80 +14,155 @@ namespace Memorama_Client
     {
         public static void IniciarSesion(Usuario usuario)
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            try 
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
 
-            server.Login(usuario);
+                server.Login(usuario);
+            }catch(EndpointNotFoundException) 
+            {
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
+          
         }
         public static void RegistrarUsuario(Usuario usuario)
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
 
-            server.RegistrarUsuario(usuario);
-        }
+                server.RegistrarUsuario(usuario);
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
+            }
 
         public static void ValidarRegistro(Usuario usuario, string codigo)
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
-            server.ValidarRegistro(usuario, codigo);
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+                server.ValidarRegistro(usuario, codigo);
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
         }
 
         public static void AgregarUsuarios(Usuario usuario)
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
-            server.AgregarUsuariosLobby(usuario);
+                server.AgregarUsuariosLobby(usuario);
+            }
+            catch (EndpointNotFoundException)
+            {
 
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
         }
 
         public static void RaikingUsuarios()
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
-            server.RankingUsuarios();
+                server.RankingUsuarios();
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
         }
 
         public static void SalirLobby(string usuario) 
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
-            server.LogOutLobby(usuario);
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+                server.LogOutLobby(usuario);
+            }
+            catch (EndpointNotFoundException)
+            {
 
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
 
         }
 
         public static void EmpezarJuego() 
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
-            server.Empezarjuego();
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+                server.Empezarjuego();
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
         }
 
 
         public static void EnviarCarta(string juego, string datacontex) 
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
 
 
-            server.PasarCarta(juego, datacontex);
+                server.PasarCarta(juego, datacontex);
+            }
+            catch (EndpointNotFoundException)
+            {
 
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
         }
 
         public static void EnviarPuntaje(string usuario,int puntos) 
         {
-            InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-            ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
-            server.AgregarPuntuacion(usuario, puntos);
+                server.AgregarPuntuacion(usuario, puntos);
+            }
+            catch (EndpointNotFoundException)
+            {
 
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
 
         }
 

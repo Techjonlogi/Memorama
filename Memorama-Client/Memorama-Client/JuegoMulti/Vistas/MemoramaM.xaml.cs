@@ -41,6 +41,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
             var game = DataContext as GameViewModelM;
             var button = sender as Button;
             game.ClickedSlide(button.DataContext);
+            
            
             
             

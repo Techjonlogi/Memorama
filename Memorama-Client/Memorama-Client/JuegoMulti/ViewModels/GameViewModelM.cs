@@ -58,7 +58,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             //Game has started, begin count.
             Timer.Start();
 
-            //Slides have been updated
+            //Slides have been updated 
             OnPropertyChanged("Slides");
             OnPropertyChanged("Timer");
             OnPropertyChanged("GameInfo");
