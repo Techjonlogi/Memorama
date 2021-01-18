@@ -1,6 +1,9 @@
 ﻿using Memorama_Client.Validaciones;
 using System.Windows;
 using static Memorama_Client.Validaciones.ValidarCampos;
+using System.Security.Cryptography;
+using System.Text;
+using System;
 
 namespace Memorama_Client
 {
@@ -67,13 +70,14 @@ namespace Memorama_Client
             if (CheckFields() == ChecResults.Passed) 
             {
 
+                String data = PassHash(passBox.Password);
 
                 Memorama_Client.Properties.Settings.Default.UsuarioOnline = txtUsuario.Text;
                 Servicios.IniciarSesion(new ServidorMemorama.Usuario
                 {
                     Nickname = txtUsuario.Text,
-                    Password = passBox.Password
-                }); ;
+                    Password = data
+                }); ; ;
                
 
 
@@ -92,5 +96,22 @@ namespace Memorama_Client
             this.Close();
 
         }
+
+
+
+        public static String PassHash(String data)
+        {
+            SHA1 sha = SHA1.Create();
+            byte[] hashData = sha.ComputeHash(Encoding.Default.GetBytes(data));
+            StringBuilder stringBuilderValue = new StringBuilder();
+
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                stringBuilderValue.Append(hashData[i].ToString());
+            }
+            return stringBuilderValue.ToString();
+        }
+
+
     }
 }

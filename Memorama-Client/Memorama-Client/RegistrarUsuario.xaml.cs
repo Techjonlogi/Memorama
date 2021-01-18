@@ -1,6 +1,8 @@
 ﻿using Memorama_Client.ServidorMemorama;
 using Memorama_Client.Validaciones;
 using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows;
 
 namespace Memorama_Client
@@ -73,7 +75,7 @@ namespace Memorama_Client
                     Usuario usuario = new Usuario();
                     usuario.Correo = txtCorreo.Text;
                     usuario.Nickname = txtUserName.Text;
-                    usuario.Password = PassPassword.Password;
+                    usuario.Password = PassHash(PassPassword.Password) ;
                     Servicios.RegistrarUsuario(usuario);
 
                     ValidarRegistro validarRegistro = new ValidarRegistro(usuario);
@@ -88,6 +90,18 @@ namespace Memorama_Client
                 PassPassword.Password = String.Empty;
                 PassRepite.Password = String.Empty;
             }
+        }
+        public static String PassHash(String data)
+        {
+            SHA1 sha = SHA1.Create();
+            byte[] hashData = sha.ComputeHash(Encoding.Default.GetBytes(data));
+            StringBuilder stringBuilderValue = new StringBuilder();
+
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                stringBuilderValue.Append(hashData[i].ToString());
+            }
+            return stringBuilderValue.ToString();
         }
     }
 }
