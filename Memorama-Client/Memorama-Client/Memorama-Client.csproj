@@ -128,6 +128,9 @@
     <Compile Include="JuegoMulti\Vistas\MemoramaM.xaml.cs">
       <DependentUpon>MemoramaM.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JuegoMulti\Vistas\MemoramaMulti.xaml.cs">
+      <DependentUpon>MemoramaMulti.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lobby.xaml.cs">
       <DependentUpon>Lobby.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="JuegoMulti\Vistas\MemoramaM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="JuegoMulti\Vistas\MemoramaMulti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
