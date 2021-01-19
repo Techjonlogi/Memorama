@@ -36,5 +36,11 @@ namespace Memorama_Client
 
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MemoramaMulti  multi= new MemoramaMulti();
+            multi.Show();
+        }
     }
 }

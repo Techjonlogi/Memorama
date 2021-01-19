@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,16 +20,28 @@ namespace Memorama_Client.JuegoMulti.Vistas
     /// </summary>
     public partial class MemoramaMulti : Window
     {
+
+        int[] cartas = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6 };
         
-        
+        int primeraCarta;
+        int segundaCarta;
+       
+
         public MemoramaMulti()
         {
             InitializeComponent();
+            Randomize<int>(cartas);
+            MostrarCartas();
+           
+           
+          
         }
+
 
         private void Carta1_Click(object sender, RoutedEventArgs e)
         {
             int idCarta = 1;
+            
 
         }
 
@@ -40,6 +53,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
         private void Carta3_Click(object sender, RoutedEventArgs e)
         {
             int idCarta = 3;
+        
         }
 
         private void Carta4_Click(object sender, RoutedEventArgs e)
@@ -84,7 +98,55 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
         private void Carta12_Click(object sender, RoutedEventArgs e)
         {
+            
             int idCarta = 12;
         }
+
+       
+
+       
+
+        public void MostrarCartas()
+        {
+            
+            Carta1.Content = cartas[0];
+            Carta2.Content = cartas[1];
+            Carta3.Content = cartas[2];
+            Carta4.Content = cartas[3];
+            Carta5.Content = cartas[4];
+            Carta6.Content = cartas[5];
+            Carta7.Content = cartas[6];
+            Carta8.Content = cartas[7];
+            Carta9.Content = cartas[8];
+            Carta10.Content = cartas[9];
+            Carta11.Content = cartas[10];
+            Carta12.Content = cartas[11];
+
+
+        }
+
+        public static void Randomize<T>(T[] items)
+        {
+            Random rand = new Random();
+
+            // For each spot in the array, pick
+            // a random item to swap into that spot.
+            for (int i = 0; i < items.Length - 1; i++)
+            {
+                int j = rand.Next(i, items.Length);
+                T temp = items[i];
+                items[i] = items[j];
+                items[j] = temp;
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
 }

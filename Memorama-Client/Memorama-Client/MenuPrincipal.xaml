@@ -18,7 +18,7 @@
                 <ImageBrush ImageSource="Imagenes/kisspng-gear-icon-gears-transparent-background-5a7a299b10b782.8313858415179554830685.png"/>
             </Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="467.928,357.517,0,0" VerticalAlignment="Top" Width="55.297" BorderBrush="{x:Null}">
+        <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="467.928,357.517,0,0" VerticalAlignment="Top" Width="55.297" BorderBrush="{x:Null}" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/19ac9c9b9ff7376fc86b45fee366a1a2-icono-de-lista-de-verificaci--n-de-archivos-by-vexels.png"/>
             </Button.Background>
