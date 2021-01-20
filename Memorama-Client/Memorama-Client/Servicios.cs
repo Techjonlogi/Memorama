@@ -1,6 +1,7 @@
 ﻿using GoogleApi.Entities.Search.Video.Common;
 using Memorama_Client.JuegoBase.Modelos;
 using Memorama_Client.JuegoMulti.ViewModels;
+using Memorama_Client.JuegoMulti.Vistas;
 using Memorama_Client.ServidorMemorama;
 using System.ServiceModel;
 using System.Windows;
@@ -10,8 +11,13 @@ namespace Memorama_Client
     /// <summary>
     /// clase encargada de enviar los mensajes al servidor
     /// </summary>
-    public static class Servicios
+    public  class Servicios
     {
+
+
+
+        public MemoramaMulti juego { get; set; }
+
         public static void IniciarSesion(Usuario usuario)
         {
             try 
@@ -165,6 +171,66 @@ namespace Memorama_Client
             }
 
         }
+
+
+        public static void BuscarParaCambiar(string usuario, string correo) 
+        {
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+                server.BuscarParaCambiarContraseña(usuario, correo);
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
+
+
+        }
+
+
+        public static void EnviarCodigo(string usuario, string codigo)
+        {
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+                server.validarCodigoContraseña(codigo, usuario);
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
+
+
+        }
+
+
+        public static void CambiarContraseña(string usuario, string contraseña) 
+        {
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+                server.CambiarContraseña(contraseña, usuario);
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
+
+        }
+
 
     }
 }

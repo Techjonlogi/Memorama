@@ -595,6 +595,9 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CodigoIncorrecto = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoseEncuentraElUsuario = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -721,6 +724,24 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/AgregarPuntuacion")]
         System.Threading.Tasks.Task AgregarPuntuacionAsync(string usuario, int puntaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/BuscarParaCambiarContraseña")]
+        void BuscarParaCambiarContraseña(string usuario, string correo);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/BuscarParaCambiarContraseña")]
+        System.Threading.Tasks.Task BuscarParaCambiarContraseñaAsync(string usuario, string correo);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/CambiarContraseña")]
+        void CambiarContraseña(string contraseña, string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/CambiarContraseña")]
+        System.Threading.Tasks.Task CambiarContraseñaAsync(string contraseña, string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/validarCodigoContraseña")]
+        void validarCodigoContraseña(string codigo, string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/validarCodigoContraseña")]
+        System.Threading.Tasks.Task validarCodigoContraseñaAsync(string codigo, string usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -749,6 +770,27 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetJuego")]
         void GetJuego(bool bandera, int numero);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetResultadoBusqueda")]
+        void GetResultadoBusqueda(string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/NoExisteUsuario")]
+        void NoExisteUsuario();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/correoEquivocado")]
+        void correoEquivocado();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/NosepudocambiarLaContraseña")]
+        void NosepudocambiarLaContraseña();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/UsuarioEncontrado")]
+        void UsuarioEncontrado(string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/CodigoValidado")]
+        void CodigoValidado(string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/ContraseñaCambiada")]
+        void ContraseñaCambiada();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -857,6 +899,30 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task AgregarPuntuacionAsync(string usuario, int puntaje) {
             return base.Channel.AgregarPuntuacionAsync(usuario, puntaje);
+        }
+        
+        public void BuscarParaCambiarContraseña(string usuario, string correo) {
+            base.Channel.BuscarParaCambiarContraseña(usuario, correo);
+        }
+        
+        public System.Threading.Tasks.Task BuscarParaCambiarContraseñaAsync(string usuario, string correo) {
+            return base.Channel.BuscarParaCambiarContraseñaAsync(usuario, correo);
+        }
+        
+        public void CambiarContraseña(string contraseña, string usuario) {
+            base.Channel.CambiarContraseña(contraseña, usuario);
+        }
+        
+        public System.Threading.Tasks.Task CambiarContraseñaAsync(string contraseña, string usuario) {
+            return base.Channel.CambiarContraseñaAsync(contraseña, usuario);
+        }
+        
+        public void validarCodigoContraseña(string codigo, string usuario) {
+            base.Channel.validarCodigoContraseña(codigo, usuario);
+        }
+        
+        public System.Threading.Tasks.Task validarCodigoContraseñaAsync(string codigo, string usuario) {
+            return base.Channel.validarCodigoContraseñaAsync(codigo, usuario);
         }
     }
 }

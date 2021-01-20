@@ -112,6 +112,13 @@ namespace Memorama_Client
             return stringBuilderValue.ToString();
         }
 
+       
 
+        private void btnContraseña_Click(object sender, RoutedEventArgs e)
+        {
+            BuscarParaContraseña ventana = new BuscarParaContraseña();
+            ventana.Show();
+            this.Close();
+        }
     }
 }

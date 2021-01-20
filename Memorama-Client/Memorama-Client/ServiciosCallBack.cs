@@ -23,7 +23,7 @@ namespace Memorama_Client
     public class ServiciosCallBack : IContratosCallback
     {
 
-        
+        public MemoramaMulti juego { get; set; }
 
         public void GetLoginResult(LoginResults resultado)
         {
@@ -71,7 +71,12 @@ namespace Memorama_Client
             else if (resultado == ResultadoValidacion.CodigoIncorrecto)
             {
                 MessageBox.Show("Código incorrecto");
+            }else if(resultado == ResultadoValidacion.NoseEncuentraElUsuario) 
+            {
+                MessageBox.Show("No se encontró el usuario a validar");            
             }
+
+
         }
 
         public void RecibirMensajes(string source, string message)
@@ -101,9 +106,7 @@ namespace Memorama_Client
 
         public void GetCarta(string objeto, string objeto2)
         {
-            GameViewModelM game = JsonSerializer.Deserialize<GameViewModelM>(objeto);
-            Object carta = JsonSerializer.Deserialize<Object>(objeto2);
-            game.ClickedSlide(carta);
+            
             
             
         }
@@ -123,7 +126,43 @@ namespace Memorama_Client
            
         }
 
-       
-       
+        public void GetResultadoBusqueda(string usuario)
+        {
+            RecibirCodigo ventana = new RecibirCodigo(usuario);
+            ventana.Show();
+
+        }
+
+        public void NoExisteUsuario()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void correoEquivocado()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void NosepudocambiarLaContraseña()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UsuarioEncontrado(string usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CodigoValidado(string usuario)
+        {
+            MessageBox.Show("Codigo Correcto");
+            NuevaContraseña ventana = new NuevaContraseña(usuario);
+            ventana.Show();
+        }
+
+        public void ContraseñaCambiada()
+        {
+            MessageBox.Show("contraseña cambiada correctamente");
+        }
     }
 }

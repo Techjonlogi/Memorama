@@ -1,5 +1,6 @@
 ﻿using Memorama_Client.ServidorMemorama;
 using System.Windows;
+using static Memorama_Client.Servicios;
 
 namespace Memorama_Client
 {
@@ -20,7 +21,7 @@ namespace Memorama_Client
         {
             string codigoVerificacion = txtCodigoVerificacion.Text;
 
-            Servicios.ValidarRegistro(usuario, codigoVerificacion);
+            ValidarRegistro(usuario, codigoVerificacion);
         }
     }
 }

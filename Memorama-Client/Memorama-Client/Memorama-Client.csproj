@@ -95,6 +95,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BuscarParaContraseña.xaml.cs">
+      <DependentUpon>BuscarParaContraseña.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServidorMemorama\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -138,8 +141,14 @@
     <Compile Include="MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NuevaContraseña.xaml.cs">
+      <DependentUpon>NuevaContraseña.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rainking.xaml.cs">
       <DependentUpon>Rainking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecibirCodigo.xaml.cs">
+      <DependentUpon>RecibirCodigo.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrarUsuario.xaml.cs">
       <DependentUpon>RegistrarUsuario.xaml</DependentUpon>
@@ -154,6 +163,10 @@
     <Compile Include="ValidarRegistro.xaml.cs">
       <DependentUpon>ValidarRegistro.xaml</DependentUpon>
     </Compile>
+    <Page Include="BuscarParaContraseña.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="JuegoBase\Vistas\Juego.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,7 +199,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NuevaContraseña.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Rainking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecibirCodigo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

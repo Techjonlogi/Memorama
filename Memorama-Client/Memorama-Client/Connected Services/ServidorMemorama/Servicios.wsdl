@@ -67,6 +67,15 @@
   <wsdl:message name="IContratos_AgregarPuntuacion_InputMessage">
     <wsdl:part name="parameters" element="tns:AgregarPuntuacion" />
   </wsdl:message>
+  <wsdl:message name="IContratos_BuscarParaCambiarContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarParaCambiarContraseña" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_CambiarContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarContraseña" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_validarCodigoContraseña_InputMessage">
+    <wsdl:part name="parameters" element="tns:validarCodigoContraseña" />
+  </wsdl:message>
   <wsdl:message name="IContratos_GetLoginResult_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetLoginResult" />
   </wsdl:message>
@@ -90,6 +99,27 @@
   </wsdl:message>
   <wsdl:message name="IContratos_GetJuego_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetJuego" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetResultadoBusqueda_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetResultadoBusqueda" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_NoExisteUsuario_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NoExisteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_correoEquivocado_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:correoEquivocado" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_NosepudocambiarLaContraseña_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NosepudocambiarLaContraseña" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_UsuarioEncontrado_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UsuarioEncontrado" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_CodigoValidado_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:CodigoValidado" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_ContraseñaCambiada_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ContraseñaCambiada" />
   </wsdl:message>
   <wsdl:portType name="IContratos">
     <wsdl:operation name="Login">
@@ -122,6 +152,15 @@
     <wsdl:operation name="AgregarPuntuacion">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/AgregarPuntuacion" message="tns:IContratos_AgregarPuntuacion_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="BuscarParaCambiarContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/BuscarParaCambiarContraseña" message="tns:IContratos_BuscarParaCambiarContraseña_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/CambiarContraseña" message="tns:IContratos_CambiarContraseña_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="validarCodigoContraseña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/validarCodigoContraseña" message="tns:IContratos_validarCodigoContraseña_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetLoginResult" message="tns:IContratos_GetLoginResult_OutputCallbackMessage" />
     </wsdl:operation>
@@ -145,6 +184,27 @@
     </wsdl:operation>
     <wsdl:operation name="GetJuego">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetJuego" message="tns:IContratos_GetJuego_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultadoBusqueda">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetResultadoBusqueda" message="tns:IContratos_GetResultadoBusqueda_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NoExisteUsuario">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/NoExisteUsuario" message="tns:IContratos_NoExisteUsuario_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="correoEquivocado">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/correoEquivocado" message="tns:IContratos_correoEquivocado_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NosepudocambiarLaContraseña">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/NosepudocambiarLaContraseña" message="tns:IContratos_NosepudocambiarLaContraseña_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioEncontrado">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/UsuarioEncontrado" message="tns:IContratos_UsuarioEncontrado_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CodigoValidado">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/CodigoValidado" message="tns:IContratos_CodigoValidado_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ContraseñaCambiada">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/ContraseñaCambiada" message="tns:IContratos_ContraseñaCambiada_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IContratos" type="tns:IContratos">
@@ -210,6 +270,24 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="BuscarParaCambiarContraseña">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/BuscarParaCambiarContraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContraseña">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/CambiarContraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="validarCodigoContraseña">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/validarCodigoContraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="GetLoginResult">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetLoginResult" style="document" />
       <wsdl:output>
@@ -254,6 +332,48 @@
     </wsdl:operation>
     <wsdl:operation name="GetJuego">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetJuego" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultadoBusqueda">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetResultadoBusqueda" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoExisteUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/NoExisteUsuario" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="correoEquivocado">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/correoEquivocado" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NosepudocambiarLaContraseña">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/NosepudocambiarLaContraseña" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UsuarioEncontrado">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/UsuarioEncontrado" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigoValidado">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/CodigoValidado" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContraseñaCambiada">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/ContraseñaCambiada" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
