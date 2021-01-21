@@ -72,6 +72,7 @@ namespace Memorama_Client
             {
                 if (CheckFields() == ChecResults.Passed)
                 {
+                    Memorama_Client.Properties.Settings.Default.UsuarioOnline = txtUserName.Text;
                     Usuario usuario = new Usuario();
                     usuario.Correo = txtCorreo.Text;
                     usuario.Nickname = txtUserName.Text;
