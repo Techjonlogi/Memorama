@@ -27,11 +27,64 @@ namespace Memorama_Client
             InitializeComponent();
             this.usuario = usuario;
         }
+        private enum ChecResults
+        {
+            Passed, Failed
+        }
+        private ChecResults CheckEmptyFields()
+        {
+            ChecResults check = ChecResults.Failed;
+            if (passContraseña.Password == string.Empty || passContraseñaRepite.Password==string.Empty)
+            {
+                check = ChecResults.Failed;
+            }
+            else
+            {
+                check = ChecResults.Passed;
+            }
+            return check;
+        }
+
+        private ChecResults CheckFields()
+        {
+            ChecResults check = ChecResults.Failed;
+            Validaciones.ValidarCampos validarCampos = new Validaciones.ValidarCampos();
+            if (CheckEmptyFields() == ChecResults.Failed)
+            {
+                MessageBox.Show("Existen campos sin llenar");
+                check = ChecResults.Failed;
+            }
+            else if (validarCampos.ValidarContraseña(passContraseña.Password) == Validaciones.ValidarCampos.ResultadosValidacion.ContraseñaInvalida)
+            {
+                MessageBox.Show("La contraseña es muy débil \n Intenta combinar letras mayúsculas, minúsculas y números");
+            }
+            else if (validarCampos.ValidarContraseña(passContraseñaRepite.Password) == Validaciones.ValidarCampos.ResultadosValidacion.ContraseñaInvalida)
+            {
+                MessageBox.Show("La contraseña es muy débil \n Intenta combinar letras mayúsculas, minúsculas y números");
+            }
+
+            else
+            {
+                check = ChecResults.Passed;
+            }
+            return check;
+        }
+
 
         private void btnCambiarContraseña_Click(object sender, RoutedEventArgs e)
         {
-            string data = PassHash(passContraseña.Password);
-            CambiarContraseña(usuario, data);
+            if (passContraseña.Password == passContraseñaRepite.Password)
+            {
+                string data = PassHash(passContraseña.Password);
+                CambiarContraseña(usuario, data);
+
+
+            }
+            else {
+
+                MessageBox.Show("Las contraseñas no son iguales");
+            }
+               
         }
 
 

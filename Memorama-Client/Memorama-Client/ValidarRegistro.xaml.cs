@@ -17,11 +17,56 @@ namespace Memorama_Client
             usuario = usu;
         }
 
+
+        private enum ChecResults
+        {
+            Passed, Failed
+        }
+
+        private ChecResults CheckEmptyFields()
+        {
+            ChecResults check = ChecResults.Failed;
+            if (txtCodigoVerificacion.Text == string.Empty)
+            {
+                check = ChecResults.Failed;
+            }
+            else
+            {
+                check = ChecResults.Passed;
+            }
+            return check;
+        }
+
+        private ChecResults CheckFields()
+        {
+            ChecResults check = ChecResults.Failed;
+            Validaciones.ValidarCampos validarCampos = new Validaciones.ValidarCampos();
+            if (CheckEmptyFields() == ChecResults.Failed)
+            {
+                MessageBox.Show("Existen campos sin llenar");
+                check = ChecResults.Failed;
+            }
+            else if (validarCampos.ValidarNúmero(txtCodigoVerificacion.Text) == Validaciones.ValidarCampos.ResultadosValidacion.NúmeroInválido)
+            {
+                MessageBox.Show("El codigo que usted ingresó no tiene el formato correcto");
+            }
+
+
+            else
+            {
+                check = ChecResults.Passed;
+            }
+            return check;
+        }
+
         private void btnVerificar_Click(object sender, RoutedEventArgs e)
         {
-            string codigoVerificacion = txtCodigoVerificacion.Text;
+            if (CheckFields() == ChecResults.Passed)
+            {
+                string codigoVerificacion = txtCodigoVerificacion.Text;
 
-            ValidarRegistro(usuario, codigoVerificacion);
+                ValidarRegistro(usuario, codigoVerificacion);
+            }
         }
     }
 }

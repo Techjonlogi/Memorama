@@ -19,7 +19,11 @@ namespace Memorama_Client.Validaciones
             UsuarioInvalido,
 
             CorreoValido,
-            CorreoInvalido
+            CorreoInvalido,
+
+            NúmeroVálido,
+            NúmeroInválido
+
 
         }
 
@@ -58,6 +62,16 @@ namespace Memorama_Client.Validaciones
                 return ResultadosValidacion.CorreoValido;
             }
             return ResultadosValidacion.CorreoInvalido;
+        }
+
+        public ResultadosValidacion ValidarNúmero(string número)
+        {
+            string patrón = @"^[0-9]*$";
+            if (Regex.IsMatch(número, patrón))
+            {
+                return ResultadosValidacion.NúmeroVálido;
+            }
+            return ResultadosValidacion.NúmeroInválido;
         }
 
 

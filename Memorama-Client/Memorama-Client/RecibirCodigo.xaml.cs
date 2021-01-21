@@ -27,9 +27,54 @@ namespace Memorama_Client
             this.usuario = usuario;
         }
 
+        private enum ChecResults
+        {
+            Passed, Failed
+        }
+
+        private ChecResults CheckEmptyFields()
+        {
+            ChecResults check = ChecResults.Failed;
+            if (txtCodigo.Text == string.Empty)
+            {
+                check = ChecResults.Failed;
+            }
+            else
+            {
+                check = ChecResults.Passed;
+            }
+            return check;
+        }
+
+        private ChecResults CheckFields()
+        {
+            ChecResults check = ChecResults.Failed;
+            Validaciones.ValidarCampos validarCampos = new Validaciones.ValidarCampos();
+            if (CheckEmptyFields() == ChecResults.Failed)
+            {
+                MessageBox.Show("Existen campos sin llenar");
+                check = ChecResults.Failed;
+            }
+            else if (validarCampos.ValidarNúmero(txtCodigo.Text) == Validaciones.ValidarCampos.ResultadosValidacion.NúmeroInválido)
+            {
+                MessageBox.Show("El codigo que usted ingresó no tiene el formato correcto");
+            }
+          
+
+            else
+            {
+                check = ChecResults.Passed;
+            }
+            return check;
+        }
+
+
         private void btnenviarCodigo_Click(object sender, RoutedEventArgs e)
         {
-            EnviarCodigo(usuario,txtCodigo.Text);
+            if (CheckFields() == ChecResults.Passed)
+            {
+                EnviarCodigo(usuario, txtCodigo.Text);
+            }
         }
     }
 }
