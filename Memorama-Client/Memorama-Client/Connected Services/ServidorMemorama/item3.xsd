@@ -96,6 +96,13 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="verificarReportes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetLoginResult">
     <xs:complexType>
       <xs:sequence>
@@ -192,6 +199,11 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="ContraseñaCambiada">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EstadoReporte">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

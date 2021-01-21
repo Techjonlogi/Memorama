@@ -135,22 +135,22 @@ namespace Memorama_Client
 
         public void NoExisteUsuario()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("no esxiste el usuario que usted busca");
         }
 
         public void correoEquivocado()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Correo equivocado");
         }
 
         public void NosepudocambiarLaContraseña()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("No se pudo cambiar la contraseña");
         }
 
         public void UsuarioEncontrado(string usuario)
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Usuario encontrado");
         }
 
         public void CodigoValidado(string usuario)
@@ -163,6 +163,11 @@ namespace Memorama_Client
         public void ContraseñaCambiada()
         {
             MessageBox.Show("contraseña cambiada correctamente");
+        }
+
+        public void EstadoReporte()
+        {
+            MessageBox.Show("Reporte enviado con exito");
         }
     }
 }

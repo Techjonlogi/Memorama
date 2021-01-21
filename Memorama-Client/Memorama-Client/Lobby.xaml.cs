@@ -31,5 +31,25 @@ namespace Memorama_Client
         {
             EmpezarJuego();
         }
+
+        private void btnReportar_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListUsuariosConectados.SelectedIndex > -1)
+            {
+                if (ListUsuariosConectados.SelectedValue.ToString().Equals(Memorama_Client.Properties.Settings.Default.UsuarioOnline)) 
+                {
+                    MessageBox.Show("no te puedes reportar a ti mismo");
+                }
+                else 
+                {
+
+                    BanearJugador(ListUsuariosConectados.SelectedValue.ToString());
+
+                }
+
+
+            }
+            else MessageBox.Show("seleccione a un jugador antes de reportar");
+        }
     }
 }

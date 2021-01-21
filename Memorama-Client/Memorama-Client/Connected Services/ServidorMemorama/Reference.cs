@@ -23,6 +23,9 @@ namespace Memorama_Client.ServidorMemorama {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CantidadReportesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CodigoVerificacionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -59,6 +62,19 @@ namespace Memorama_Client.ServidorMemorama {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CantidadReportes {
+            get {
+                return this.CantidadReportesField;
+            }
+            set {
+                if ((this.CantidadReportesField.Equals(value) != true)) {
+                    this.CantidadReportesField = value;
+                    this.RaisePropertyChanged("CantidadReportes");
+                }
             }
         }
         
@@ -742,6 +758,12 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/validarCodigoContraseña")]
         System.Threading.Tasks.Task validarCodigoContraseñaAsync(string codigo, string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/verificarReportes")]
+        void verificarReportes(string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/verificarReportes")]
+        System.Threading.Tasks.Task verificarReportesAsync(string usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -791,6 +813,9 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/ContraseñaCambiada")]
         void ContraseñaCambiada();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/EstadoReporte")]
+        void EstadoReporte();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -923,6 +948,14 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task validarCodigoContraseñaAsync(string codigo, string usuario) {
             return base.Channel.validarCodigoContraseñaAsync(codigo, usuario);
+        }
+        
+        public void verificarReportes(string usuario) {
+            base.Channel.verificarReportes(usuario);
+        }
+        
+        public System.Threading.Tasks.Task verificarReportesAsync(string usuario) {
+            return base.Channel.verificarReportesAsync(usuario);
         }
     }
 }

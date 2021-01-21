@@ -232,5 +232,25 @@ namespace Memorama_Client
         }
 
 
+        public static void BanearJugador(string jugador) 
+        {
+            try
+            {
+                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+                server.verificarReportes(jugador);
+
+                
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
+
+        }
+
+
     }
 }
