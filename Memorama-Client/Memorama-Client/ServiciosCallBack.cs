@@ -10,7 +10,9 @@ using System.ServiceModel;
 using System.Windows;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
+using System.Windows.Documents;
+using System.Collections.Generic;
+using System.Windows.Threading;
 
 namespace Memorama_Client
 {
@@ -23,6 +25,12 @@ namespace Memorama_Client
     public class ServiciosCallBack : IContratosCallback
     {
 
+
+
+
+
+
+        MemoramaMulti ventana;
         public MemoramaMulti juego { get; set; }
 
         public void GetLoginResult(LoginResults resultado)
@@ -111,12 +119,12 @@ namespace Memorama_Client
             
         }
 
-        public void GetJuego(Boolean bandera,int numero)
+        /*public void GetJuego(Boolean bandera,string[] numero)
         {
             if (bandera) 
             {
                 
-                JuegoM multi = new JuegoM(numero);
+                MemoramaMulti multi = new MemoramaMulti(numero);
                 multi.Show();
             }
             else 
@@ -124,7 +132,7 @@ namespace Memorama_Client
                 MessageBox.Show("Faltan jugadores para iniciar");
             }
            
-        }
+        }*/
 
         public void GetResultadoBusqueda(string usuario)
         {
@@ -169,5 +177,31 @@ namespace Memorama_Client
         {
             MessageBox.Show("Reporte enviado con exito");
         }
+
+
+
+        public void GetMovimiento(Boolean bandera, int first, int second)
+        {
+            ventana.SetCartas(first);
+        }
+
+        public void GetJuego(bool bandera, int[] tablero)
+        {
+
+            if (bandera)
+            {
+
+                MemoramaMulti multi = new MemoramaMulti(tablero);
+                ventana = multi;
+                multi.Show();
+            }
+            else
+            {
+                MessageBox.Show("Faltan jugadores para iniciar");
+            }
+        }
+
+
+
     }
 }

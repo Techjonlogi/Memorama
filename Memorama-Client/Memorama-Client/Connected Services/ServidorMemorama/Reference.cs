@@ -723,6 +723,12 @@ namespace Memorama_Client.ServidorMemorama {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/Empezarjuego")]
         System.Threading.Tasks.Task EmpezarjuegoAsync();
         
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/HacerMovimiento")]
+        void HacerMovimiento(int primeraCarta, int segundaCarta);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/HacerMovimiento")]
+        System.Threading.Tasks.Task HacerMovimientoAsync(int primeraCarta, int segundaCarta);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/PasarCarta")]
         void PasarCarta(string objeto, string Objeto2);
         
@@ -791,7 +797,10 @@ namespace Memorama_Client.ServidorMemorama {
         void GetCarta(string objeto, string objeto2);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetJuego")]
-        void GetJuego(bool bandera, int numero);
+        void GetJuego(bool bandera, int[] tablero);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetMovimiento")]
+        void GetMovimiento(bool bandera, int primeraCarta, int segundaCarta);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetResultadoBusqueda")]
         void GetResultadoBusqueda(string usuario);
@@ -900,6 +909,14 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task EmpezarjuegoAsync() {
             return base.Channel.EmpezarjuegoAsync();
+        }
+        
+        public void HacerMovimiento(int primeraCarta, int segundaCarta) {
+            base.Channel.HacerMovimiento(primeraCarta, segundaCarta);
+        }
+        
+        public System.Threading.Tasks.Task HacerMovimientoAsync(int primeraCarta, int segundaCarta) {
+            return base.Channel.HacerMovimientoAsync(primeraCarta, segundaCarta);
         }
         
         public void PasarCarta(string objeto, string Objeto2) {

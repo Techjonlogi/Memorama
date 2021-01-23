@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static Memorama_Client.Servicios;
 
 namespace Memorama_Client.JuegoMulti.Vistas
 {
@@ -23,7 +24,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
     public partial class MemoramaMulti : Window
     {
         private ServiciosCallBack juego = new ServiciosCallBack();
-        int[] cartas = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6 };
+        int[] cartas;
 
         int primeraCarta = -1;
         int segundaCarta = -1;
@@ -33,20 +34,23 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
 
 
-        public MemoramaMulti()
+        public MemoramaMulti(int[] tablero)
         {
+
+
+
             InitializeComponent();
-            Randomize<int>(cartas);
+            cartas = tablero;
             MostrarCartas();
 
-            
+
             timermemorizar = new DispatcherTimer();
             timermemorizar.Interval = new TimeSpan(0, 0, 5);
             timermemorizar.Tick += OpeningTimer_Tick;
             timermemorizar.Start();
-            
-           
-           
+
+
+
 
 
 
@@ -54,10 +58,20 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
         }
 
+        public void SetCartas(int primeraCarta)
+        {
+            this.primeraCarta = primeraCarta;
+            MessageBox.Show("El numero es =  " + primeraCarta);
+        }
+
 
 
         private void Carta1_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+            HacerMovimiento( 1, 2); 
             int idCarta = 1;
             Carta1.Content = cartas[idCarta - 1];
             if (primeraCarta == -1)

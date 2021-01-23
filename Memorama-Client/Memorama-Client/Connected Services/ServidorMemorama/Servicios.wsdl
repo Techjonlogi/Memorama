@@ -58,6 +58,9 @@
   <wsdl:message name="IContratos_Empezarjuego_InputMessage">
     <wsdl:part name="parameters" element="tns:Empezarjuego" />
   </wsdl:message>
+  <wsdl:message name="IContratos_HacerMovimiento_InputMessage">
+    <wsdl:part name="parameters" element="tns:HacerMovimiento" />
+  </wsdl:message>
   <wsdl:message name="IContratos_PasarCarta_InputMessage">
     <wsdl:part name="parameters" element="tns:PasarCarta" />
   </wsdl:message>
@@ -102,6 +105,9 @@
   </wsdl:message>
   <wsdl:message name="IContratos_GetJuego_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetJuego" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_GetMovimiento_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:GetMovimiento" />
   </wsdl:message>
   <wsdl:message name="IContratos_GetResultadoBusqueda_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetResultadoBusqueda" />
@@ -149,6 +155,9 @@
     <wsdl:operation name="Empezarjuego">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/Empezarjuego" message="tns:IContratos_Empezarjuego_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="HacerMovimiento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContratos/HacerMovimiento" message="tns:IContratos_HacerMovimiento_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="PasarCarta">
       <wsdl:input wsaw:Action="http://tempuri.org/IContratos/PasarCarta" message="tns:IContratos_PasarCarta_InputMessage" />
     </wsdl:operation>
@@ -193,6 +202,9 @@
     </wsdl:operation>
     <wsdl:operation name="GetJuego">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetJuego" message="tns:IContratos_GetJuego_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMovimiento">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetMovimiento" message="tns:IContratos_GetMovimiento_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetResultadoBusqueda">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetResultadoBusqueda" message="tns:IContratos_GetResultadoBusqueda_OutputCallbackMessage" />
@@ -260,6 +272,12 @@
     </wsdl:operation>
     <wsdl:operation name="Empezarjuego">
       <soap12:operation soapAction="http://tempuri.org/IContratos/Empezarjuego" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="HacerMovimiento">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/HacerMovimiento" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -350,6 +368,12 @@
     </wsdl:operation>
     <wsdl:operation name="GetJuego">
       <soap12:operation soapAction="http://tempuri.org/IContratos/GetJuego" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovimiento">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/GetMovimiento" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
