@@ -29,9 +29,9 @@ namespace Memorama_Client
         public int id;
 
 
+        public MemoramaMulti ventana;
 
-        MemoramaMulti ventana;
-        public MemoramaMulti juego { get; set; }
+        public MemoramaM juego { get; set; }
         public event EventHandler<int> userDidTouchCard;
 
         public void GetLoginResult(LoginResults resultado)
@@ -117,27 +117,19 @@ namespace Memorama_Client
             ventanaRiking.Show();
         }
 
-        public void GetCarta(string objeto, string objeto2)
+        public void GetCarta(int posicion)
         {
-            
+            juego.MostrarCartas(posicion);
             
             
         }
 
-        /*public void GetJuego(Boolean bandera,string[] numero)
+        public void GetJuego(int numero)
         {
-            if (bandera) 
-            {
-                
-                MemoramaMulti multi = new MemoramaMulti(numero);
-                multi.Show();
-            }
-            else 
-            {
-                MessageBox.Show("Faltan jugadores para iniciar");
-            }
+            JuegoM multi = new JuegoM(numero);
+            multi.Show();
            
-        }*/
+        }
 
         public void GetResultadoBusqueda(string usuario)
         {
@@ -193,12 +185,17 @@ namespace Memorama_Client
                 tempEvent(this, first);
                 
             }
-
+           
             
         }
 
-
         public void GetJuego(bool bandera, int[] tablero)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        /*public void GetJuego(bool bandera, int[] tablero)
         {
 
             if (bandera)
@@ -212,10 +209,10 @@ namespace Memorama_Client
             {
                 MessageBox.Show("Faltan jugadores para iniciar");
             }
-        }
+        }*/
 
 
-        
+
 
 
 

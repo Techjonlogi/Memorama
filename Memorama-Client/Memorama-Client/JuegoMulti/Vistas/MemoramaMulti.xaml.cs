@@ -125,7 +125,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
         public void MostrarCartas()
         {
-            juego.juego = this;
+           
 
             Carta1.Content = cartas[0];
             Carta2.Content = cartas[1];

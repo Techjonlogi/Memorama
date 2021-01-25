@@ -60,8 +60,7 @@
   <xs:element name="PasarCarta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="objeto" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="Objeto2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,16 +156,14 @@
   <xs:element name="GetCarta">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="objeto" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="objeto2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="posicion" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetJuego">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="bandera" type="xs:boolean" />
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="tablero" nillable="true" type="q10:ArrayOfint" />
+        <xs:element minOccurs="0" name="numero" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

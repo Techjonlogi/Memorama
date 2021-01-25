@@ -138,24 +138,6 @@ namespace Memorama_Client
         }
 
 
-        public static void EnviarCarta(string juego, string datacontex) 
-        {
-            try
-            {
-                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
-                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
-
-
-
-                server.PasarCarta(juego, datacontex);
-            }
-            catch (EndpointNotFoundException)
-            {
-
-
-                MessageBox.Show("No se pudo conectar al servidor");
-            }
-        }
 
         public static void EnviarPuntaje(string usuario,int puntos) 
         {
@@ -234,7 +216,7 @@ namespace Memorama_Client
 
         }
 
-        public static void HacerMovimiento(int primero, int segundo, ServiciosCallBack juego)
+        public static void HacerMovimiento(int id,ServiciosCallBack juego)
         {
             try
             {
@@ -243,7 +225,7 @@ namespace Memorama_Client
                 
                 ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
-                server.HacerMovimiento(primero, segundo);
+                server.PasarCarta(id);
             }
             catch (EndpointNotFoundException)
             {

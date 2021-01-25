@@ -730,10 +730,10 @@ namespace Memorama_Client.ServidorMemorama {
         System.Threading.Tasks.Task HacerMovimientoAsync(int primeraCarta, int segundaCarta);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/PasarCarta")]
-        void PasarCarta(string objeto, string Objeto2);
+        void PasarCarta(int id);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/PasarCarta")]
-        System.Threading.Tasks.Task PasarCartaAsync(string objeto, string Objeto2);
+        System.Threading.Tasks.Task PasarCartaAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/LogOutLobby")]
         void LogOutLobby(string usuario);
@@ -794,10 +794,10 @@ namespace Memorama_Client.ServidorMemorama {
         void GetRanking(Memorama_Client.ServidorMemorama.UsuarioRanking[] ranking);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetCarta")]
-        void GetCarta(string objeto, string objeto2);
+        void GetCarta(int posicion);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetJuego")]
-        void GetJuego(bool bandera, int[] tablero);
+        void GetJuego(int numero);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetMovimiento")]
         void GetMovimiento(bool bandera, int primeraCarta, int segundaCarta);
@@ -919,12 +919,12 @@ namespace Memorama_Client.ServidorMemorama {
             return base.Channel.HacerMovimientoAsync(primeraCarta, segundaCarta);
         }
         
-        public void PasarCarta(string objeto, string Objeto2) {
-            base.Channel.PasarCarta(objeto, Objeto2);
+        public void PasarCarta(int id) {
+            base.Channel.PasarCarta(id);
         }
         
-        public System.Threading.Tasks.Task PasarCartaAsync(string objeto, string Objeto2) {
-            return base.Channel.PasarCartaAsync(objeto, Objeto2);
+        public System.Threading.Tasks.Task PasarCartaAsync(int id) {
+            return base.Channel.PasarCartaAsync(id);
         }
         
         public void LogOutLobby(string usuario) {
