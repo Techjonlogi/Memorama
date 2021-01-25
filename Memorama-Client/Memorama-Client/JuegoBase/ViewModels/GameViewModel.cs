@@ -63,7 +63,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
 
         //Slide has been clicked
         public void ClickedSlide(object slide)
-        {
+         {
             if (Slides.canSelect)
             {
                 var selected = slide as PictureViewModel;

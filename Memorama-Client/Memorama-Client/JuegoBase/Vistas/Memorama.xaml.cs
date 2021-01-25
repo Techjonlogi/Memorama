@@ -20,6 +20,7 @@ namespace Memorama_Client.JuegoBase.Vistas
 
         private void Slide_Clicked(object sender, RoutedEventArgs e)
         {
+            
             var game = DataContext as GameViewModel;
             var button = sender as Button;
             game.ClickedSlide(button.DataContext);
@@ -37,6 +38,11 @@ namespace Memorama_Client.JuegoBase.Vistas
             var game = DataContext as GameViewModel;
             game.Restart();
         }
+
+       
+
+
     }
 
 }
+ 

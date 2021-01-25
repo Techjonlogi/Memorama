@@ -26,19 +26,22 @@ namespace Memorama_Client
     {
 
 
-
+        public int id;
 
 
 
         MemoramaMulti ventana;
         public MemoramaMulti juego { get; set; }
+        public event EventHandler<int> userDidTouchCard;
 
         public void GetLoginResult(LoginResults resultado)
         {
             if (resultado == LoginResults.UsuarioEncontrado)
             {
+                this.id = 2;
                 MenuPrincipal ventanaprincipal = new MenuPrincipal();
                 ventanaprincipal.Show();
+                
 
             }
             else if (resultado == LoginResults.NoExisteUrsuario)
@@ -73,6 +76,7 @@ namespace Memorama_Client
             if (resultado == ResultadoValidacion.CodigoCorrecto)
             {
                 MessageBox.Show("Registro validado");
+                this.id = 3;
                 MenuPrincipal ventanaprincipal = new MenuPrincipal();
                 ventanaprincipal.Show();
             }
@@ -95,6 +99,7 @@ namespace Memorama_Client
 
         public void GetUsuariosOnline(string[] usuariosConectados)
         {
+            this.id = 4;
             Lobby lobby = new Lobby();
             ObservableCollection<string> misUsuarios = new ObservableCollection<string>(usuariosConectados);
 
@@ -182,15 +187,23 @@ namespace Memorama_Client
 
         public void GetMovimiento(Boolean bandera, int first, int second)
         {
-            ventana.SetCartas(first);
+            var tempEvent = userDidTouchCard;
+            if (tempEvent != null)
+            {
+                tempEvent(this, first);
+                
+            }
+
+            
         }
+
 
         public void GetJuego(bool bandera, int[] tablero)
         {
 
             if (bandera)
             {
-
+                this.id = 5;
                 MemoramaMulti multi = new MemoramaMulti(tablero);
                 ventana = multi;
                 multi.Show();
@@ -200,6 +213,9 @@ namespace Memorama_Client
                 MessageBox.Show("Faltan jugadores para iniciar");
             }
         }
+
+
+        
 
 
 

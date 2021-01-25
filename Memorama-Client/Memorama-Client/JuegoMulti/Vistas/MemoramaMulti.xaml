@@ -10,18 +10,20 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Memorama-Client;component/Imagenes/tema-fondo-luces-neon_52683-44625.jpg"/>
         </Grid.Background>
-        <Button x:Name="Carta1" Content="" HorizontalAlignment="Left" Margin="74,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta1_Click"/>
-        <Button x:Name="Carta2" Content="" HorizontalAlignment="Left" Margin="74,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta2_Click"/>
-        <Button x:Name="Carta3" Content="" HorizontalAlignment="Left" Margin="74,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta3_Click"/>
-        <Button x:Name="Carta6" Content="" HorizontalAlignment="Left" Margin="218,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta6_Click"/>
-        <Button x:Name="Carta5" Content="" HorizontalAlignment="Left" Margin="218,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta5_Click"/>
-        <Button x:Name="Carta4" Content="" HorizontalAlignment="Left" Margin="218,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta4_Click"/>
-        <Button x:Name="Carta7" Content="" HorizontalAlignment="Left" Margin="366,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta7_Click"/>
-        <Button x:Name="Carta10" Content="" HorizontalAlignment="Left" Margin="522,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta10_Click"/>
-        <Button x:Name="Carta8" Content="" HorizontalAlignment="Left" Margin="366,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta8_Click"/>
-        <Button x:Name="Carta12" Content="" HorizontalAlignment="Left" Margin="522,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta12_Click"/>
-        <Button x:Name="Carta9" Content="" HorizontalAlignment="Left" Margin="366,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta9_Click"/>
-        <Button x:Name="Carta11" Content="" HorizontalAlignment="Left" Margin="522,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="Carta11_Click"/>
+        <Grid x:Name="gridCartas">
+            <Button x:Name="Carta1" Content="" HorizontalAlignment="Left" Margin="74,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta2" Content="" HorizontalAlignment="Left" Margin="74,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta3" Content="" HorizontalAlignment="Left" Margin="74,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta4" Content="" HorizontalAlignment="Left" Margin="218,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta5" Content="" HorizontalAlignment="Left" Margin="218,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta6" Content="" HorizontalAlignment="Left" Margin="218,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta7" Content="" HorizontalAlignment="Left" Margin="366,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta8" Content="" HorizontalAlignment="Left" Margin="522,38,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta9" Content="" HorizontalAlignment="Left" Margin="366,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta10" Content="" HorizontalAlignment="Left" Margin="522,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta11" Content="" HorizontalAlignment="Left" Margin="366,308,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+            <Button x:Name="Carta12" Content="" HorizontalAlignment="Left" Margin="522,168,0,0" VerticalAlignment="Top" Width="98" Height="101" Click="sendClickedCard"/>
+        </Grid>
 
     </Grid>
 </Window>

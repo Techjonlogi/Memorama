@@ -22,7 +22,10 @@ namespace Memorama_Client
         {
             try 
             {
-                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                ServiciosCallBack servicios = new ServiciosCallBack();
+                servicios.id = 5;
+                InstanceContext instanceContext = new InstanceContext(servicios);
+                
                 ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
 
@@ -231,11 +234,13 @@ namespace Memorama_Client
 
         }
 
-        public static void HacerMovimiento(int primero, int segundo)
+        public static void HacerMovimiento(int primero, int segundo, ServiciosCallBack juego)
         {
             try
             {
-                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+               
+                InstanceContext instanceContext = new InstanceContext(juego);
+                
                 ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
                 server.HacerMovimiento(primero, segundo);

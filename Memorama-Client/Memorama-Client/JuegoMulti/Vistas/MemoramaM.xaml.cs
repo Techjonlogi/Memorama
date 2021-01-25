@@ -22,7 +22,8 @@ using System.Text.Json.Serialization;
 
 
 using static Memorama_Client.Servicios;
-
+using Memorama_Client.JuegoBase.Vistas;
+using System.Data.Linq;
 
 namespace Memorama_Client.JuegoMulti.Vistas
 {
@@ -31,9 +32,13 @@ namespace Memorama_Client.JuegoMulti.Vistas
     /// </summary>
     public partial class MemoramaM : UserControl
     {
+        private ServiciosCallBack juego = new ServiciosCallBack();
+       
+        
         public MemoramaM()
         {
             InitializeComponent();
+            
         }
 
         private void Slide_Clicked(object sender, RoutedEventArgs e)
@@ -41,19 +46,6 @@ namespace Memorama_Client.JuegoMulti.Vistas
             var game = DataContext as GameViewModelM;
             var button = sender as Button;
             game.ClickedSlide(button.DataContext);
-            
-           
-            
-            
-         
-          
-
-
-            
-            
-
-            
-
 
         }
 

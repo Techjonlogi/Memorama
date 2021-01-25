@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using static Memorama_Client.Servicios;
+using Memorama_Client.JuegoMulti.ViewModels;
 
 namespace Memorama_Client.JuegoMulti.Vistas
 {
@@ -41,7 +42,20 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
             InitializeComponent();
             cartas = tablero;
+            juego.id = 1;
+            juego.userDidTouchCard += (sender, cardFlipped) =>
+            {
+                Dispatcher.Invoke(() => flipCard(cardFlipped));
+            };
             MostrarCartas();
+            int cont = 0;
+            foreach (var element in gridCartas.Children)
+            {
+                var button = (Button)element;
+                button.DataContext = new ModeloX(tablero[cont]);
+                cont++;
+            }
+
 
 
             timermemorizar = new DispatcherTimer();
@@ -58,6 +72,18 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
         }
 
+        private void flipCard(int number)
+        {
+            if (number < 0 || number > 11)
+            {
+                MessageBox.Show("Index out of bounds, i dont know how you did it, but it is illegal and i can sue you for that");
+            }
+            else
+            {
+                Console.WriteLine("The value that has to had is " + number);
+            }
+        }
+
         public void SetCartas(int primeraCarta)
         {
             this.primeraCarta = primeraCarta;
@@ -65,409 +91,14 @@ namespace Memorama_Client.JuegoMulti.Vistas
         }
 
 
+     
 
-        private void Carta1_Click(object sender, RoutedEventArgs e)
+
+        public void sendClickedCard(object sender, RoutedEventArgs e)
         {
-
-
-
-            HacerMovimiento( 1, 2); 
-            int idCarta = 1;
-            Carta1.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta1.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta1.Content = "";
-                    }
-
-
-                }
-
-
-            }
-        }
-
-        private void Carta2_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 2;
-            Carta2.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta2.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta2.Content = "";
-                    }
-
-
-                }
-
-
-
-            }
-        }
-
-        private void Carta3_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 3;
-            Carta3.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta3.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta3.Content = "";
-                    }
-
-
-                }
-
-
-
-            }
-
-        }
-
-        private void Carta4_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 4;
-            Carta4.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta4.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta4.Content = "";
-                    }
-
-
-                }
-
-
-
-            }
-        }
-
-        private void Carta5_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 5;
-            Carta5.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta5.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta5.Content = "";
-                    }
-
-
-                }
-
-
-
-            }
-        }
-
-        private void Carta6_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 6;
-            Carta6.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta6.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta6.Content = "";
-                    }
-
-
-                }
-
-
-            }
-        }
-
-        private void Carta7_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 7;
-            Carta7.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta7.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta7.Content = "";
-                    }
-
-
-                }
-
-
-
-            }
-        }
-
-        private void Carta8_Click(object sender, RoutedEventArgs e)
-        {
-
-            int idCarta = 8;
-            Carta8.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta8.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta8.Content = "";
-                    }
-
-
-                }
-            }
-        }
-
-        private void Carta9_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 9;
-            Carta9.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta9.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta9.Content = "";
-                    }
-
-
-                }
-            }
-        }
-
-        private void Carta10_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 10;
-            Carta10.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta10.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta10.Content = "";
-                    }
-
-
-                }
-
-
-
-            }
-        }
-
-        private void Carta11_Click(object sender, RoutedEventArgs e)
-        {
-            int idCarta = 11;
-            Carta11.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta11.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta11.Content = "";
-                    }
-
-
-                }
-            }
-        }
-
-        private void Carta12_Click(object sender, RoutedEventArgs e)
-        {
-
-            int idCarta = 12;
-            Carta12.Content = cartas[idCarta - 1];
-            if (primeraCarta == -1)
-            {
-                primeraCarta = idCarta - 1;
-
-            }
-            else if (segundaCarta == -1)
-            {
-
-                segundaCarta = idCarta - 1;
-                if (segundaCarta != -1 && primeraCarta != -1)
-                {
-                    if (cartas[primeraCarta] == cartas[segundaCarta])
-                    {
-                        Carta12.IsEnabled = false;
-                    }
-                    else
-                    {
-                        primeraCarta = -1;
-                        segundaCarta = -1;
-                        Carta12.Content = "";
-                    }
-
-
-                }
-
-            }
-           
+            var tempButton = (Button)sender;
+            var contexto = tempButton.DataContext as ModeloX;
+            MessageBox.Show(contexto.Valor.ToString());
         }
 
 
