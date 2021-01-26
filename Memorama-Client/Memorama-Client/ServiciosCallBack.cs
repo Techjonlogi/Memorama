@@ -27,6 +27,7 @@ namespace Memorama_Client
 
 
         public int id;
+        public event EventHandler<int> userDidCard;
 
 
         public MemoramaMulti ventana;
@@ -119,7 +120,14 @@ namespace Memorama_Client
 
         public void GetCarta(int posicion)
         {
-            juego.MostrarCartas(posicion);
+            this.id = 1;
+            var tempEvent = userDidCard;
+            if (tempEvent != null)
+            {
+                tempEvent(this, posicion);
+
+            }
+           
             
             
         }
@@ -179,6 +187,7 @@ namespace Memorama_Client
 
         public void GetMovimiento(Boolean bandera, int first, int second)
         {
+            this.id = 1;
             var tempEvent = userDidTouchCard;
             if (tempEvent != null)
             {

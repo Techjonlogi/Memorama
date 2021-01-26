@@ -33,14 +33,22 @@ namespace Memorama_Client.JuegoMulti.Vistas
     public partial class MemoramaM : UserControl
     {
         private ServiciosCallBack juego = new ServiciosCallBack();
+
        
-        
         public MemoramaM()
         {
             this.juego.juego = this;
+            
+
+            juego.userDidCard += (sender, cardFlipped) =>
+            {
+                Dispatcher.Invoke(() => MostrarCartas(cardFlipped));
+            };
+           
             InitializeComponent();
             
         }
+
 
        /* private void Slide_Clicked(object sender, RoutedEventArgs e)
         {
@@ -134,6 +142,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
         public void MostrarCartas(int carta)
         {
+            MessageBox.Show("Llegué aquí");
             if (carta == 1)
             {
                 var game = DataContext as GameViewModelM;
