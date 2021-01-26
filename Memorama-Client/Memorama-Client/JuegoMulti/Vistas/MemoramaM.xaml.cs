@@ -1,6 +1,5 @@
 ﻿using Memorama_Client.JuegoBase.Modelos;
 using Memorama_Client.JuegoMulti.ViewModels;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +16,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
-
-
-
 using static Memorama_Client.Servicios;
 using Memorama_Client.JuegoBase.Vistas;
 using System.Data.Linq;
+using System.Runtime.InteropServices;
 
 namespace Memorama_Client.JuegoMulti.Vistas
 {
@@ -32,31 +28,40 @@ namespace Memorama_Client.JuegoMulti.Vistas
     /// </summary>
     public partial class MemoramaM : UserControl
     {
-        private ServiciosCallBack juego = new ServiciosCallBack();
+        
+        public ServiciosCallBack calbackpapa;
+        private MemoramaM ventana;
 
-       
+
         public MemoramaM()
         {
-            this.juego.juego = this;
-            
 
-            juego.userDidCard += (sender, cardFlipped) =>
+            InitializeComponent();
+
+            this.Loaded += new RoutedEventHandler(UserControl_Loaded);
+
+
+
+
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            calbackpapa = (DataContext as GameViewModelM).calbacpapa;
+            calbackpapa.userDidCard += (sender1, cardFlipped) =>
             {
                 Dispatcher.Invoke(() => MostrarCartas(cardFlipped));
             };
-           
-            InitializeComponent();
-            
         }
 
 
-       /* private void Slide_Clicked(object sender, RoutedEventArgs e)
-        {
-            var game = DataContext as GameViewModelM;
-            var button = sender as Button;
-            game.ClickedSlide(button.DataContext);
+        /* private void Slide_Clicked(object sender, RoutedEventArgs e)
+         {
+             var game = DataContext as GameViewModelM;
+             var button = sender as Button;
+             game.ClickedSlide(button.DataContext);
 
-        }*/
+         }*/
 
         private void PlayAgain_c(Object sender, RoutedEventArgs e)
         {
@@ -68,73 +73,75 @@ namespace Memorama_Client.JuegoMulti.Vistas
         private void Click_Carta1(object sender, RoutedEventArgs e)
         {
             int id = 1;
-            HacerMovimiento(id,juego);
+          
+
+            HacerMovimiento(id,calbackpapa);
         }
 
         private void Clic_carta2(object sender, RoutedEventArgs e)
         {
             int id = 2;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void Clic_Carta3(object sender, RoutedEventArgs e)
         {
             int id = 3;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void clic_carta4(object sender, RoutedEventArgs e)
         {
             int id = 4;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void clic_carta5(object sender, RoutedEventArgs e)
         {
             int id = 5;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void clic_Carta6(object sender, RoutedEventArgs e)
         {
             int id = 6;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void clic_Carta7(object sender, RoutedEventArgs e)
         {
             int id = 7;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void Clic_Carta8(object sender, RoutedEventArgs e)
         {
             int id = 8;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void Clic_Carta9(object sender, RoutedEventArgs e)
         {
             int id = 9;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void Clic_Carta10(object sender, RoutedEventArgs e)
         {
             int id = 10;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void Clic_Carta11(object sender, RoutedEventArgs e)
         {
             int id = 11;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
         private void Click_Carta12(object sender, RoutedEventArgs e)
         {
             int id = 12;
-            HacerMovimiento(id, juego);
+            HacerMovimiento(id, calbackpapa);
         }
 
 
@@ -142,11 +149,12 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
         public void MostrarCartas(int carta)
         {
-            MessageBox.Show("Llegué aquí");
+            
             if (carta == 1)
             {
                 var game = DataContext as GameViewModelM;
                 game.ClickedSlide(carta1.DataContext);
+               
 
             }
             else if (carta == 2)

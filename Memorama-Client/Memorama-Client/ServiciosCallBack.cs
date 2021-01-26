@@ -28,6 +28,7 @@ namespace Memorama_Client
 
         public int id;
         public event EventHandler<int> userDidCard;
+        public ServiciosCallBack calbackpapa;
 
 
         public MemoramaMulti ventana;
@@ -101,7 +102,7 @@ namespace Memorama_Client
         public void GetUsuariosOnline(string[] usuariosConectados)
         {
             this.id = 4;
-            Lobby lobby = new Lobby();
+            Lobby lobby = new Lobby(this.calbackpapa);
             ObservableCollection<string> misUsuarios = new ObservableCollection<string>(usuariosConectados);
 
             lobby.ListUsuariosConectados.ItemsSource = misUsuarios;
@@ -127,6 +128,7 @@ namespace Memorama_Client
                 tempEvent(this, posicion);
 
             }
+
            
             
             
@@ -134,7 +136,9 @@ namespace Memorama_Client
 
         public void GetJuego(int numero)
         {
-            JuegoM multi = new JuegoM(numero);
+
+            this.id = 20;
+            JuegoM multi = new JuegoM(numero,this.calbackpapa);
             multi.Show();
            
         }

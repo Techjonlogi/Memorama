@@ -1,5 +1,6 @@
 ﻿using Memorama_Client.JuegoBase.Vistas;
 using Memorama_Client.JuegoMulti.Vistas;
+using System.Runtime.CompilerServices;
 using System.Windows;
 
 namespace Memorama_Client
@@ -20,7 +21,9 @@ namespace Memorama_Client
 
             ServidorMemorama.Usuario usuario = new ServidorMemorama.Usuario();
             usuario.Nickname = Memorama_Client.Properties.Settings.Default.UsuarioOnline;
-            Servicios.AgregarUsuarios(usuario);
+            var callback = new ServiciosCallBack();
+            callback.calbackpapa = callback;
+            Servicios.AgregarUsuarios(usuario,callback);
            
         }
 

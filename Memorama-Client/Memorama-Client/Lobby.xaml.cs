@@ -10,8 +10,10 @@ namespace Memorama_Client
     /// </summary>
     public partial class Lobby : Window
     {
-        public Lobby()
+        public ServiciosCallBack callBack;
+        public Lobby(ServiciosCallBack callBack)
         {
+            this.callBack = callBack;
             InitializeComponent();
         }
 
@@ -29,7 +31,8 @@ namespace Memorama_Client
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
-            EmpezarJuego();
+            
+            EmpezarJuego( callBack);
         }
 
         private void btnReportar_Click(object sender, RoutedEventArgs e)

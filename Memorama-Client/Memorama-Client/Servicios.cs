@@ -3,6 +3,7 @@ using Memorama_Client.JuegoBase.Modelos;
 using Memorama_Client.JuegoMulti.ViewModels;
 using Memorama_Client.JuegoMulti.Vistas;
 using Memorama_Client.ServidorMemorama;
+using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.Windows;
 
@@ -11,17 +12,19 @@ namespace Memorama_Client
     /// <summary>
     /// clase encargada de enviar los mensajes al servidor
     /// </summary>
-    public  class Servicios
+    public class Servicios
     {
 
 
+        public ServiciosCallBack calbackpapa;
 
-        public MemoramaMulti juego { get; set; }
+        
 
         public static void IniciarSesion(Usuario usuario)
         {
             try 
             {
+               
                 ServiciosCallBack servicios = new ServiciosCallBack();
                 servicios.id = 5;
                 InstanceContext instanceContext = new InstanceContext(servicios);
@@ -70,11 +73,11 @@ namespace Memorama_Client
             }
         }
 
-        public static void AgregarUsuarios(Usuario usuario)
+        public static void AgregarUsuarios(Usuario usuario,ServiciosCallBack callback)
         {
             try
             {
-                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                InstanceContext instanceContext = new InstanceContext(callback);
                 ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
 
                 server.AgregarUsuariosLobby(usuario);
@@ -121,11 +124,11 @@ namespace Memorama_Client
 
         }
 
-        public static void EmpezarJuego() 
+        public static void EmpezarJuego(ServiciosCallBack callBack) 
         {
             try
             {
-                InstanceContext instanceContext = new InstanceContext(new ServiciosCallBack());
+                InstanceContext instanceContext = new InstanceContext(callBack);
                 ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
                 server.Empezarjuego();
             }

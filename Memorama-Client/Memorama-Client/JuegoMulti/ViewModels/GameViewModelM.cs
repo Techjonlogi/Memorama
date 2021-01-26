@@ -29,13 +29,16 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         //Category we are playing in
         public SlideCategoriesM Category { get; private set; }
 
+        public ServiciosCallBack calbacpapa;
+
         private int numero;
 
-        public GameViewModelM(SlideCategoriesM category, int numero)
+        public GameViewModelM(SlideCategoriesM category, int numero, ServiciosCallBack callBack)
         {
             this.numero = numero;
             Category = category;
             SetupGame(category);
+            this.calbacpapa=callBack;
         }
 
         public GameViewModelM() { }
