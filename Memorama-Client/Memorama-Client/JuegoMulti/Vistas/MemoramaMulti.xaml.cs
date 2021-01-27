@@ -43,10 +43,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
             InitializeComponent();
             cartas = tablero;
             juego.id = 1;
-            juego.userDidTouchCard += (sender, cardFlipped) =>
-            {
-                Dispatcher.Invoke(() => flipCard(cardFlipped));
-            };
+           
             MostrarCartas();
             int cont = 0;
             foreach (var element in gridCartas.Children)

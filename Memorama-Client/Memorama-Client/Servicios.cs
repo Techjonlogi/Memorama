@@ -3,6 +3,7 @@ using Memorama_Client.JuegoBase.Modelos;
 using Memorama_Client.JuegoMulti.ViewModels;
 using Memorama_Client.JuegoMulti.Vistas;
 using Memorama_Client.ServidorMemorama;
+using System;
 using System.Runtime.CompilerServices;
 using System.ServiceModel;
 using System.Windows;
@@ -17,6 +18,7 @@ namespace Memorama_Client
 
 
         public ServiciosCallBack calbackpapa;
+
 
         
 
@@ -258,6 +260,31 @@ namespace Memorama_Client
             }
 
         }
+
+
+
+
+        public static void CartaEquivocada(ServiciosCallBack juego)
+        {
+            try
+            {
+
+                InstanceContext instanceContext = new InstanceContext(juego);
+
+                ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);
+
+                server.CartaEquivocada();
+            }
+            catch (EndpointNotFoundException)
+            {
+
+
+                MessageBox.Show("No se pudo conectar al servidor");
+            }
+
+        }
+
+
 
 
     }

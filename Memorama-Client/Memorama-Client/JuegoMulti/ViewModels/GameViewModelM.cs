@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using static Memorama_Client.Servicios;
 
 namespace Memorama_Client.JuegoMulti.ViewModels
@@ -32,6 +33,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
         public ServiciosCallBack calbacpapa;
 
         private int numero;
+        public bool turno;
 
         public GameViewModelM(SlideCategoriesM category, int numero, ServiciosCallBack callBack)
         {
@@ -81,11 +83,25 @@ namespace Memorama_Client.JuegoMulti.ViewModels
                 if (Slides.CheckIfMatched())
                 
                     GameInfo.Award(); //Correct match
-                  
-                   
-                
+
+
+
                 else
+                {
+                    if (turno) 
+                    {
+                    CartaEquivocada(calbacpapa);
+
+                    }
+
                     GameInfo.Penalize();//Incorrect match
+                   
+
+
+
+                }
+                   
+                    
             }
 
             GameStatus();

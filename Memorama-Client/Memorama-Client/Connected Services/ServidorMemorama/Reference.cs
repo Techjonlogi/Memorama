@@ -770,6 +770,12 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/verificarReportes")]
         System.Threading.Tasks.Task verificarReportesAsync(string usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/CartaEquivocada")]
+        void CartaEquivocada();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/CartaEquivocada")]
+        System.Threading.Tasks.Task CartaEquivocadaAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -825,6 +831,9 @@ namespace Memorama_Client.ServidorMemorama {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/EstadoReporte")]
         void EstadoReporte();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetTurno")]
+        void GetTurno(bool turno);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -973,6 +982,14 @@ namespace Memorama_Client.ServidorMemorama {
         
         public System.Threading.Tasks.Task verificarReportesAsync(string usuario) {
             return base.Channel.verificarReportesAsync(usuario);
+        }
+        
+        public void CartaEquivocada() {
+            base.Channel.CartaEquivocada();
+        }
+        
+        public System.Threading.Tasks.Task CartaEquivocadaAsync() {
+            return base.Channel.CartaEquivocadaAsync();
         }
     }
 }

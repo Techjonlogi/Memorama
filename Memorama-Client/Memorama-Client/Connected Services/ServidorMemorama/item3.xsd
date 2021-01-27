@@ -110,6 +110,11 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CartaEquivocada">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetLoginResult">
     <xs:complexType>
       <xs:sequence>
@@ -220,6 +225,13 @@
   <xs:element name="EstadoReporte">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="turno" type="xs:boolean" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

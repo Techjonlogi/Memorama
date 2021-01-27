@@ -27,14 +27,17 @@ namespace Memorama_Client
 
 
         public int id;
-        public event EventHandler<int> userDidCard;
+    
         public ServiciosCallBack calbackpapa;
 
 
         public MemoramaMulti ventana;
 
         public MemoramaM juego { get; set; }
-        public event EventHandler<int> userDidTouchCard;
+        
+        
+        public event EventHandler<int> userDidCard;
+        public event EventHandler<bool> cambioDeTurno;
 
         public void GetLoginResult(LoginResults resultado)
         {
@@ -125,7 +128,7 @@ namespace Memorama_Client
             var tempEvent = userDidCard;
             if (tempEvent != null)
             {
-                tempEvent(this, posicion);
+                tempEvent(this,posicion);
 
             }
 
@@ -191,20 +194,26 @@ namespace Memorama_Client
 
         public void GetMovimiento(Boolean bandera, int first, int second)
         {
-            this.id = 1;
-            var tempEvent = userDidTouchCard;
-            if (tempEvent != null)
-            {
-                tempEvent(this, first);
-                
-            }
-           
-            
+            throw new NotImplementedException();
+
+
         }
 
         public void GetJuego(bool bandera, int[] tablero)
         {
             throw new NotImplementedException();
+        }
+
+   
+
+        public void GetTurno(bool turno)
+        {
+            var tempEvent = cambioDeTurno;
+            if (tempEvent != null)
+            {
+                tempEvent(this, turno);
+
+            }
         }
 
 

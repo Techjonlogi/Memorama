@@ -65,5 +65,24 @@ namespace Memorama_Client.Validaciones.Tests
 
             Assert.AreEqual(ValidarCampos.ResultadosValidacion.CorreoInvalido, chec.ValidarCorreo(correo));
         }
+
+        [TestMethod()]
+        public void ValidarNúmeroTest()
+        {
+            ValidarCampos chec = new ValidarCampos();
+            String numero = "654654654";
+
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.NúmeroVálido, chec.ValidarNúmero(numero));
+        }
+
+        [TestMethod()]
+        public void ValidarNúmeroTestError()
+        {
+            ValidarCampos chec = new ValidarCampos();
+            String numero = "6546fjkhfgd4654";
+
+            Assert.AreEqual(ValidarCampos.ResultadosValidacion.NúmeroInválido, chec.ValidarNúmero(numero));
+        }
+
     }
 }

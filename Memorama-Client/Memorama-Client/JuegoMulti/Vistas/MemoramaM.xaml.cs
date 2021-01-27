@@ -31,6 +31,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
         
         public ServiciosCallBack calbackpapa;
         private MemoramaM ventana;
+        private bool turnoCliente;
 
 
         public MemoramaM()
@@ -52,6 +53,16 @@ namespace Memorama_Client.JuegoMulti.Vistas
             {
                 Dispatcher.Invoke(() => MostrarCartas(cardFlipped));
             };
+
+            
+
+            calbackpapa.cambioDeTurno += (sender1, Turn) =>
+            {
+                Dispatcher.Invoke(() => CambiarTurno(Turn));
+            };
+
+
+
         }
 
 
@@ -144,7 +155,49 @@ namespace Memorama_Client.JuegoMulti.Vistas
             HacerMovimiento(id, calbackpapa);
         }
 
+        public void CambiarTurno(bool turno)   
+        {
+             (DataContext as GameViewModelM).turno=turno;
 
+            this.turnoCliente = turno;
+
+            if (turnoCliente == false)
+            {
+
+                carta1.IsEnabled = false;
+                carta2.IsEnabled = false;
+                carta3.IsEnabled = false;
+                carta4.IsEnabled = false;
+                carta5.IsEnabled = false;
+                carta6.IsEnabled = false;
+                carta7.IsEnabled = false;
+                carta8.IsEnabled = false;
+                carta9.IsEnabled = false;
+                carta10.IsEnabled = false;
+                carta11.IsEnabled = false;
+                carta12.IsEnabled = false;
+
+            }
+            else 
+            {
+
+                carta1.IsEnabled = true;
+                carta2.IsEnabled = true;
+                carta3.IsEnabled = true;
+                carta4.IsEnabled = true;
+                carta5.IsEnabled = true;
+                carta6.IsEnabled = true;
+                carta7.IsEnabled = true;
+                carta8.IsEnabled = true;
+                carta9.IsEnabled = true;
+                carta10.IsEnabled = true;
+                carta11.IsEnabled = true;
+                carta12.IsEnabled = true;
+
+            }
+        
+        
+        }
 
 
         public void MostrarCartas(int carta)
