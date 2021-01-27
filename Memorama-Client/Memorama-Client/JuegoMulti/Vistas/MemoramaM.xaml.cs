@@ -66,18 +66,11 @@ namespace Memorama_Client.JuegoMulti.Vistas
         }
 
 
-        /* private void Slide_Clicked(object sender, RoutedEventArgs e)
-         {
-             var game = DataContext as GameViewModelM;
-             var button = sender as Button;
-             game.ClickedSlide(button.DataContext);
-
-         }*/
 
         private void PlayAgain_c(Object sender, RoutedEventArgs e)
         {
-            var game = DataContext as GameViewModelM;
-            game.Restart();
+            var miventana = Window.GetWindow(this);
+            miventana.Close();
             
         }
 

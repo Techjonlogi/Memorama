@@ -120,7 +120,6 @@
     </Compile>
     <Compile Include="JuegoMulti\ViewModels\GameInfoViewModelM.cs" />
     <Compile Include="JuegoMulti\ViewModels\GameViewModelM.cs" />
-    <Compile Include="JuegoMulti\ViewModels\ModeloX.cs" />
     <Compile Include="JuegoMulti\ViewModels\ObservableObjectM.cs" />
     <Compile Include="JuegoMulti\ViewModels\PictureViewModelM.cs" />
     <Compile Include="JuegoMulti\ViewModels\SlideCollectionViewModelM.cs" />
