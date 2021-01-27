@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="529" Width="355.932">
+        xmlns:p = "clr-namespace:Memorama_Client.Properties"
+        Title="{x:Static p:Resources.TituloLogin}" Height="529" Width="355.932">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/—Pngtree—neon background wall poster background_1043173.jpg"/>
         </Grid.Background>
-        <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="107.903,453.902,0,0" VerticalAlignment="Top" Width="134.949" RenderTransformOrigin="0.5,0.5" Background="#FFAEA5A5" UseLayoutRounding="False" Padding="1" Height="22.96" Click="btnIngresar_Click">
+        <Button x:Name="btnIngresar" Content="{x:Static p:Resources.btnIngresar}" HorizontalAlignment="Left" Margin="107.903,453.902,0,0" VerticalAlignment="Top" Width="134.949" RenderTransformOrigin="0.5,0.5" Background="#FFAEA5A5" UseLayoutRounding="False" Padding="1" Height="22.96" Click="btnIngresar_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -23,12 +24,12 @@
         <TextBlock HorizontalAlignment="Left" Height="43.55" Margin="86.355,75.322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187.096" FontFamily="Rockwell" FontSize="36" FontStyle="Italic" FontStretch="Expanded" Foreground="#FFA879AA">
             <TextBlock.Effect>
                 <DropShadowEffect BlurRadius="9"/>
-            </TextBlock.Effect><Run Text="B"/><Run Text="ienvenido"/></TextBlock>
+            </TextBlock.Effect><Run Text="{x:Static p:Resources.Bienvenida}"/></TextBlock>
         <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="86.355,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171.645" MaxLength="25"/>
-        <TextBlock HorizontalAlignment="Left" Margin="86.355,204.04,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top" Foreground="#FFECACAC"/>
-        <TextBlock HorizontalAlignment="Left" Margin="86.355,272.08,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.251,0.313" Height="26.92"><Run Foreground="#FFEC9E9E" Text="Contraseña"/><LineBreak/><Run/></TextBlock>
-        <Button x:Name="btnContraseña" Content="Recuperar Contraseña" HorizontalAlignment="Left" Height="25" Margin="107,392,0,0" VerticalAlignment="Top" Width="134" Foreground="Black" Background="#FFD4C7C7" Click="btnContraseña_Click"/>
-        <Button x:Name="btnRegistrarUsuario" Content="Registrarse" HorizontalAlignment="Left" Margin="107,345,0,0" VerticalAlignment="Top" Width="134" Click="btnRegistrarUsuario_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="86.355,204.04,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.usuarioLogin}" VerticalAlignment="Top" Foreground="#FFECACAC"/>
+        <TextBlock HorizontalAlignment="Left" Margin="86.355,272.08,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.251,0.313" Height="26.92"><Run Foreground="#FFEC9E9E" Text="{x:Static p:Resources.ContraseñaLogin}"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="btnContraseña" Content="{x:Static p:Resources.btnCambiarContraseña}" HorizontalAlignment="Left" Height="25" Margin="107,392,0,0" VerticalAlignment="Top" Width="134" Foreground="Black" Background="#FFD4C7C7" Click="btnContraseña_Click"/>
+        <Button x:Name="btnRegistrar" Content="{x:Static p:Resources.btnRegistrarse}" HorizontalAlignment="Left" Margin="107,345,0,0" VerticalAlignment="Top" Width="134" Click="btnRegistrarUsuario_Click"/>
         <PasswordBox x:Name="passBox" HorizontalAlignment="Left" Margin="86,299,0,0" VerticalAlignment="Top" Width="172" Height="23" MaxLength="30"/>
 
     </Grid>

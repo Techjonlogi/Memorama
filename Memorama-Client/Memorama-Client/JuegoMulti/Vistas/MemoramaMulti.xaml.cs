@@ -49,7 +49,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
             foreach (var element in gridCartas.Children)
             {
                 var button = (Button)element;
-                button.DataContext = new ModeloX(tablero[cont]);
+                //button.DataContext = new ModeloX(tablero[cont]);
                 cont++;
             }
 
@@ -94,8 +94,8 @@ namespace Memorama_Client.JuegoMulti.Vistas
         public void sendClickedCard(object sender, RoutedEventArgs e)
         {
             var tempButton = (Button)sender;
-            var contexto = tempButton.DataContext as ModeloX;
-            MessageBox.Show(contexto.Valor.ToString());
+          //  var contexto = tempButton.DataContext as ModeloX;
+          //  MessageBox.Show(contexto.Valor.ToString());
         }
 
 

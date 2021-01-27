@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client"
         mc:Ignorable="d"
-        Title="NuevaContraseña" Height="532.286" Width="389.212">
+        xmlns:p = "clr-namespace:Memorama_Client.Properties"
+        Title="{x:Static p:Resources.tituloCambiarContraseña}" Height="532.286" Width="389.212">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/—Pngtree—neon background wall poster background_1043173.jpg"/>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Left" Margin="94,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"><Run Foreground="#FFD5A4E4" Text="Contraseña"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="94,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFD177EC"><Run FontSize="20" Text="Repita su "/><Run FontSize="20" Text="contraseña"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="94,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"><Run Foreground="#FFD5A4E4" Text="{x:Static p:Resources.contraseñaCambiar}"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="94,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFD177EC"><Run FontSize="20" Text="{x:Static p:Resources.contraseñaCambiarRepite}"/></TextBlock>
         <PasswordBox x:Name="passContraseña" HorizontalAlignment="Left" Margin="94,205,0,0" VerticalAlignment="Top" Width="178" Height="32" MaxLength="30"/>
         <PasswordBox x:Name="passContraseñaRepite" HorizontalAlignment="Left" Margin="94,310,0,0" VerticalAlignment="Top" Width="178" Height="32" MaxLength="30"/>
-        <Button x:Name="btnCambiarContraseña" Content="Cambiar Contraseña" HorizontalAlignment="Left" Margin="117,388,0,0" VerticalAlignment="Top" Width="138" Height="31" Click="btnCambiarContraseña_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="94,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Foreground="#FFDE59F3" FontSize="22"><Run Text="Ingrese sus Datos"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="btnCambiarContraseña" Content="{x:Static p:Resources.btnCambiarContraseña}" HorizontalAlignment="Left" Margin="117,388,0,0" VerticalAlignment="Top" Width="138" Height="31" Click="btnCambiarContraseña_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="94,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Foreground="#FFDE59F3" FontSize="22"><Run Text="{x:Static p:Resources.descripcionCambiarcontraseña}"/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>

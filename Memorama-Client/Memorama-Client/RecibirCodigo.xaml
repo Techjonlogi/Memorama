@@ -4,15 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client"
+        xmlns:p = "clr-namespace:Memorama_Client.Properties"
         mc:Ignorable="d"
-        Title="RecibirCodigo" Height="271.68" Width="503.112">
+        Title="{x:Static p:Resources.tituloRecibirCodigo}" Height="271.68" Width="503.112">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/tema-fondo-luces-neon_52683-44625.jpg"/>
         </Grid.Background>
         <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="31" Margin="57,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" MaxLength="10"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,26,0,0" TextWrapping="Wrap" Text="Ingrese su codigo recibido" VerticalAlignment="Top" FontSize="20" Foreground="#FFF5EDF5"/>
-        <Button x:Name="btnenviarCodigo" Content="Enviar Codigo" HorizontalAlignment="Left" Margin="287,111,0,0" VerticalAlignment="Top" Width="89" Height="31" Click="btnenviarCodigo_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,26,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.DescripcionRecibirCodigo}" VerticalAlignment="Top" FontSize="20" Foreground="#FFF5EDF5"/>
+        <Button x:Name="btnenviarCodigo" Content="{x:Static p:Resources.btn_EnviarCodigo}" HorizontalAlignment="Left" Margin="287,111,0,0" VerticalAlignment="Top" Width="89" Height="31" Click="btnenviarCodigo_Click"/>
 
 
     </Grid>

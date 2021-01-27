@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client"
         mc:Ignorable="d"
-        Title="Rainking" Height="450" Width="350">
+         xmlns:p = "clr-namespace:Memorama_Client.Properties"
+        Title="{x:Static p:Resources.tituloRainking}" Height="450" Width="350">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/tema-fondo-luces-neon_52683-44625.jpg"/>
         </Grid.Background>
-        <Label Content="Rainking" HorizontalAlignment="Left" Margin="44,30,0,0" VerticalAlignment="Top" Width="120" FontSize="24" Foreground="#FFF7F7F7" Background="#00000000" FontWeight="Bold" RenderTransformOrigin="-0.154,-0.582"/>
+        <Label Content="{x:Static p:Resources.DescripcionRainking}" HorizontalAlignment="Left" Margin="44,30,0,0" VerticalAlignment="Top" Width="120" FontSize="24" Foreground="#FFF7F7F7" Background="#00000000" FontWeight="Bold" RenderTransformOrigin="-0.154,-0.582"/>
         <ListView HorizontalAlignment="Left" Height="293" Margin="20,94,0,0" VerticalAlignment="Top" Width="297" x:Name="lvRankig">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Usuario" Width="150" DisplayMemberBinding="{Binding Nickname}"/>
-                    <GridViewColumn Header="Puntuación" Width="150" DisplayMemberBinding="{Binding Puntuacion}"/>
+                    <GridViewColumn Header="{x:Static p:Resources.usuarioLogin}" Width="150" DisplayMemberBinding="{Binding Nickname}"/>
+                    <GridViewColumn Header="{x:Static p:Resources.tituloRainking}" Width="150" DisplayMemberBinding="{Binding Puntuacion}"/>
                 </GridView>
             </ListView.View>
         </ListView>

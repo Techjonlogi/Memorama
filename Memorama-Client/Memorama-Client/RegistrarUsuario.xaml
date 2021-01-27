@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client"
         mc:Ignorable="d"
-        Title="RegistrarUsuario" Height="569.5" Width="417">
+        xmlns:p = "clr-namespace:Memorama_Client.Properties"
+        Title="{x:Static p:Resources.tituloRegistrarUsuario}" Height="569.5" Width="417">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/—Pngtree—neon background wall poster background_1043173.jpg"/>
         </Grid.Background>
-        <TextBlock HorizontalAlignment="Left" Height="93" Margin="100,22,0,0" TextWrapping="Wrap" Text="Ingrese sus datos" VerticalAlignment="Top" Width="224" FontSize="36"/>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="127,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"><Run Text="User Name"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="127,267,0,0" TextWrapping="Wrap" Text="Contraseña" VerticalAlignment="Top" Width="102"/>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="127,194,0,0" TextWrapping="Wrap" Text="E-Mail" VerticalAlignment="Top" Width="102"/>
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="122,334.997,0,0" TextWrapping="Wrap" Text="Repita su contraseña" VerticalAlignment="Top" Width="113.999" RenderTransformOrigin="0.5,0.5">
+        <TextBlock HorizontalAlignment="Left" Height="93" Margin="100,22,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.DescripcionRegistrar}" VerticalAlignment="Top" Width="224" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="127,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"><Run Text="{x:Static p:Resources.usuarioRegistrar}"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="127,267,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.ContraseñaRegistrar}" VerticalAlignment="Top" Width="102"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="127,194,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.correoRegistrar}" VerticalAlignment="Top" Width="102"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="122,334.997,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.ContraseñaRegistrarRepite}" VerticalAlignment="Top" Width="113.999" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -24,8 +25,8 @@
                 </TransformGroup>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <Button x:Name="btnRegistrar" Content="Registrar" HorizontalAlignment="Left" Height="37" Margin="256,470,0,0" VerticalAlignment="Top" Width="121" Click="btnRegistrar_Click"/>
-        <Button x:Name="btnCancelar" Content="Cancelar" HorizontalAlignment="Left" Height="37" Margin="32,470,0,0" VerticalAlignment="Top" Width="121"/>
+        <Button x:Name="btnRegistrar" Content="{x:Static p:Resources.btnRegistrar}" HorizontalAlignment="Left" Height="37" Margin="256,470,0,0" VerticalAlignment="Top" Width="121" Click="btnRegistrar_Click"/>
+        <Button x:Name="btnCancelar" Content="{x:Static p:Resources.btnCancelar}" HorizontalAlignment="Left" Height="37" Margin="32,470,0,0" VerticalAlignment="Top" Width="121"/>
         <PasswordBox x:Name="PassRepite" HorizontalAlignment="Left" Height="24" Margin="127,365,0,0" VerticalAlignment="Top" Width="147" MaxLength="30"/>
         <PasswordBox x:Name="PassPassword" HorizontalAlignment="Left" Height="24" Margin="127,295,0,0" VerticalAlignment="Top" Width="147" MaxLength="30"/>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="29" Margin="127,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" MaxLength="25"/>

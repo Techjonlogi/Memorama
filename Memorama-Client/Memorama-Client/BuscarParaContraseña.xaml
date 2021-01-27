@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Memorama_Client"
         mc:Ignorable="d"
-        Title="BuscarParaContraseña" Height="557.93" Width="357.333">
+        xmlns:p = "clr-namespace:Memorama_Client.Properties"
+        Title="{x:Static p:Resources.TitulobuscarContraseña}" Height="557.93" Width="357.333">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Imagenes/—Pngtree—neon background wall poster background_1043173.jpg"/>
         </Grid.Background>
         <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="35" Margin="70,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" MaxLength="25"/>
         <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="35" Margin="70,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" MaxLength="80"/>
-        <TextBlock HorizontalAlignment="Left" Margin="37,10,0,0" TextWrapping="Wrap" Text="Ingrese Sus datos para Cambiar su contraseña" VerticalAlignment="Top" Height="85" Width="279" Foreground="#FFB38AF0" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="79,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="20"><Run Foreground="#FF8218DA" Text="Usuario"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="79,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFAE12E8"><Run FontSize="20" Text="Correo"/></TextBlock>
-        <Button x:Name="btnEnviarCodigo" Content="Enviar Codigo" HorizontalAlignment="Left" Margin="118,385,0,0" VerticalAlignment="Top" Width="114" Height="30" Click="btnEnviarCodigo_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,10,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.DescripcionBuscarContraseña}" VerticalAlignment="Top" Height="85" Width="279" Foreground="#FFB38AF0" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="79,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" FontSize="20"><Run Foreground="#FF8218DA" Text="{x:Static p:Resources.usuarioBuscar}"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="79,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFAE12E8"><Run FontSize="20" Text="{x:Static p:Resources.CorreoBuscar}"/></TextBlock>
+        <Button x:Name="btnEnviarCodigo" Content="{x:Static p:Resources.btnEnviarCodigo}" HorizontalAlignment="Left" Margin="118,385,0,0" VerticalAlignment="Top" Width="114" Height="30" Click="btnEnviarCodigo_Click"/>
     </Grid>
 </Window>
