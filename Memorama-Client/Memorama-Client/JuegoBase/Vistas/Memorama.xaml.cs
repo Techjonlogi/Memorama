@@ -31,8 +31,6 @@ namespace Memorama_Client.JuegoBase.Vistas
         private void PlayAgain_c(Object sender, RoutedEventArgs e)
         {
             String usuario=Memorama_Client.Properties.Settings.Default.UsuarioOnline;
-            String puntos = "";
-            puntos = textpuntos.Text;
             EnviarPuntaje(usuario, Memorama_Client.Properties.Settings.Default.puntaje);
             
             var game = DataContext as GameViewModel;

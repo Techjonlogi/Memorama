@@ -27,7 +27,7 @@ namespace Memorama_Client
 
         private ChecResults CheckEmptyFields()
         {
-            ChecResults check = ChecResults.Failed;
+            ChecResults check;
             if (txtUsuario.Text == string.Empty || passBox.Password == string.Empty)
             {
                 check = ChecResults.Failed;
@@ -77,7 +77,7 @@ namespace Memorama_Client
                 {
                     Nickname = txtUsuario.Text,
                     Password = data
-                }); ; ;
+                });  
                
 
 

@@ -14,7 +14,6 @@
         <ListBox x:Name="ListUsuariosConectados" HorizontalAlignment="Left" Height="209" Margin="503,123,0,0" VerticalAlignment="Top" Width="212"/>
         <TextBlock HorizontalAlignment="Left" Height="36" Margin="541,62,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.usuariosConectados}" VerticalAlignment="Top" Width="174"/>
         <Button x:Name="btnSalir" Content="{x:Static p:Resources.btnSalir}" HorizontalAlignment="Left" Margin="46,332,0,0" VerticalAlignment="Top" Width="75" Click="btnSalir_Click"/>
-        <Button x:Name="btnMensaje" Content="{x:Static p:Resources.btnEnviarMensaje}" HorizontalAlignment="Left" Margin="162,332,0,0" VerticalAlignment="Top" Width="91" Click="btnMensaje_Click"/>
         <Button x:Name="btnIniciar" Content="{x:Static p:Resources.btnEmpezar}" HorizontalAlignment="Left" Margin="307,332,0,0" VerticalAlignment="Top" Width="75" Click="btnIniciar_Click"/>
         <Button x:Name="btnReportar" Content="{x:Static p:Resources.btnReportar}" HorizontalAlignment="Left" Margin="414,332,0,0" VerticalAlignment="Top" Width="75" Click="btnReportar_Click"/>
 

@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace Memorama_Client.JuegoBase
 {
-    class ControladorDeAudio
+    public static class ControladorDeAudio
     {
         /// <summary>
         /// Encargad de reproducir los sonidos cada que es necesario

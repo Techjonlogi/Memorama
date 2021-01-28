@@ -1,25 +1,12 @@
-﻿using Memorama_Client.JuegoBase.Modelos;
+﻿
 using Memorama_Client.JuegoMulti.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+
 using static Memorama_Client.Servicios;
-using Memorama_Client.JuegoBase.Vistas;
-using System.Data.Linq;
-using System.Runtime.InteropServices;
+
 
 namespace Memorama_Client.JuegoMulti.Vistas
 {
@@ -30,7 +17,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
     {
         
         public ServiciosCallBack calbackpapa;
-        private MemoramaM ventana;
+     
         private bool turnoCliente;
 
 
@@ -154,7 +141,7 @@ namespace Memorama_Client.JuegoMulti.Vistas
 
             this.turnoCliente = turno;
 
-            if (turnoCliente == false)
+            if (!turnoCliente)
             {
 
                 carta1.IsEnabled = false;

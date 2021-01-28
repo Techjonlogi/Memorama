@@ -1,10 +1,6 @@
 ﻿using Memorama_Client.JuegoBase;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
+
 using static Memorama_Client.Servicios;
 
 namespace Memorama_Client.JuegoMulti.ViewModels

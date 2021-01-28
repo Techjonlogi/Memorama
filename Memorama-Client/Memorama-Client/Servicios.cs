@@ -1,10 +1,4 @@
-﻿using GoogleApi.Entities.Search.Video.Common;
-using Memorama_Client.JuegoBase.Modelos;
-using Memorama_Client.JuegoMulti.ViewModels;
-using Memorama_Client.JuegoMulti.Vistas;
-using Memorama_Client.ServidorMemorama;
-using System;
-using System.Runtime.CompilerServices;
+﻿using Memorama_Client.ServidorMemorama;
 using System.ServiceModel;
 using System.Windows;
 
@@ -13,11 +7,11 @@ namespace Memorama_Client
     /// <summary>
     /// clase encargada de enviar los mensajes al servidor
     /// </summary>
-    public class Servicios
+    public static class Servicios
     {
 
 
-        public ServiciosCallBack calbackpapa;
+        
 
 
         
@@ -28,7 +22,7 @@ namespace Memorama_Client
             {
                
                 ServiciosCallBack servicios = new ServiciosCallBack();
-                servicios.id = 5;
+                
                 InstanceContext instanceContext = new InstanceContext(servicios);
                 
                 ServidorMemorama.ContratosClient server = new ServidorMemorama.ContratosClient(instanceContext);

@@ -14,17 +14,7 @@
         <Button x:Name="btnModoSolo" Content="{x:Static p:Resources.btnModoSolo}" HorizontalAlignment="Left" Height="27" Margin="217,158,0,0" VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Click="btnModoSolo_Click"/>
         <TextBlock HorizontalAlignment="Left" Height="74.364" Margin="92.291,39.737,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.DescripcionMemorama}" VerticalAlignment="Top" Width="382.31" FontSize="36" Foreground="White" FontFamily="Tempus Sans ITC"/>
         <Button x:Name="btnMultijugador" Content="{x:Static p:Resources.btnMultijugador}" HorizontalAlignment="Left" Height="26.695" Margin="217.186,235.182,0,0" VerticalAlignment="Top" Width="100.106" BorderBrush="{x:Null}" Click="btnMultijugador_Click"/>
-        <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="25.556,357.517,0,0" VerticalAlignment="Top" Width="52.435" Foreground="White" BorderBrush="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="Imagenes/kisspng-gear-icon-gears-transparent-background-5a7a299b10b782.8313858415179554830685.png"/>
-            </Button.Background>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Height="42.902" Margin="467.928,357.517,0,0" VerticalAlignment="Top" Width="55.297" BorderBrush="{x:Null}" Click="Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Imagenes/19ac9c9b9ff7376fc86b45fee366a1a2-icono-de-lista-de-verificaci--n-de-archivos-by-vexels.png"/>
-            </Button.Background>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="113,358,0,0" VerticalAlignment="Top" Width="46" Height="42" Click="btnRainking_Click">
+        <Button Content="" HorizontalAlignment="Left" Margin="48,358,0,0" VerticalAlignment="Top" Width="46" Height="42" Click="btnRainking_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Imagenes/iconoRainking.png"/>
             </Button.Background>

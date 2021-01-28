@@ -1,6 +1,5 @@
 ﻿using Memorama_Client.JuegoBase.Vistas;
-using Memorama_Client.JuegoMulti.Vistas;
-using System.Runtime.CompilerServices;
+
 using System.Windows;
 
 namespace Memorama_Client
@@ -40,9 +39,6 @@ namespace Memorama_Client
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
+      
     }
 }

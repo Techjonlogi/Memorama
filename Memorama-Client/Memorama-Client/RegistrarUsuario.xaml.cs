@@ -24,7 +24,7 @@ namespace Memorama_Client
 
         private ChecResults CheckEmptyFields()
         {
-            ChecResults check = ChecResults.Failed;
+            ChecResults check;
             if (txtCorreo.Text == String.Empty || txtUserName.Text == String.Empty || PassPassword.Password == String.Empty || PassRepite.Password == String.Empty)
             {
                 check = ChecResults.Failed;

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Threading;
 
 namespace Memorama_Client.JuegoBase.ViewModels
@@ -19,7 +16,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
         private DispatcherTimer _playedTimer;
         private TimeSpan _timePlayed;
 
-        private const int _playSeconds = 1;
+        
 
         public TimeSpan Time
         {

@@ -1,9 +1,6 @@
 ﻿using Memorama_Client.JuegoBase.Vistas;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace Memorama_Client.JuegoBase.ViewModels
 {

@@ -1,4 +1,4 @@
-﻿using Memorama_Client.JuegoMulti.Vistas;
+﻿
 using System.Windows;
 using static Memorama_Client.Servicios;
 
@@ -24,10 +24,7 @@ namespace Memorama_Client
            
         }
 
-        private void btnMensaje_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
 
         private void btnIniciar_Click(object sender, RoutedEventArgs e)
         {
