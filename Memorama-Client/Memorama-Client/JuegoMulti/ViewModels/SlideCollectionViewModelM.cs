@@ -57,7 +57,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             }
         }
 
-        //Can user select a slide
+       
         public bool canSelect { get; private set; }
 
 
@@ -73,23 +73,23 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             _openingTimer.Tick += OpeningTimer_Tick;
         }
 
-        //Create slides from images in file directory
+       
         public void CreateSlides(string imagesPath)
         {
-            //New list of slides
+           
             MemorySlides = new ObservableCollection<PictureViewModelM>();
             var models = GetModelsFrom(@imagesPath);
 
-            //Create slides with matching pairs from models
+            
             for (int i = 0; i < 6; i++)
             {
-                //Create 2 matching slides
+               
                 var newSlide = new PictureViewModelM(models[i]);
                 var newSlideMatch = new PictureViewModelM(models[i]);
-                //Add new slides to collection
+               
                 MemorySlides.Add(newSlide);
                 MemorySlides.Add(newSlideMatch);
-                //Initially display images for user
+             
                 newSlide.PeekAtImage();
                 newSlideMatch.PeekAtImage();
             }
@@ -98,7 +98,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             OnPropertyChanged("MemorySlides");
         }
 
-        //Select a slide to be matched
+       
         public void SelectSlide(PictureViewModelM slide)
         {
             slide.PeekAtImage();
@@ -117,7 +117,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             OnPropertyChanged("areSlidesActive");
         }
 
-        //Are the selected slides a match
+       
         public bool CheckIfMatched()
         {
             if (SelectedSlide1.Id == SelectedSlide2.Id)
@@ -132,7 +132,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             }
         }
 
-        //Selected slides did not match
+       
         private void MatchFailed()
         {
             SelectedSlide1.MarkFailed();
@@ -140,7 +140,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             ClearSelected();
         }
 
-        //Selected slides matched
+      
         private void MatchCorrect()
         {
             SelectedSlide1.MarkMatched();
@@ -148,7 +148,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             ClearSelected();
         }
 
-        //Clear selected slides
+       
         private void ClearSelected()
         {
             SelectedSlide1 = null;
@@ -156,7 +156,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             canSelect = false;
         }
 
-        //Reveal all unmatched slides
+        
         public void RevealUnmatched()
         {
             foreach (var slide in MemorySlides)
@@ -170,26 +170,26 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             }
         }
 
-        //Hid all slides that are unmatched
+        
         public void HideUnmatched()
         {
             _peekTimer.Start();
         }
 
-        //Display slides for memorizing
+       
         public void Memorize()
         {
             _openingTimer.Start();
         }
 
-        //Get slide picture models for creating picture views
+        //Obtiene las imagenes del directorio
         private List<PictureModel> GetModelsFrom(string relativePath)
         {
-            //List of models for picture slides
+           
             var models = new List<PictureModel>();
-            //Get all image URIs in folder
+            
             var images = Directory.GetFiles(@relativePath, "*.jpg", SearchOption.AllDirectories);
-            //Slide id begin at 0
+            //inicia el id en 0
             var id = 0;
 
             foreach (string i in images)
@@ -201,7 +201,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             return models;
         }
 
-        //Randomize the location of the slides in collection
+       
         private void ShuffleSlides()
         {
             if (numero == 5) 
@@ -252,7 +252,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
 
         }
 
-        //Close slides being memorized
+       
         private void OpeningTimer_Tick(object sender, EventArgs e)
         {
             foreach (var slide in MemorySlides)
@@ -264,7 +264,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
             _openingTimer.Stop();
         }
 
-        //Display selected card
+       
         private void PeekTimer_Tick(object sender, EventArgs e)
         {
             foreach (var slide in MemorySlides)

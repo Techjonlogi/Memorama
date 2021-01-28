@@ -12,18 +12,18 @@ namespace Memorama_Client.JuegoBase.ViewModels
         /// </summary>
         
         
-        //Model for this view
+        
         private PictureModel _model;
 
-        //ID of this slide
+       
         public int Id { get; private set; }
 
-        //Slide status
+       
         private bool _isViewed;
         private bool _isMatched;
         private bool _isFailed;
 
-        //Is being viewed by user
+       
         public bool isViewed
         {
             get
@@ -38,7 +38,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Has been matched
+       
         public bool isMatched
         {
             get
@@ -53,7 +53,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Has failed to be matched
+       
         public bool isFailed
         {
             get
@@ -68,7 +68,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //User can select this slide
+      
         public bool isSelectable
         {
             get
@@ -82,7 +82,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Image to be displayed
+        
         public string SlideImage
         {
             get
@@ -97,7 +97,6 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Brush color of border based on status
         public Brush BorderBrush
         {
             get
@@ -120,19 +119,19 @@ namespace Memorama_Client.JuegoBase.ViewModels
             Id = model.Id;
         }
 
-        //Has been matched
+      
         public void MarkMatched()
         {
             isMatched = true;
         }
 
-        //Has failed to match
+        
         public void MarkFailed()
         {
             isFailed = true;
         }
 
-        //No longer being viewed
+        
         public void ClosePeek()
         {
             isViewed = false;
@@ -141,7 +140,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             OnPropertyChanged("SlideImage");
         }
 
-        //Let user view
+       
         public void PeekAtImage()
         {
             isViewed = true;

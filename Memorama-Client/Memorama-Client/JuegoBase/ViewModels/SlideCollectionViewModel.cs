@@ -19,23 +19,23 @@ namespace Memorama_Client.JuegoBase.ViewModels
         /// </summary>
         
         
-        //Collection of picture slides
+        
         public ObservableCollection<PictureViewModel> MemorySlides { get; private set; }
 
-        //Selected slides for matching
+      
         private PictureViewModel SelectedSlide1;
         private PictureViewModel SelectedSlide2;
 
-        //Timers for peeking at slides and initial display for memorizing
+       
         private DispatcherTimer _peekTimer;
         private DispatcherTimer _openingTimer;
 
-        //Interval for how long a user peeks at selections
+       
         private const int _peekSeconds = 3;
-        //Interval for how long a user has to memorize slides
+       
         private const int _openSeconds = 5;
 
-        //Are selected slides still being displayed
+       
         public bool areSlidesActive
         {
             get
@@ -47,7 +47,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Have all slides been matched
+     
         public bool AllSlidesMatched
         {
             get
@@ -62,7 +62,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Can user select a slide
+       
         public bool canSelect { get; private set; }
 
 
@@ -77,14 +77,14 @@ namespace Memorama_Client.JuegoBase.ViewModels
             _openingTimer.Tick += OpeningTimer_Tick;
         }
 
-        //Create slides from images in file directory
+        
         public void CreateSlides(string imagesPath)
         {
-            //New list of slides
+           
             MemorySlides = new ObservableCollection<PictureViewModel>();
             var models = GetModelsFrom(@imagesPath);
 
-            //Create slides with matching pairs from models
+            
             for (int i = 0; i < 6; i++)
             {
                 //Create 2 matching slides
@@ -102,7 +102,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             OnPropertyChanged("MemorySlides");
         }
 
-        //Select a slide to be matched
+        
         public void SelectSlide(PictureViewModel slide)
         {
             slide.PeekAtImage();
@@ -121,7 +121,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             OnPropertyChanged("areSlidesActive");
         }
 
-        //Are the selected slides a match
+        
         public bool CheckIfMatched()
         {
             if (SelectedSlide1.Id == SelectedSlide2.Id)
@@ -136,7 +136,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Selected slides did not match
+        
         private void MatchFailed()
         {
             SelectedSlide1.MarkFailed();
@@ -144,7 +144,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             ClearSelected();
         }
 
-        //Selected slides matched
+      
         private void MatchCorrect()
         {
             SelectedSlide1.MarkMatched();
@@ -152,7 +152,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             ClearSelected();
         }
 
-        //Clear selected slides
+      
         private void ClearSelected()
         {
             SelectedSlide1 = null;
@@ -160,7 +160,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             canSelect = false;
         }
 
-        //Reveal all unmatched slides
+       
         public void RevealUnmatched()
         {
             foreach (var slide in MemorySlides)
@@ -174,26 +174,26 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Hid all slides that are unmatched
+      
         public void HideUnmatched()
         {
             _peekTimer.Start();
         }
 
-        //Display slides for memorizing
+        
         public void Memorize()
         {
             _openingTimer.Start();
         }
 
-        //Get slide picture models for creating picture views
+        //Obtiene las imagenes del directorio
         private List<PictureModel> GetModelsFrom(string relativePath)
         {
-            //List of models for picture slides
+           
             var models = new List<PictureModel>();
-            //Get all image URIs in folder
+            
             var images = Directory.GetFiles(@relativePath, "*.jpg", SearchOption.AllDirectories);
-            //Slide id begin at 0
+            //pone el id en 0
             var id = 0;
 
             foreach (string i in images)
@@ -205,7 +205,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             return models;
         }
 
-        //Randomize the location of the slides in collection
+      
         private void ShuffleSlides()
         {
             //Randomizing slide indexes
@@ -218,7 +218,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             }
         }
 
-        //Close slides being memorized
+    
         private void OpeningTimer_Tick(object sender, EventArgs e)
         {
             foreach (var slide in MemorySlides)
@@ -230,7 +230,7 @@ namespace Memorama_Client.JuegoBase.ViewModels
             _openingTimer.Stop();
         }
 
-        //Display selected card
+       
         private void PeekTimer_Tick(object sender, EventArgs e)
         {
             foreach (var slide in MemorySlides)
