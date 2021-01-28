@@ -832,6 +832,12 @@ namespace Memorama_Client.ServidorMemorama {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/EstadoReporte")]
         void EstadoReporte();
         
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/FaltanJugadores")]
+        void FaltanJugadores();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/LobbyLleno")]
+        void LobbyLleno();
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IContratos/GetTurno")]
         void GetTurno(bool turno);
     }

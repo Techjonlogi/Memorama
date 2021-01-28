@@ -136,6 +136,12 @@
   <wsdl:message name="IContratos_EstadoReporte_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:EstadoReporte" />
   </wsdl:message>
+  <wsdl:message name="IContratos_FaltanJugadores_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:FaltanJugadores" />
+  </wsdl:message>
+  <wsdl:message name="IContratos_LobbyLleno_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:LobbyLleno" />
+  </wsdl:message>
   <wsdl:message name="IContratos_GetTurno_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:GetTurno" />
   </wsdl:message>
@@ -238,6 +244,12 @@
     </wsdl:operation>
     <wsdl:operation name="EstadoReporte">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/EstadoReporte" message="tns:IContratos_EstadoReporte_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FaltanJugadores">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/FaltanJugadores" message="tns:IContratos_FaltanJugadores_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LobbyLleno">
+      <wsdl:output wsaw:Action="http://tempuri.org/IContratos/LobbyLleno" message="tns:IContratos_LobbyLleno_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetTurno">
       <wsdl:output wsaw:Action="http://tempuri.org/IContratos/GetTurno" message="tns:IContratos_GetTurno_OutputCallbackMessage" />
@@ -440,6 +452,18 @@
     </wsdl:operation>
     <wsdl:operation name="EstadoReporte">
       <soap12:operation soapAction="http://tempuri.org/IContratos/EstadoReporte" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FaltanJugadores">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/FaltanJugadores" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LobbyLleno">
+      <soap12:operation soapAction="http://tempuri.org/IContratos/LobbyLleno" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

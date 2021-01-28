@@ -204,13 +204,14 @@ namespace Memorama_Client
             }
         }
 
+        public void FaltanJugadores()
+        {
+            MessageBox.Show("Faltan Jugadores Para iniciar la partida");
+        }
 
-     
-
-
-
-
-
-
+        public void LobbyLleno()
+        {
+            MessageBox.Show("No pueden acceder mas de 2 personas a la vez al lobby");
+        }
     }
 }

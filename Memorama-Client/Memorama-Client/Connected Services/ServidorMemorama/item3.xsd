@@ -227,6 +227,16 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="FaltanJugadores">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LobbyLleno">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetTurno">
     <xs:complexType>
       <xs:sequence>
