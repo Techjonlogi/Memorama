@@ -15,7 +15,7 @@ namespace Memorama_Client.JuegoMulti.ViewModels
 
         private bool _gameLost;
         private bool _gameWon;
-
+        // nomas estoy viendo
         public int MatchAttempts
         {
             get
